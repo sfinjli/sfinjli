@@ -4,4 +4,4 @@ permalink: /robots.txt
 ---
 User-agent: *
 Allow: /
-Sitemap: https://sfinjli.github.io/sfinjli/sitemap.xml
+{{ "Sitemap: https://sfinjli.github.io/sfinjli/sitemap.xml" }}
