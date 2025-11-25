@@ -1,0 +1,8 @@
+---
+layout: null
+---
+{% raw %}
+User-agent: *
+Allow: /
+Sitemap: https://sfinjli.github.io/sfinjli/sitemap.xml
+{% endraw %}
