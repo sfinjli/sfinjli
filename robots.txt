@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://sfinjli.github.io/sfinjli/sitemap.xml
-Sitemap: https://sfinjli.github.io/sfinjli/sitemap.xml/
-Sitemap: https://sfinjli.github.io/sitemap.xml
-Sitemap: https://www.sfinjli.github.io/sfinjli/sitemap.xml
+
