@@ -451,6 +451,17 @@
             box-shadow: 0 15px 40px rgba(27, 75, 107, 0.5);
         }
 
+        .btn-facebook {
+            background: linear-gradient(135deg, #1877F2 0%, #0C63D4 100%);
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(24, 119, 242, 0.4);
+        }
+
+        .btn-facebook:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(24, 119, 242, 0.5);
+        }
+
         .btn-icon {
             width: 24px;
             height: 24px;
@@ -571,11 +582,14 @@
 
             .cta-buttons {
                 flex-direction: row;
-                max-width: 500px;
+                flex-wrap: wrap;
+                max-width: 650px;
+                justify-content: center;
             }
 
-            .btn {
+            .cta-buttons .btn {
                 flex: 1;
+                min-width: 180px;
             }
         }
 
@@ -669,7 +683,7 @@
             <img src="logo.png" alt="ספינג׳ לי - ספינג׳ מרוקאי אמיתי כמו של סבתא">
         </div>
         <p class="tagline">דוכן ספינג׳ לאירועים | ספינג׳ טרי וחם במקום</p>
-        <span class="kashrut-badge">✡ כל המוצרים בהשגחת בד״ץ העדה החרדית</span>
+        <span class="kashrut-badge">✡ כל המוצרים בהשגחת בד״ץ העדה החרדית ✡</span>
     </header>
 
     <!-- Main Content -->
@@ -793,6 +807,12 @@
                         <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
                     </svg>
                     התקשרו עכשיו
+                </a>
+                 <a href="https://www.facebook.com/profile.php?id=61583860125185" target="_blank" class="btn btn-facebook">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                    עקבו אחרינו
                 </a>
             </div>
         </section>
