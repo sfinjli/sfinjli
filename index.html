@@ -123,15 +123,12 @@
         /* הגדרות הוידאו */
         .video-bg {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* זה מותח את הוידאו וממרכז אותו אוטומטית בלי לחתוך עקום */
             z-index: 0;
-            object-fit: cover;
         }
 
         /* שכבת ההחשכה - 0.4 */
