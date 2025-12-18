@@ -375,7 +375,7 @@
             border-radius: 5px;
         }
 
-        /* Video Section - Carousel */
+        /* Video Section - Grid Layout */
         .video-section {
             max-width: 1400px;
             margin: 8rem auto;
@@ -384,33 +384,38 @@
 
         .video-header {
             margin-bottom: 4rem;
+            text-align: center;
         }
 
-        .video-swiper .swiper-slide {
-            height: 70vh;
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
         }
 
-        .video-swiper iframe {
+        .video-item {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+        }
+
+        .video-item iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             border: none;
-        }
-
-        /* Dark buttons for video section */
-        .video-section .swiper-button-prev,
-        .video-section .swiper-button-next {
-            color: var(--black);
-            border-color: rgba(0, 0, 0, 0.3);
-        }
-
-        .video-section .swiper-button-prev:hover,
-        .video-section .swiper-button-next:hover {
-            background: rgba(0, 0, 0, 0.1);
-            border-color: var(--black);
-        }
-
-        .video-section .swiper-pagination-bullet {
-            background: var(--black);
         }
 
         /* Events Tags - Minimal */
@@ -707,6 +712,24 @@
                 height: 50vh;
             }
         }
+
+        @media (min-width: 769px) and (max-width: 1200px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        @media (min-width: 1201px) {
+            .video-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+
+            .video-item {
+                padding-bottom: 56.25%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -841,42 +864,37 @@
         </div>
     </section>
 
-    <!-- Video Section - Now with Carousel -->
+    <!-- Video Section -->
     <section class="video-section">
         <div class="video-header">
             <h2 class="section-title">צפו בנו בפעולה</h2>
         </div>
         
-        <div class="swiper video-swiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <iframe 
-                        src="https://www.youtube.com/embed/zu5egr6ts3o"
-                        title="סרטון ספינג׳ לי"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="swiper-slide">
-                    <iframe 
-                        src="https://www.youtube.com/embed/_9eB68XIjDU"
-                        title="סרטון ספינג׳ לי"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="swiper-slide">
-                    <iframe 
-                        src="https://www.youtube.com/embed/eFVJaFAUBRI"
-                        title="סרטון ספינג׳ לי"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
-                </div>
+        <div class="video-grid">
+            <div class="video-item">
+                <iframe 
+                    src="https://www.youtube.com/embed/zu5egr6ts3o"
+                    title="סרטון ספינג׳ לי"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
+            <div class="video-item">
+                <iframe 
+                    src="https://www.youtube.com/embed/_9eB68XIjDU"
+                    title="סרטון ספינג׳ לי"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="video-item">
+                <iframe 
+                    src="https://www.youtube.com/embed/eFVJaFAUBRI"
+                    title="סרטון ספינג׳ לי"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
         </div>
     </section>
 
@@ -966,20 +984,6 @@
                 1024: {
                     slidesPerView: 1.5,
                 },
-            },
-        });
-
-        // Video Swiper
-        const videoSwiper = new Swiper('.video-swiper', {
-            loop: true,
-            spaceBetween: 30,
-            pagination: {
-                el: '.video-swiper .swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.video-swiper .swiper-button-next',
-                prevEl: '.video-swiper .swiper-button-prev',
             },
         });
 
