@@ -2,28 +2,21 @@
 <html lang="he" dir="rtl">
 <head>
     <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL41DTFN2D"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-        
-          gtag('config', 'G-QL41DTFN2D');
-        </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL41DTFN2D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QL41DTFN2D');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>דוכן ספינג' לאירועים (מהדרין) | ספינג' לי</title>
-        <meta name="description" content="דוכן ספינג׳ לאירועים , ספינג' לי , דוכן ספינג', עמדת ספינג' , בר מצווה, בת מצווה, חינה, חתונה. טלפון: 054-5576767">
-        <meta name="keywords" content="דוכן ספינג׳, עמדת ספינג', ספינג', מהדרין , כשר , ספינג׳ מרוקאי, ספינג׳ לאירועים, קייטרינג ספינג׳, בר מצוה, , בר מצווה, חינה , חתונה , אירועי חברה , עליה לתורה ">
+    <title>דוכן ספינג' לאירועים (מהדרין) | ספינג' לי</title>
+    <meta name="description" content="דוכן ספינג׳ לאירועים , ספינג' לי , דוכן ספינג', עמדת ספינג' , בר מצווה, בת מצווה, חינה, חתונה. טלפון: 054-5576767">
+    <meta name="keywords" content="דוכן ספינג׳, עמדת ספינג', ספינג', מהדרין , כשר , ספינג׳ מרוקאי, ספינג׳ לאירועים, קייטרינג ספינג׳, בר מצוה, , בר מצווה, חינה , חתונה , אירועי חברה , עליה לתורה ">
     
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&family=Secular+One&display=swap" rel="stylesheet">
-
-    <link rel="icon" href="/favicon.png" type="image/png" sizes="192x192">
-    <link rel="apple-touch-icon" href="/favicon.png">
-    
+    <!-- Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -46,20 +39,31 @@
     }
     </script>
 
-    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Secular+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="192x192">
+
+   <!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ספינג׳ לי - דוכן ספינג׳ לאירועים | ספינג׳ מרוקאי מהדרין</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <style>
         :root {
-            --gold-dark: #C17F24;
-            --gold: #E8A832;
-            --gold-light: #F5C962;
-            --blue-dark: #1B4B6B;
-            --blue: #2B6B8E;
-            --blue-light: #5BA3C4;
-            --cream: #FDF8F0;
-            --cream-dark: #F5E6D3;
-            --white: #FFFFFF;
-            --text-dark: #2D2418;
-            --text-medium: #5A4D3A;
+            --black: #0A0A0A;
+            --white: #FAFAFA;
+            --gold: #C9A961;
+            --gold-dark: #A18845;
+            --grey-light: #F5F5F5;
+            --grey-medium: #CCCCCC;
+            --grey-dark: #666666;
         }
 
         * {
@@ -73,552 +77,504 @@
         }
 
         body {
-            font-family: 'Heebo', sans-serif;
-            background: var(--cream);
-            color: var(--text-dark);
-            line-height: 1.7;
+            font-family: 'Montserrat', sans-serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Moroccan Pattern Background */
-        .moroccan-pattern {
+        /* Navigation */
+        nav {
             position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 250, 250, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: block;
+            height: 50px;
+        }
+
+        .logo img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--black);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .kashrut-mini {
+            font-size: 0.75rem;
+            color: var(--grey-dark);
+            border: 1px solid var(--grey-medium);
+            padding: 0.4rem 0.8rem;
+            border-radius: 3px;
+        }
+
+        /* Hero Section - Full Screen */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .hero-image {
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none;
-            opacity: 0.03;
-            z-index: -1;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30L30 0z' fill='%231B4B6B' fill-opacity='1'/%3E%3Cpath d='M30 10L50 30L30 50L10 30L30 10z' fill='none' stroke='%231B4B6B' stroke-width='2'/%3E%3C/svg%3E");
+            object-fit: cover;
+            filter: brightness(0.5);
         }
 
-        /* Header */
-        header {
-            background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%);
-            padding: 2rem 1rem 3rem;
-            text-align: center;
+        .hero-content {
             position: relative;
+            z-index: 10;
+            text-align: center;
+            color: var(--white);
+            padding: 2rem;
+            animation: fadeInUp 1.2s ease-out;
         }
 
-        header::after {
-            content: '';
+        .hero-subtitle {
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 10vw, 7rem);
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: var(--white);
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            border: 2px solid var(--white);
+        }
+
+        .hero-cta:hover {
+            background: transparent;
+            color: var(--white);
+        }
+
+        .scroll-indicator {
             position: absolute;
-            bottom: 0;
+            bottom: 3rem;
             left: 50%;
             transform: translateX(-50%);
-            width: 200px;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-        }
-
-        .logo-container {
-            max-width: 350px;
-            margin: 0 auto 0rem;
-            animation: fadeInDown 1s ease-out;
-        }
-
-        .logo-container img {
-            width: 100%;
-            height: auto;
-            filter: drop-shadow(0 10px 30px rgba(193, 127, 36, 0.2));
-        }
-
-        .tagline {
-            font-family: 'Secular One', sans-serif;
-            font-size: 1.3rem;
-            color: var(--blue-dark);
-            margin-bottom: 0.5rem;
-            animation: fadeInUp 1s ease-out 0.3s both;
-        }
-
-        .kashrut-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%);
-            color: var(--white);
-            padding: 0.6rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-top: 1rem;
-            box-shadow: 0 4px 15px rgba(27, 75, 107, 0.3);
-            animation: fadeInUp 1s ease-out 0.5s both;
-        }
-
-        /* Main Content */
-        main {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 50%, var(--gold-light) 100%);
-            border-radius: 30px;
-            padding: 3rem 2rem;
-            margin: -1.5rem 0.5rem 2rem;
-            text-align: center;
-            color: var(--white);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(193, 127, 36, 0.4);
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .hero h1 {
-            font-family: 'Secular One', sans-serif;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            opacity: 0.95;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Events List */
-        .events-strip {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .event-tag {
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px);
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-
-        /* Story Section */
-        .story-section {
+            width: 1px;
+            height: 60px;
             background: var(--white);
-            border-radius: 25px;
-            padding: 2.5rem 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-            position: relative;
-        }
-
-        .story-section::before {
-            content: '״';
-            position: absolute;
-            top: 1rem;
-            right: 1.5rem;
-            font-size: 5rem;
-            color: var(--gold-light);
             opacity: 0.5;
-            font-family: serif;
-            line-height: 1;
+            animation: scrollDown 2s infinite;
         }
 
-        .story-section h2 {
-            font-family: 'Secular One', sans-serif;
-            color: var(--blue-dark);
-            font-size: 1.5rem;
+        /* Introduction Section */
+        .intro-section {
+            max-width: 900px;
+            margin: 8rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .intro-label {
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
             margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
-        .story-section h2::before {
-            content: '';
-            width: 4px;
-            height: 30px;
-            background: linear-gradient(180deg, var(--gold) 0%, var(--gold-light) 100%);
-            border-radius: 2px;
+        .intro-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 2rem;
         }
 
-        .story-text {
+        .intro-text {
             font-size: 1.1rem;
-            color: var(--text-medium);
             line-height: 1.9;
+            color: var(--grey-dark);
+            font-weight: 300;
         }
 
-        /* Features Grid */
-        .features {
+        /* Features Grid - Asymmetric */
+        .features-section {
+            max-width: 1400px;
+            margin: 0 auto 8rem;
+            padding: 0 2rem;
+        }
+
+        .features-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin: 2rem 0;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
         }
 
-        .feature-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 2rem;
+        .feature-item {
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 2px solid transparent;
+            padding: 3rem 2rem;
+            transition: transform 0.3s;
         }
 
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-            border-color: var(--gold-light);
+        .feature-item:hover {
+            transform: translateY(-10px);
         }
 
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 2rem;
+        .feature-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 300;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 1rem;
         }
 
-        .feature-card h3 {
-            font-family: 'Secular One', sans-serif;
-            color: var(--blue-dark);
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
         }
 
-        .feature-card p {
-            color: var(--text-medium);
+        .feature-text {
             font-size: 0.95rem;
+            color: var(--grey-dark);
+            line-height: 1.7;
+            font-weight: 300;
         }
 
-        /* Media Gallery Section */
+        /* Gallery Section - Magazine Style */
         .gallery-section {
-            background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%);
-            border-radius: 25px;
-            padding: 2.5rem 1.5rem;
-            margin: 2rem 0;
+            margin: 8rem 0;
+            background: var(--black);
             color: var(--white);
+            padding: 6rem 0;
         }
 
-        .gallery-section h2 {
-            font-family: 'Secular One', sans-serif;
-            text-align: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
+        .section-header {
+            max-width: 1400px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
         }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
         }
 
-        .gallery-item {
-            aspect-ratio: 1;
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px dashed rgba(255,255,255,0.3);
-            color: rgba(255,255,255,0.6);
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            overflow: hidden;
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--grey-medium);
+            font-weight: 300;
         }
 
-        .gallery-item:hover {
-            background: rgba(255,255,255,0.15);
-            border-color: rgba(255,255,255,0.5);
+        /* Swiper Customization */
+        .gallery-swiper {
+            padding: 0 2rem;
         }
 
-        .gallery-item img {
+        .gallery-swiper .swiper-slide {
+            height: 70vh;
+        }
+
+        .gallery-swiper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .gallery-item.large {
-            grid-column: span 2;
-            aspect-ratio: 2/1;
-        }
-
-        /* Video Section */
-        .video-section {
-            background: var(--white);
-            border-radius: 25px;
-            padding: 2rem;
-            margin: 2rem 0;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-        }
-
-        .video-section h2 {
-            font-family: 'Secular One', sans-serif;
-            color: var(--blue-dark);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .video-placeholder {
-            aspect-ratio: 16/9;
-            background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
-            border-radius: 15px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border: 2px dashed var(--gold);
-            color: var(--text-medium);
-            gap: 0.5rem;
-        }
-
-        .video-placeholder .play-icon {
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: var(--white);
             width: 60px;
             height: 60px;
-            background: var(--gold);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .swiper-button-prev:hover,
+        .swiper-button-next:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--white);
+        }
+
+        .swiper-button-prev::after,
+        .swiper-button-next::after {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background: var(--white);
+            opacity: 0.3;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+            width: 40px;
+            border-radius: 5px;
+        }
+
+        /* Video Section - Split Layout */
+        .video-section {
+            max-width: 1400px;
+            margin: 8rem auto;
+            padding: 0 2rem;
+        }
+
+        .video-header {
+            margin-bottom: 4rem;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+
+        .video-item {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background: var(--black);
+        }
+
+        .video-item iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Events Tags - Minimal */
+        .events-tags {
+            max-width: 1400px;
+            margin: 6rem auto;
+            padding: 0 2rem;
             display: flex;
-            align-items: center;
+            flex-wrap: wrap;
             justify-content: center;
+            gap: 1rem;
+        }
+
+        .event-tag {
+            padding: 1rem 2rem;
+            border: 1px solid var(--black);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            background: var(--white);
+        }
+
+        .event-tag:hover {
+            background: var(--black);
             color: var(--white);
-            font-size: 1.5rem;
         }
 
-        /* CTA Section */
+        /* CTA Section - Bold */
         .cta-section {
-            background: linear-gradient(135deg, var(--cream-dark) 0%, var(--cream) 100%);
-            border-radius: 25px;
-            padding: 2.5rem 2rem;
-            margin: 2rem 0;
+            background: var(--gold);
+            color: var(--black);
+            padding: 8rem 2rem;
             text-align: center;
-            border: 3px solid var(--gold-light);
         }
 
-        .cta-section h2 {
-            font-family: 'Secular One', sans-serif;
-            color: var(--gold-dark);
-            font-size: 1.6rem;
-            margin-bottom: 0.5rem;
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            line-height: 1.1;
         }
 
-        .cta-section .contact-name {
-            font-size: 1.2rem;
-            color: var(--text-dark);
-            margin-bottom: 1.5rem;
+        .cta-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
+            font-weight: 300;
         }
 
         .cta-buttons {
             display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            max-width: 350px;
-            margin: 0 auto;
-        }
-
-        .btn {
-            display: flex;
-            align-items: center;
             justify-content: center;
-            gap: 0.75rem;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            gap: 1.5rem;
+            flex-wrap: wrap;
         }
 
-        .btn-whatsapp {
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            color: var(--white);
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
-        }
-
-        .btn-whatsapp:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
-        }
-
-        .btn-call {
-            background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
-            color: var(--white);
-            box-shadow: 0 10px 30px rgba(27, 75, 107, 0.4);
-        }
-
-        .btn-call:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(27, 75, 107, 0.5);
-        }
-
-        .btn-facebook {
-            background: linear-gradient(135deg, #1877F2 0%, #0C63D4 100%);
-            color: var(--white);
-            box-shadow: 0 10px 30px rgba(24, 119, 242, 0.4);
-        }
-
-        .btn-facebook:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(24, 119, 242, 0.5);
-        }
-
-        .btn-icon {
-            width: 24px;
-            height: 24px;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--blue-dark);
-            color: var(--white);
-            text-align: center;
-            padding: 2rem 1rem;
-            margin-top: 3rem;
-        }
-
-        footer .logo-small {
-            font-family: 'Secular One', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--gold-light);
-        }
-
-        footer p {
-            opacity: 0.8;
+        .cta-btn {
+            padding: 1.2rem 3rem;
             font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 2px solid var(--black);
+            color: var(--black);
+            background: transparent;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
         }
 
-        /* Floating WhatsApp Button */
+        .cta-btn:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .cta-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Footer - Minimal */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            font-size: 0.95rem;
+            color: var(--grey-medium);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-link {
+            color: var(--grey-medium);
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .footer-link:hover {
+            color: var(--gold);
+        }
+
+        .footer-copyright {
+            font-size: 0.8rem;
+            color: var(--grey-dark);
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Floating WhatsApp - Minimal */
         .floating-whatsapp {
             position: fixed;
             bottom: 2rem;
             left: 2rem;
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            background: var(--black);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 5px 25px rgba(37, 211, 102, 0.5);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            animation: pulse 2s infinite;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            transition: all 0.3s;
+            border: 1px solid var(--gold);
         }
 
         .floating-whatsapp:hover {
             transform: scale(1.1);
+            background: var(--gold);
         }
 
         .floating-whatsapp svg {
-            width: 32px;
-            height: 32px;
-            fill: white;
+            width: 28px;
+            height: 28px;
+            fill: var(--white);
         }
 
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                box-shadow: 0 5px 25px rgba(37, 211, 102, 0.5);
-            }
-            50% {
-                box-shadow: 0 5px 35px rgba(37, 211, 102, 0.8);
-            }
-        }
-
-        /* Responsive */
-        @media (min-width: 600px) {
-            .logo-container {
-                max-width: 400px;
-            }
-
-            .tagline {
-                font-size: 1.5rem;
-            }
-
-            .hero {
-                padding: 4rem 3rem;
-                margin: -1.5rem 1rem 2rem;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .features {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .gallery-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .gallery-item.large {
-                grid-column: span 3;
-                aspect-ratio: 3/1;
-            }
-
-            .cta-buttons {
-                flex-direction: row;
-                flex-wrap: wrap;
-                max-width: 650px;
-                justify-content: center;
-            }
-
-            .cta-buttons .btn {
-                flex: 1;
-                min-width: 180px;
-            }
-        }
-
-        @media (min-width: 900px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .features {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .story-section {
-                padding: 3rem;
-            }
-        }
         /* Lightbox */
         .lightbox {
             display: none;
@@ -627,7 +583,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.95);
+            background: rgba(0, 0, 0, 0.97);
             z-index: 9999;
             justify-content: center;
             align-items: center;
@@ -638,268 +594,345 @@
         }
 
         .lightbox-content {
-    max-width: 80%;
-    max-height: 80vh;
-    position: relative;
-}
+            max-width: 90%;
+            max-height: 90vh;
+            position: relative;
+        }
 
-.lightbox-content img {
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 80vh;
-    object-fit: contain;
-    border-radius: 10px;
-}
+        .lightbox-content img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
 
         .lightbox-close {
             position: absolute;
             top: -50px;
             right: 0;
-            background: var(--gold);
+            background: transparent;
             color: var(--white);
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--white);
             border-radius: 50%;
-            border: none;
-            font-size: 2rem;
+            font-size: 1.5rem;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: transform 0.3s ease;
+            transition: all 0.3s;
         }
 
         .lightbox-close:hover {
-            transform: scale(1.1);
-            background: var(--gold-dark);
+            background: var(--white);
+            color: var(--black);
         }
 
-        .gallery-item img {
-            cursor: pointer;
-            transition: transform 0.3s ease;
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .gallery-item img:hover {
-            transform: scale(1.05);
+        @keyframes scrollDown {
+            0%, 100% {
+                transform: translateX(-50%) translateY(0);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translateX(-50%) translateY(15px);
+                opacity: 1;
+            }
         }
-        .btn-google {
-            background: linear-gradient(135deg, #4285F4 0%, #34A853 50%, #FBBC05 100%);
-            color: var(--white);
-            box-shadow: 0 10px 30px rgba(66, 133, 244, 0.4);
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                margin-top: 70px;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .gallery-swiper .swiper-slide {
+                height: 50vh;
+            }
         }
-        
-        .btn-google:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(66, 133, 244, 0.5);
+        .hero-logo {
+            margin-bottom: 2.5rem;
+            animation: fadeInScale 1s ease-out;
+        }
+
+        .hero-logo img {
+            max-width: 450px;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 15px 40px rgba(0,0,0,0.6));
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-logo img {
+                max-width: 280px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Moroccan Pattern Background -->
-    <div class="moroccan-pattern"></div>
-
-    <!-- Header -->
-    <header>
-        <div class="logo-container">
-            <!-- מקום ללוגו שלך -->
-            <img src="logo.png" alt="ספינג׳ לי - ספינג׳ מרוקאי אמיתי כמו של סבתא">
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">אודות</a></li>
+                <li><a href="#gallery">גלריה</a></li>
+                <li><a href="#contact">צור קשר</a></li>
+            </ul>
+            <span class="kashrut-mini">✡ כשר למהדרין</span>
         </div>
-        <span class="kashrut-badge">✡ כל המוצרים בהשגחת בד״ץ העדה החרדית ✡</span>
-    </header>
+    </nav>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <!-- H1: מילת המפתח הראשית עם הנפח הגבוה ביותר -->
-            <h1>דוכן ספינג׳ לאירועים</h1>
-            
-            <!-- H2: כאן שילבנו את "עמדת ספינג' לאירועים" + "מרוקאי" + "מהדרין" -->
-            <!-- זה מכסה את כל הוריאציות החשובות שביקשת -->
-            <h2 style="font-size: 1.5rem; margin-top: 10px; margin-bottom: 15px; font-weight: normal; color: var(--white); line-height: 1.3;">
-                עמדת ספינג' לאירועים (מהדרין)
-            </h2>
-        
-            <!-- פסקה: חיבור המותג "ספינג' לי" עם מילות המפתח -->
-            <p class="intro">
-                מחפשים <strong>עמדת ספינג'</strong> שתעשה שמח? הגעתם ל"ספינג׳ לי"! 
-                אנו מציעים דוכן ספינג׳ מעוצב, טרי וחם שמכינים במקום. חוויה מרוקאית אמיתית ומתוקה שמשדרגת כל בר מצווה, בת מצווה, חינה, חתונה ואירועי חברה.
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="img_main.jpeg" alt="ספינג׳ לי" class="hero-image">
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="logo.png" alt="ספינג׳ לי - לוגו">
+            </div>
+            <h1 class="hero-title">דוכן ספינג' לאירועים</h1>
+            <p class="hero-description">
+                החוויה המרוקאית האמיתית לאירוע שלכם. 
+                ספינג׳ לי - טעם שלא תשכחו.
             </p>
+            <a href="#contact" class="hero-cta">הזמינו עכשיו</a>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="intro-section" id="about">
+        <p class="intro-label">דוכן ספינג׳ לאירועים</p>
+        <h2 class="intro-title">עמדת ספינג' מהדרין שמשדרגת כל אירוע</h2>
+        <p class="intro-text">
+            הספינג׳ שלנו הוא לא רק מתוק – הוא סיפור של מסורת, של ריח ביתי שממלא את הלב, 
+            ושל רגעים שמחברים בין דורות. בדוכן שלנו תרגישו את האווירה המרוקאית האותנטית – 
+            שמן מבעבע, סוכר שנמס על הבצק, וחיוך שמוגש יחד עם כל ביס.
+        </p>
+    </section>
+
+    <!-- Features -->
+    <section class="features-section">
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-number">01</div>
+                <h3 class="feature-title">חוויה חושית מושלמת</h3>
+                <p class="feature-text">
+                    ריח השמן המבעבע והסוכר הנמס יוצרים אווירה מיוחדת שמושכת את כל האורחים. 
+                    הדוכן המעוצב שלנו לא רק מגיש אוכל - הוא יוצר חוויה שכל האורחים מצלמים ומשתפים.
+                </p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-number">02</div>
+                <h3 class="feature-title">מסורת אמיתית, לא חיקוי</h3>
+                <p class="feature-text">
+                    הספינג׳ שלנו מוכן במקום לפי מתכון מסורתי שעובר מדור לדור. 
+                    טרי, חם ומושלם - בדיוק כמו של סבתא. לא מוקפא, לא מיקרוגל, רק אמיתי.
+                </p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-number">03</div>
+                <h3 class="feature-title">שירות מלא ומקצועי</h3>
+                <p class="feature-text">
+                    אנחנו מגיעים, מקימים, מכינים ומנקים - אתם רק נהנים. 
+                    כל המוצרים בהשגחות המהודרות ביותר, עם צוות מקצועי שדואג לכל פרט. 
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Tags -->
+    <div class="events-tags">
+        <div class="event-tag">בר מצווה</div>
+        <div class="event-tag">בת מצווה</div>
+        <div class="event-tag">חינה</div>
+        <div class="event-tag">הפרשת חלה</div>
+        <div class="event-tag">חתונה</div>
+        <div class="event-tag">אירועי חברה</div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="section-header">
+            <h2 class="section-title">הגלריה שלנו</h2>
+            <p class="section-subtitle">תמונות מאירועים שערכנו</p>
+        </div>
         
-            <p style="margin-top: 0.5rem; font-weight: 500;">
-                תוסיפו צבע, ריח וחיים לאירוע שלכם!
-            </p>
-        
-            <div class="events-strip">
-                <span class="event-tag">בר מצווה</span>
-                <span class="event-tag">בת מצווה</span>
-                <span class="event-tag">חינה</span>
-                <span class="event-tag">הפרשת חלה</span>
-                <span class="event-tag">חתונה</span>
-                <span class="event-tag">אירועי חברה</span>
+        <div class="swiper gallery-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="img7.jpeg" alt="דוכן ספינג' לאירועים" onclick="openLightbox('img7.jpeg')">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img_main.jpeg" alt="דוכן ספינג' לאירועים" onclick="openLightbox('img_main.jpeg')">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img1.jpg" alt="דוכן ספינג' לאירועים" onclick="openLightbox('img1.jpg')">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img2.jpeg" alt="דוכן ספינג' לאירועים" onclick="openLightbox('img2.jpeg')">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img3.jpeg" alt="דוכן ספינג' לאירועים" onclick="openLightbox('img3.jpeg')">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img4.jpeg" alt="דוכן ספינג' לאירועים" onclick="openLightbox('img4.jpeg')">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img5.jpeg" alt="דוכן ספינג' לאירועים" onclick="openLightbox('img5.jpeg')">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img6.jpeg" alt="דוכן ספינג' לאירועים" onclick="openLightbox('img6.jpeg')">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img8.jpeg" alt="דוכן ספינג' לאירועים" onclick="openLightbox('img8.jpeg')">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img9.jpeg" alt="דוכן ספינג' לאירועים" onclick="openLightbox('img9.jpeg')">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img10.jpeg" alt="דוכן ספינג' לאירועים" onclick="openLightbox('img10.jpeg')">
+                </div>
             </div>
-        </section>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
 
-        <!-- Story Section -->
-        <section class="story-section">
-            <h2>הסיפור שלנו</h2>
-            <p class="story-text">
-                הספינג׳ שלנו הוא לא רק מתוק – הוא סיפור של מסורת, של ריח ביתי שממלא את הלב, ושל רגעים שמחברים בין דורות. בדוכן שלנו תרגישו את האווירה המרוקאית האותנטית – שמן מבעבע, סוכר שנמס על הבצק, וחיוך שמוגש יחד עם כל ביס.
-            </p>
-        </section>
-
-        <!-- Features -->
-        <section class="features">
-            <div class="feature-card">
-                <div class="feature-icon">🎪</div>
-                <h3>עמדה מעוצבת</h3>
-                <p>עמדת ספינג׳ מושקעת ויפה שתוסיף צבע, ריח וחיים לאירוע שלכם</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔥</div>
-                <h3>חוויה אותנטית</h3>
-                <p>חוויה אותנטית שעוטפת את האירוע בחום ובמתיקות</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">✨</div>
-                <h3>שילוב מנצח</h3>
-                <p>שילוב מנצח של נראות, טעם וחוויה בלתי נשכחת</p>
-            </div>
-        </section>
-
-        <!-- Gallery Section -->
-        <section class="gallery-section">
-            <h2>📸 הגלריה שלנו</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item large">
-                    <img src="img7.jpeg" 
-                         alt="דוכן ספינג' לאירועים - ספינג' לי" 
-                         onclick="openLightbox('img7.jpeg')"
-                         style="object-position: top;">
-                </div>
-                <div class="gallery-item large">
-                    <img src="img_main.jpeg" alt="דוכן ספינג' לאירועים - ספינג' לי" onclick="openLightbox('img_main.jpeg')">
-                </div>
-                <div class="gallery-item">
-                     <img src="img1.jpg" alt="דוכן ספינג' לאירועים - ספינג' לי" onclick="openLightbox('img1.jpg')">
-                </div>
-                <div class="gallery-item">
-                    <img src="img2.jpeg" alt="דוכן ספינג' לאירועים - ספינג' לי" onclick="openLightbox('img2.jpeg')">
-                </div>
-                <div class="gallery-item">
-                    <img src="img3.jpeg" alt="דוכן ספינג' לאירועים - ספינג' לי" onclick="openLightbox('img3.jpeg')">
-                </div>
-                <div class="gallery-item">
-                    <img src="img4.jpeg" alt="דוכן ספינג' לאירועים - ספינג' לי" onclick="openLightbox('img4.jpeg')">
-                </div>
-                <div class="gallery-item">
-                    <img src="img5.jpeg" alt="דוכן ספינג' לאירועים - ספינג' לי" onclick="openLightbox('img5.jpeg')">
-                </div>
-                <div class="gallery-item">
-                    <img src="img6.jpeg" alt="דוכן ספינג' לאירועים - ספינג' לי" onclick="openLightbox('img6.jpeg')">
-                </div>
-                <div class="gallery-item">
-                    <img src="img8.jpeg" alt="דוכן ספינג' לאירועים - ספינג' לי" onclick="openLightbox('img8.jpeg')">
-                </div>
-                <div class="gallery-item">
-                    <img src="img9.jpeg" alt="דוכן ספינג' לאירועים - ספינג' לי" onclick="openLightbox('img9.jpeg')">
-                </div>
-                <div class="gallery-item">
-                    <img src="img10.jpeg" alt="דוכן ספינג' לאירועים - ספינג' לי" onclick="openLightbox('img10.jpeg')">
-                </div>
-            </div>
-        </section>
-
-        <!-- Video Section -->
-        <section class="video-section">
-            <h2>🎬 צפו בנו בפעולה</h2>
-            
-            <!-- סרטון ראשון -->
-            <div style="margin-bottom: 2rem;">
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="video-header">
+            <h2 class="section-title">צפו בנו בפעולה</h2>
+        </div>
+        <div class="video-grid">
+            <div class="video-item">
                 <iframe 
-                    width="100%" 
-                    height="500"
-                    style="border-radius: 15px; max-height: 500px;"
                     src="https://www.youtube.com/embed/zu5egr6ts3o"
                     title="סרטון ספינג׳ לי"
-                    frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
                 </iframe>
             </div>
-            
-            <!-- סרטון שני -->
-            <div style="margin-bottom: 2rem;">
+            <div class="video-item">
                 <iframe 
-                    width="100%" 
-                    height="500"
-                    style="border-radius: 15px; max-height: 500px;"
                     src="https://www.youtube.com/embed/_9eB68XIjDU"
                     title="סרטון ספינג׳ לי"
-                    frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
                 </iframe>
             </div>
-            
-            <!-- סרטון שלישי -->
-            <div>
+            <div class="video-item">
                 <iframe 
-                    width="100%" 
-                    height="500"
-                    style="border-radius: 15px; max-height: 500px;"
                     src="https://www.youtube.com/embed/eFVJaFAUBRI"
                     title="סרטון ספינג׳ לי"
-                    frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
                 </iframe>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- CTA Section -->
-        <section class="cta-section">
-            <h2>רוצים ספינג׳ באירוע?</h2>
-            <p class="contact-name">לפרטים והזמנות: עליזה</p>
-            <div class="cta-buttons">
-                <a href="https://wa.me/9720545576767?text=היי%20עליזה,%20אשמח%20לשמוע%20פרטים%20על%20דוכן%20הספינג׳%20לאירוע" class="btn btn-whatsapp">
-                    <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                    </svg>
-                    WhatsApp
-                </a>
-                <a href="tel:0545576767" class="btn btn-call">
-                    <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
-                    </svg>
-                    התקשרו עכשיו
-                </a>
-                 <a href="https://www.facebook.com/profile.php?id=61583860125185" target="_blank" class="btn btn-facebook">
-                    <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                    </svg>
-                    עקבו אחרינו
-                </a>
-                <a href="https://share.google/79KIBbyOkiwV3N8HV" target="_blank" class="btn btn-google">
-                    <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
-                    </svg>
-                    הביקורות שלנו בגוגל
-                </a>
-            </div>
-        </section>
-    </main>
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <h2 class="cta-title">מוכנים להזמין?</h2>
+        <p class="cta-subtitle">נשמח לעזור לכם</p>
+        <div class="cta-buttons">
+            <a href="https://wa.me/9720545576767?text=היי%20עליזה,%20אשמח%20לשמוע%20פרטים%20על%20דוכן%20הספינג׳%20לאירוע" class="cta-btn">
+                <svg viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                WhatsApp
+            </a>
+            <a href="tel:0545576767" class="cta-btn">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                </svg>
+                התקשרו
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61583860125185" target="_blank" class="cta-btn">
+                <svg viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+                Facebook
+            </a>
+            <a href="https://share.google/79KIBbyOkiwV3N8HV" target="_blank" class="cta-btn">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
+                </svg>
+                Google
+            </a>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
-        <div class="logo-small">ספינג׳ לי</div>
-        <p>ספינג׳ מרוקאי אמיתי כמו של סבתא!</p>
-        <p style="margin-top: 0.5rem;">כל הזכויות שמורות © 2025</p>
+        <div class="footer-logo">ספינג׳ לי</div>
+        <p class="footer-text">ספינג׳ מרוקאי אמיתי כמו של סבתא</p>
+        <div class="footer-links">
+            <a href="#about" class="footer-link">אודות</a>
+            <a href="#gallery" class="footer-link">גלריה</a>
+            <a href="#contact" class="footer-link">צור קשר</a>
+        </div>
+        <p class="footer-copyright">כל הזכויות שמורות © 2025 ספינג׳ לי</p>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/9720545576767?text=היי%20עליזה,%20אשמח%20לשמוע%20פרטים%20על%20דוכן%20הספינג׳%20לאירוע" class="floating-whatsapp" title="שלחו הודעה בוואטסאפ">
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/9720545576767?text=היי%20עליזה,%20אשמח%20לשמוע%20פרטים%20על%20דוכן%20הספינג׳%20לאירוע" class="floating-whatsapp">
         <svg viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
@@ -913,32 +946,73 @@
         </div>
     </div>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Gallery Swiper
+        const gallerySwiper = new Swiper('.gallery-swiper', {
+            loop: true,
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                },
+                1024: {
+                    slidesPerView: 1.5,
+                },
+            },
+        });
 
-<script>
-    function openLightbox(imgSrc) {
-        document.getElementById('lightbox').classList.add('active');
-        document.getElementById('lightbox-img').src = imgSrc;
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox() {
-        document.getElementById('lightbox').classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
-
-    // סגירה בלחיצה על הרקע
-    document.getElementById('lightbox').addEventListener('click', function(e) {
-        if (e.target === this) {
-            closeLightbox();
+        // Lightbox
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox').classList.add('active');
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.body.style.overflow = 'hidden';
         }
-    });
 
-    // סגירה עם מקש ESC
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            closeLightbox();
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
         }
-    });
-</script>
+
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
