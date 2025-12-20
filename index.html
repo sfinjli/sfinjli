@@ -369,19 +369,37 @@
             font-weight: 300;
         }
 
-        /* Swiper Customization */
+        /* Swiper Customization - תיקון גודל גלריה */
         .gallery-swiper {
             padding: 0 2rem;
+            max-width: 1200px; /* מגביל את הרוחב המקסימלי של הגלריה */
+            margin: 0 auto;
         }
-
+        
         .gallery-swiper .swiper-slide {
-            height: 70vh;
+            height: 500px; /* גובה קבוע ונוח יותר במקום אחוזים מהמסך */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 15px; /* מוסיף קצת עידון */
         }
-
+        
         .gallery-swiper img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: cover; /* שומר שהתמונה תמלא את הריבוע בלי להתעוות */
+            transition: transform 0.5s ease;
+        }
+        /* אפקט קטן כשהסלייד במרכז */
+        .swiper-slide-active img {
+            transform: scale(1.05);
+        }
+        /* התאמה לניידים - שהתמונות לא יהיו ענקיות מדי בנייד */
+        @media (max-width: 768px) {
+            .gallery-swiper .swiper-slide {
+                height: 350px; /* גובה נמוך יותר לנייד */
+            }
         }
 
         .swiper-button-prev,
