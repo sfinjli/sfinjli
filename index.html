@@ -24,7 +24,7 @@
       "@type": "CateringService",
       "name": "ספינג' לי - דוכן ספינג' לאירועים ועמדת ספינג'",
       "telephone": "+972-54-5576767",
-      "url": "                      ",
+      "url": "https://spingli.co.il",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "IL"
@@ -33,9 +33,9 @@
     </script>
 
     <!-- Fonts & Styles -->
-    <link rel="preconnect" href="                            ">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="                                                                  ;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     
     <style>
@@ -65,6 +65,27 @@
     .hero { height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
     .hero-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.4); }
     .hero-content { position: relative; z-index: 10; text-align: center; color: var(--white); padding: 2rem; animation: fadeInUp 0.5s ease-out; }
+    
+    /* אלמנט מחיר חדש ובולט */
+    .price-badge { 
+        background: var(--gold); 
+        color: var(--black); 
+        display: inline-block; 
+        padding: 8px 25px; 
+        border-radius: 50px; 
+        font-weight: 800; 
+        font-size: 1.2rem; 
+        margin-bottom: 1.5rem; 
+        box-shadow: 0 4px 20px rgba(201, 169, 97, 0.4);
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+
     .hero-logo img { max-width: 350px; width: 100%; height: auto; margin-bottom: 1.5rem; }
     .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 6rem); font-weight: 900; line-height: 1; margin-bottom: 1.5rem; }
     .hero-description { font-size: 1.2rem; max-width: 600px; margin: 0 auto 2.5rem; }
@@ -106,6 +127,7 @@
         .nav-links { display: none; }
         .hero-title { font-size: 2.8rem; }
         .gallery-swiper .swiper-slide { height: 350px; }
+        .price-badge { font-size: 1rem; padding: 6px 15px; }
     }
     </style>
 </head>
@@ -126,12 +148,15 @@
     <section class="hero">
         <img src="img_main.jpeg" alt="ספינג׳ לי" class="hero-image">
         <div class="hero-content">
+            <!-- התוספת החדשה שתופסת את העין מיד -->
+            <div class="price-badge">מחירים מפתיעים ומשתלמים! ✨</div>
+            
             <div class="hero-logo"><img src="logo.png" alt="ספינג׳ לי"></div>
             <h1 class="hero-title">דוכן ספינג' לאירועים</h1>
-            <p class="hero-description">החוויה המרוקאית האמיתית לאירוע שלכם. הספינג׳ הכי טעים שתאכלו, חם וטרי במקום.</p>
+            <p class="hero-description">החוויה המרוקאית האמיתית לאירוע שלכם במחירים מנצחים. הספינג׳ הכי טעים שתאכלו, חם וטרי במקום.</p>
             <div class="hero-btns">
                 <!-- הוספת מעקב המרה ללחצן טלפון -->
-                <a href="tel:0545576767" class="hero-cta" onclick="gtag('event', 'conversion', {'send_to': 'AW-17754186390/_YrhCN6LluIBeJbF7ZFC'});">התקשרו עכשיו</a>
+                <a href="tel:0545576767" class="hero-cta" onclick="gtag('event', 'conversion', {'send_to': 'AW-17754186390/_YrhCN6LluIBeJbF7ZFC'});">קבלו הצעת מחיר משתלמת</a>
             </div>
         </div>
     </section>
@@ -169,15 +194,16 @@
 
     <section class="intro-section" id="about">
         <h2 class="intro-title">הספינג' שכולם מדברים עליו</h2>
-        <p>ספינג' לי מביאה לכם את הספינג׳ המרוקאי האמיתי – מסורת של טעם וחיוך בכל אירוע.</p>
+        <p>ספינג' לי מביאה לכם את הספינג׳ המרוקאי האמיתי – מסורת של טעם וחיוך בכל אירוע במחיר שמתאים לכל כיס.</p>
     </section>
 
     <section class="cta-section" id="contact">
         <h2 class="section-title">הזמינו את ספינג' לי לאירוע שלכם</h2>
+        <p style="margin-bottom: 1rem; font-weight: 700;">אל תפספסו: מחירים מפתיעים ומשתלמים במיוחד!</p>
         <div class="cta-buttons">
             <!-- הוספת מעקב המרה ללחצני יצירת קשר -->
             <a href="https://wa.me/972545576767" class="cta-btn" onclick="gtag('event', 'conversion', {'send_to': 'AW-17754186390/_YrhCN6LluIBeJbF7ZFC'});">WhatsApp</a>
-            <a href="tel:0545576767" class="cta-btn" onclick="gtag('event', 'conversion', {'send_to': 'AW-17754186390/_YrhCN6LluIBeJbF7ZFC'});">חייגו עכשיו</a>
+            <a href="tel:0545576767" class="cta-btn" onclick="gtag('event', 'conversion', {'send_to': 'AW-17754186390/_YrhCN6LluIBeJbF7ZFC'});">חייגו להצעה משתלמת</a>
         </div>
     </section>
 
