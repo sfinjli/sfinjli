@@ -14,15 +14,15 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>דוכן ספינג' לאירועים - עמדת ספינג' | ספינג' לי</title>
-    <meta name="description" content="ספינג' לי מציעה דוכן ספינג' לאירועים ועמדת ספינג' מרוקאי אותנטי - כל המוצרים בכשרויות המהודרות ביותר. שירות ספינג' טרי וחם לחינה, בר מצווה וחתונות. הזמינו עכשיו: 054-5576767">
+    <title>דוכן ספינג' ועוגיות מרוקאיות לאירועים | ספינג' לי</title>
+    <meta name="description" content="ספינג' לי מציעה דוכן ספינג' חם ועמדת עוגיות מרוקאיות אותנטיות לאירועים: חינה, בר מצווה וחתונות. כל המוצרים בכשרויות מהודרות. שירות מקצועי וטעים במחיר מנצח. הזמינו: 054-5576767">
     
     <!-- Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "CateringService",
-      "name": "ספינג' לי - דוכן ספינג' לאירועים ועמדת ספינג'",
+      "name": "ספינג' לי - דוכן ספינג' ועוגיות מרוקאיות לאירועים",
       "telephone": "+972-54-5576767",
       "url": "https://spingli.co.il",
       "address": {
@@ -66,7 +66,6 @@
     .hero-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.4); }
     .hero-content { position: relative; z-index: 10; text-align: center; color: var(--white); padding: 2rem; }
     
-    /* אלמנט מחיר בולט */
     .price-badge { 
         background: var(--gold); 
         color: var(--black); 
@@ -75,7 +74,7 @@
         border-radius: 50px; 
         font-weight: 800; 
         font-size: 1.3rem; 
-        margin-top: 1rem; /* מרווח מהלוגו שמעליו */
+        margin-top: 1rem;
         margin-bottom: 2rem; 
         box-shadow: 0 4px 25px rgba(201, 169, 97, 0.5);
         animation: pulse 2s infinite;
@@ -89,8 +88,8 @@
     }
 
     .hero-logo img { max-width: 350px; width: 100%; height: auto; margin-bottom: 0.5rem; }
-    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 6rem); font-weight: 900; line-height: 1; margin-bottom: 1.5rem; }
-    .hero-description { font-size: 1.2rem; max-width: 600px; margin: 0 auto 2.5rem; }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
+    .hero-description { font-size: 1.2rem; max-width: 700px; margin: 0 auto 2.5rem; }
     .hero-cta { display: inline-block; padding: 1.1rem 2.5rem; background: var(--white); color: var(--black); text-decoration: none; font-weight: 600; transition: 0.3s; border: 2px solid var(--white); cursor: pointer; }
     .hero-cta:hover { background: var(--gold); border-color: var(--gold); color: var(--white); }
 
@@ -109,6 +108,7 @@
 
     .intro-section { max-width: 900px; margin: 5rem auto; padding: 0 2rem; text-align: center; }
     .intro-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1.5rem; }
+    .intro-text { font-size: 1.1rem; color: var(--grey-dark); margin-bottom: 1rem; }
 
     .cta-section { background: var(--gold); padding: 6rem 2rem; text-align: center; }
     .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
@@ -130,7 +130,7 @@
         .nav-links { display: none; }
         .hero { height: auto; min-height: 100vh; padding: 110px 0 60px; } 
         .hero-content { margin-top: 10px; }
-        .hero-title { font-size: 3rem; }
+        .hero-title { font-size: 2.5rem; }
         .price-badge { font-size: 1.1rem; padding: 8px 20px; margin-top: 0.5rem; margin-bottom: 1.5rem; }
         .gallery-swiper .swiper-slide { height: 350px; }
     }
@@ -146,21 +146,19 @@
                 <li><a href="#about">אודות</a></li>
                 <li><a href="#contact">הזמנות</a></li>
             </ul>
-            <span class="kashrut-mini">✡ כל המוצרים בכשרויות המהודרות ביותר</span>
+            <span class="kashrut-mini">✡ כשרויות מהודרות | ספינג' ועוגיות</span>
         </div>
     </nav>
 
     <section class="hero">
-        <img src="img_main.jpeg" alt="ספינג׳ לי" class="hero-image">
+        <img src="img_main.jpeg" alt="עמדת ספינג' ועוגיות מרוקאיות" class="hero-image">
         <div class="hero-content">
-            <!-- לוגו קודם -->
             <div class="hero-logo"><img src="logo.png" alt="ספינג׳ לי"></div>
             
-            <!-- התג הבולט מיד מתחת ללוגו -->
-            <div class="price-badge">מחירים מפתיעים ומשתלמים! ✨</div>
+            <div class="price-badge">ספינג' חם + מגשי עוגיות במחירי מבצע! ✨</div>
             
-            <h1 class="hero-title">דוכן ספינג' לאירועים</h1>
-            <p class="hero-description">החוויה המרוקאית האמיתית לאירוע שלכם במחירים מנצחים.<br>הספינג׳ הכי טעים שתאכלו, חם וטרי במקום.</p>
+            <h1 class="hero-title">דוכן ספינג' ועוגיות מרוקאיות</h1>
+            <p class="hero-description">החגיגה המרוקאית המושלמת לאירוע שלכם. ספינג' אוורירי ולוהט הנעשה במקום, לצד מבחר עשיר של עוגיות מרוקאיות אותנטיות בעבודת יד.</p>
             <div class="hero-btns">
                 <a href="tel:0545576767" class="hero-cta" onclick="gtag('event', 'conversion', {'send_to': 'AW-17754186390/_YrhCN6LluIBeJbF7ZFC'});">קבלו הצעת מחיר משתלמת</a>
             </div>
@@ -168,30 +166,31 @@
     </section>
 
     <section class="gallery-section" id="gallery">
-        <div class="section-header"><h2 class="section-title">הגלריה שלנו</h2></div>
+        <div class="section-header"><h2 class="section-title">המתוקים שלנו</h2></div>
         <div class="swiper gallery-swiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="img11.jpeg" alt="ספינג'" onclick="openLightbox('img11.jpeg')"></div>
-                <div class="swiper-slide"><img src="img12.jpeg" alt="ספינג'" onclick="openLightbox('img12.jpeg')"></div>
-                <div class="swiper-slide"><img src="img13.jpeg" alt="ספינג'" onclick="openLightbox('img13.jpeg')"></div>
-                <div class="swiper-slide"><img src="img14.jpeg" alt="ספינג'" onclick="openLightbox('img14.jpeg')"></div>
-                <div class="swiper-slide"><img src="img1.jpg" alt="ספינג'" onclick="openLightbox('img1.jpg')"></div>
-                <div class="swiper-slide"><img src="img2.jpeg" alt="ספינג'" onclick="openLightbox('img2.jpeg')"></div>
-                <div class="swiper-slide"><img src="img3.jpeg" alt="ספינג'" onclick="openLightbox('img3.jpeg')"></div>
-                <div class="swiper-slide"><img src="img4.jpeg" alt="ספינג'" onclick="openLightbox('img4.jpeg')"></div>
-                <div class="swiper-slide"><img src="img5.jpeg" alt="ספינג'" onclick="openLightbox('img5.jpeg')"></div>
-                <div class="swiper-slide"><img src="img6.jpeg" alt="ספינג'" onclick="openLightbox('img6.jpeg')"></div>
-                <div class="swiper-slide"><img src="img7.jpeg" alt="ספינג'" onclick="openLightbox('img7.jpeg')"></div>
-                <div class="swiper-slide"><img src="img8.jpeg" alt="ספינג'" onclick="openLightbox('img8.jpeg')"></div>
-                <div class="swiper-slide"><img src="img9.jpeg" alt="ספינג'" onclick="openLightbox('img9.jpeg')"></div>
-                <div class="swiper-slide"><img src="img10.jpeg" alt="ספינג'" onclick="openLightbox('img10.jpeg')"></div>
+                <!-- כאן תוכל להוסיף תמונות של העוגיות המרוקאיות כשתצלם אותן -->
+                <div class="swiper-slide"><img src="img11.jpeg" alt="ספינג' חם" onclick="openLightbox('img11.jpeg')"></div>
+                <div class="swiper-slide"><img src="img12.jpeg" alt="מגשי עוגיות מרוקאיות" onclick="openLightbox('img12.jpeg')"></div>
+                <div class="swiper-slide"><img src="img13.jpeg" alt="עמדת מתוקים לאירועים" onclick="openLightbox('img13.jpeg')"></div>
+                <div class="swiper-slide"><img src="img14.jpeg" alt="ספינג' מרוקאי" onclick="openLightbox('img14.jpeg')"></div>
+                <div class="swiper-slide"><img src="img1.jpg" alt="עוגיות לחינה" onclick="openLightbox('img1.jpg')"></div>
+                <div class="swiper-slide"><img src="img2.jpeg" alt="ספינג' לי אירועים" onclick="openLightbox('img2.jpeg')"></div>
+                <div class="swiper-slide"><img src="img3.jpeg" alt="מתוקים מרוקאיים" onclick="openLightbox('img3.jpeg')"></div>
+                <div class="swiper-slide"><img src="img4.jpeg" alt="דוכן ספינג'" onclick="openLightbox('img4.jpeg')"></div>
+                <div class="swiper-slide"><img src="img5.jpeg" alt="עוגיות מסורתיות" onclick="openLightbox('img5.jpeg')"></div>
+                <div class="swiper-slide"><img src="img6.jpeg" alt="ספינג' טרי" onclick="openLightbox('img6.jpeg')"></div>
+                <div class="swiper-slide"><img src="img7.jpeg" alt="מגשי אירוח" onclick="openLightbox('img7.jpeg')"></div>
+                <div class="swiper-slide"><img src="img8.jpeg" alt="חגיגה מרוקאית" onclick="openLightbox('img8.jpeg')"></div>
+                <div class="swiper-slide"><img src="img9.jpeg" alt="עוגיות מרוקאיות" onclick="openLightbox('img9.jpeg')"></div>
+                <div class="swiper-slide"><img src="img10.jpeg" alt="ספינג' איכותי" onclick="openLightbox('img10.jpeg')"></div>
             </div>
             <div class="swiper-pagination"></div>
         </div>
     </section>
 
     <section class="video-section">
-        <div class="section-header"><h2 class="section-title">ספינג' לי בפעולה</h2></div>
+        <div class="section-header"><h2 class="section-title">החוויה באירוע שלכם</h2></div>
         <div class="video-grid">
             <div class="video-item"><video controls playsinline loop><source src="video1.mp4" type="video/mp4"></video></div>
             <div class="video-item"><video controls playsinline loop><source src="video2.mp4" type="video/mp4"></video></div>
@@ -199,13 +198,14 @@
     </section>
 
     <section class="intro-section" id="about">
-        <h2 class="intro-title">הספינג' שכולם מדברים עליו</h2>
-        <p>ספינג' לי מביאה לכם את הספינג׳ המרוקאי האמיתי – מסורת של טעם וחיוך בכל אירוע .</p>
+        <h2 class="intro-title">יותר מסתם ספינג' - חגיגה של טעמים</h2>
+        <p class="intro-text">ב-"ספינג' לי" אנחנו מביאים אליכם את המסורת המרוקאית בשיא תפארתה. לצד הספינג' המפורסם שלנו, אנו מציעים כעת מבחר עשיר של עוגיות מרוקאיות צבעוניות, פריכות ואותנטיות המיוצרות מחומרי הגלם הטובים ביותר.</p>
+        <p class="intro-text">מתאים לחינות, שבת חתן, בר/בת מצווה, חתונות ואירועי חברה. הכל בכשרות מהודרת ועם שירות מכל הלב.</p>
     </section>
 
     <section class="cta-section" id="contact">
-        <h2 class="section-title">הזמינו את ספינג' לי לאירוע שלכם</h2>
-        <p style="margin-bottom: 1rem; font-weight: 700;">אל תפספסו: מחירים מפתיעים ומשתלמים במיוחד!</p>
+        <h2 class="section-title">סגרו עכשיו דוכן ספינג' ועוגיות</h2>
+        <p style="margin-bottom: 1rem; font-weight: 700;">חבילות משולבות במחירים מפתיעים ומשתלמים במיוחד!</p>
         <div class="cta-buttons">
             <a href="https://wa.me/972545576767" class="cta-btn" onclick="gtag('event', 'conversion', {'send_to': 'AW-17754186390/_YrhCN6LluIBeJbF7ZFC'});">WhatsApp</a>
             <a href="tel:0545576767" class="cta-btn" onclick="gtag('event', 'conversion', {'send_to': 'AW-17754186390/_YrhCN6LluIBeJbF7ZFC'});">חייגו להצעה משתלמת</a>
@@ -213,7 +213,7 @@
     </section>
 
     <footer>
-        <p>© 2025 ספינג׳ לי - דוכן ספינג' לאירועים</p>
+        <p>© 2025 ספינג׳ לי - דוכן ספינג' ועוגיות מרוקאיות לאירועים</p>
     </footer>
 
     <a href="https://wa.me/972545576767" class="floating-whatsapp" onclick="gtag('event', 'conversion', {'send_to': 'AW-17754186390/_YrhCN6LluIBeJbF7ZFC'});">
