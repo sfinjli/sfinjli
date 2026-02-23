@@ -88,7 +88,6 @@
     .gallery-swiper, .video-swiper { padding: 0 2rem; }
     .gallery-swiper .swiper-slide, .video-swiper .swiper-slide { height: 450px; border-radius: 8px; overflow: hidden; }
     
-    /* עיצוב וידאו מתוקן - ללא זום */
     .video-item { width: 100%; height: 100%; background: #000; display: flex; align-items: center; justify-content: center; }
     .video-item video { width: 100%; height: 100%; object-fit: contain; }
 
@@ -132,6 +131,7 @@
         .hero-title { font-size: 2.5rem; }
         .price-badge { font-size: 0.95rem; padding: 8px 18px; margin-top: 0.5rem; margin-bottom: 1.2rem; }
         .gallery-swiper .swiper-slide, .video-swiper .swiper-slide { height: 350px; }
+        .video-swiper { padding: 0 10px; } /* צמצום שוליים לקבלת מראה קרוב יותר */
     }
     </style>
 </head>
@@ -200,13 +200,14 @@
                 <div class="swiper-slide"><img src="img18.jpeg" alt="דוכן ספינג'" onclick="openLightbox('img18.jpeg')"></div>
                 <div class="swiper-slide"><img src="img13.jpeg" alt="עמדת מתוקים" onclick="openLightbox('img13.jpeg')"></div>
                 <div class="swiper-slide"><img src="img14.jpeg" alt="חגיגה מרוקאית" onclick="openLightbox('img14.jpeg')"></div>
+                <div class="swiper-slide"><img src="img19.jpeg" alt="פינוקים מרוקאים" onclick="openLightbox('img19.jpeg')"></div>
             </div>
             <div class="swiper-pagination"></div>
         </div>
     </section>
 
     <section class="intro-section" id="about">
-        <h2 class="intro-title">חוויה מרוקאית בלנת נשכחת</h2>
+        <h2 class="intro-title">חוויה מרוקאית בלתי נשכחת</h2>
         <p class="intro-text">ב-"ספינג' לי" אנחנו מביאים אליכם את טעמי מרוקו האמיתיים. אנחנו מתמחים בהכנת ספינג' זהוב ואוורירי ומופלטות חמות ונימוחות הנעשות במקום לעיני האורחים.</p>
         <p class="intro-text" style="font-weight: 600; color: var(--black); font-size: 1.2rem;">כחלק בלתי נפרד מהחגיגה, אנו מציעים עמדת עוגיות מרוקאיות עשירה, צבעונית ואותנטית המוסיפה פאר ויופי לכל אירוע.</p>
         <p class="intro-text">מתאים לחינות, שבת חתן, בר/בת מצווה, חתונות ואירועי חברה עם שירות מכל הלב.</p>
@@ -236,13 +237,21 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // קרוסלת וידאו
+        // קרוסלת וידאו מתוקנת
         const swiperVideo = new Swiper('.video-swiper', {
-            loop: false,
-            slidesPerView: 1,
-            spaceBetween: 20,
+            initialSlide: 1, // מתחיל מהסרטון האמצעי
+            centeredSlides: true, // ממרכז את הסרטון הנבחר
+            slidesPerView: 1.3, // מראה חלק מהסרטונים בצדדים במובייל
+            spaceBetween: 10, // רווח קטן יותר כדי שיראו שהם קרובים
             pagination: { el: '.swiper-pagination', clickable: true },
-            breakpoints: { 768: { slidesPerView: 3 } }
+            breakpoints: { 
+                768: { 
+                    slidesPerView: 3,
+                    initialSlide: 0,
+                    centeredSlides: false,
+                    spaceBetween: 20
+                } 
+            }
         });
 
         // קרוסלת תמונות
