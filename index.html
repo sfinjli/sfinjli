@@ -82,15 +82,15 @@
     .gallery-section { padding: 5rem 0; background: var(--black); color: var(--white); }
     .section-header { text-align: center; margin-bottom: 3rem; }
     .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); }
-    .gallery-swiper { padding: 0 2rem; }
-    .gallery-swiper .swiper-slide { height: 450px; border-radius: 8px; overflow: hidden; }
+    
+    .gallery-swiper, .video-swiper { padding: 0 2rem; }
+    .gallery-swiper .swiper-slide, .video-swiper .swiper-slide { height: 450px; border-radius: 8px; overflow: hidden; }
     .gallery-swiper img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; cursor: pointer; }
     .gallery-swiper img:hover { transform: scale(1.05); }
 
-    .video-section { max-width: 1400px; margin: 5rem auto; padding: 0 2rem; }
-    .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-    .video-item { position: relative; width: 100%; border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-    .video-item video { width: 100%; height: auto; display: block; object-fit: contain; }
+    .video-section { padding: 5rem 0; background: var(--white); }
+    .video-item { position: relative; width: 100%; height: 100%; background: #000; }
+    .video-item video { width: 100%; height: 100%; display: block; object-fit: cover; }
 
     .intro-section { max-width: 900px; margin: 5rem auto; padding: 0 2rem; text-align: center; }
     .intro-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1.5rem; }
@@ -118,29 +118,17 @@
         font-weight: 800;
         margin-bottom: 1.5rem;
         color: var(--white);
-        direction: ltr; /* שומר על סדר המספרים */
+        direction: ltr;
         text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
     }
     
     @media (max-width: 768px) {
-        .hero-phone-number {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-    }
-
-    @media (max-width: 768px) {
+        .hero-phone-number { font-size: 1.8rem; margin-bottom: 1rem; }
         .nav-links { display: none; }
         .hero { height: auto; min-height: 100vh; padding: 110px 0 60px; } 
         .hero-title { font-size: 2.5rem; }
-        /* תיקון עבור הבאנר במובייל */
-        .price-badge { 
-            font-size: 0.95rem; 
-            padding: 8px 18px; 
-            margin-top: 0.5rem; 
-            margin-bottom: 1.2rem; 
-        }
-        .gallery-swiper .swiper-slide { height: 350px; }
+        .price-badge { font-size: 0.95rem; padding: 8px 18px; margin-top: 0.5rem; margin-bottom: 1.2rem; }
+        .gallery-swiper .swiper-slide, .video-swiper .swiper-slide { height: 350px; }
     }
     </style>
 </head>
@@ -162,30 +150,34 @@
         <img src="img_main.jpeg" alt="עמדת ספינג' ומופלטה מרוקאית" class="hero-image">
         <div class="hero-content">
             <div class="hero-logo"><img src="logo.png" alt="ספינג׳ לי"></div>
-            
             <div class="price-badge">מחירים מפתיעים ומשתלמים! ✨</div>
-            
             <h1 class="hero-title">דוכן ספינג' ומופלטה מרוקאית</h1>
             <p class="hero-description">החגיגה האותנטית לאירוע שלכם: ספינג' אוורירי ומופלטה חמה הנעשים במקום, לצד מבחר עשיר של עוגיות מרוקאיות מסורתיות.</p>
-            
-            <!-- הטלפון החדש כאן -->
             <div class="hero-phone-number">
                 <a href="tel:0545576767" style="color: inherit; text-decoration: none;">054-5576767</a>
             </div>
-        
             <div class="hero-btns">
                 <a href="tel:0545576767" class="hero-cta" onclick="gtag('event', 'conversion', {'send_to': 'AW-17754186390/_YrhCN6LluIBeJbF7ZFC'});">קבלו הצעת מחיר משתלמת</a>
             </div>
         </div>
     </section>
 
-    <!-- הוידאו הועבר לפה - לפני הגלריה -->
+    <!-- וידאו לפני התמונות בקרוסלה -->
     <section class="video-section">
         <div class="section-header"><h2 class="section-title">החוויה באירוע שלכם</h2></div>
-        <div class="video-grid">
-            <div class="video-item"><video muted playsinline loop><source src="video1.mp4" type="video/mp4"></video></div>
-            <div class="video-item"><video muted playsinline loop><source src="video4.mp4" type="video/mp4"></video></div>
-            <div class="video-item"><video muted playsinline loop><source src="video4.mp4" type="video/mp4"></video></div>
+        <div class="swiper video-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="video-item"><video muted playsinline loop controls><source src="video1.mp4" type="video/mp4"></video></div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="video-item"><video muted playsinline loop controls><source src="video4.mp4" type="video/mp4"></video></div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="video-item"><video muted playsinline loop controls><source src="video5.mp4" type="video/mp4"></video></div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
         </div>
     </section>
 
@@ -241,13 +233,33 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        const swiper = new Swiper('.gallery-swiper', {
+        // קרוסלת תמונות
+        const swiperGallery = new Swiper('.gallery-swiper', {
             loop: true,
             slidesPerView: 1,
             spaceBetween: 20,
             autoplay: { delay: 3000 },
             pagination: { el: '.swiper-pagination', clickable: true },
             breakpoints: { 768: { slidesPerView: 3 } }
+        });
+
+        // קרוסלת וידאו
+        const swiperVideo = new Swiper('.video-swiper', {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 20,
+            centeredSlides: true,
+            pagination: { el: '.swiper-pagination', clickable: true },
+            breakpoints: { 768: { slidesPerView: 2 } },
+            on: {
+                slideChangeTransitionEnd: function () {
+                    // עוצר את כל הסרטונים ומנגן רק את האקטיבי
+                    document.querySelectorAll('.video-item video').forEach(v => v.pause());
+                    const activeSlide = this.slides[this.activeIndex];
+                    const activeVideo = activeSlide.querySelector('video');
+                    if (activeVideo) activeVideo.play();
+                }
+            }
         });
 
         function openLightbox(src) {
@@ -258,20 +270,20 @@
             document.getElementById('lightbox').classList.remove('active');
         }
 
-        // קוד לניגון אוטומטי בגלילה
-        const observerOptions = {
-            threshold: 0.5 // יתחיל להתנגן כש-50% מהוידאו נראה במסך
-        };
-
+        // ניגון אוטומטי כשהוידאו נכנס לתחום הגלילה
         const videoObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.play();
+                    const video = entry.target;
+                    // רק אם זה הסלייד האקטיבי כרגע בקרוסלה
+                    if (video.closest('.swiper-slide-active')) {
+                        video.play();
+                    }
                 } else {
                     entry.target.pause();
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.5 });
 
         document.querySelectorAll('.video-item video').forEach(video => {
             videoObserver.observe(video);
