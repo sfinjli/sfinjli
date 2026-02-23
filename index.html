@@ -179,6 +179,16 @@
         </div>
     </section>
 
+    <!-- הוידאו הועבר לפה - לפני הגלריה -->
+    <section class="video-section">
+        <div class="section-header"><h2 class="section-title">החוויה באירוע שלכם</h2></div>
+        <div class="video-grid">
+            <div class="video-item"><video muted playsinline loop><source src="video1.mp4" type="video/mp4"></video></div>
+            <div class="video-item"><video muted playsinline loop><source src="video4.mp4" type="video/mp4"></video></div>
+            <div class="video-item"><video muted playsinline loop><source src="video4.mp4" type="video/mp4"></video></div>
+        </div>
+    </section>
+
     <section class="gallery-section" id="gallery">
         <div class="section-header"><h2 class="section-title">הפינוקים שלנו</h2></div>
         <div class="swiper gallery-swiper">
@@ -197,14 +207,6 @@
                 <div class="swiper-slide"><img src="img14.jpeg" alt="חגיגה מרוקאית" onclick="openLightbox('img14.jpeg')"></div>
             </div>
             <div class="swiper-pagination"></div>
-        </div>
-    </section>
-
-    <section class="video-section">
-        <div class="section-header"><h2 class="section-title">החוויה באירוע שלכם</h2></div>
-        <div class="video-grid">
-            <div class="video-item"><video controls playsinline loop><source src="video1.mp4" type="video/mp4"></video></div>
-            <div class="video-item"><video controls playsinline loop><source src="video2.mp4" type="video/mp4"></video></div>
         </div>
     </section>
 
@@ -255,6 +257,25 @@
         function closeLightbox() {
             document.getElementById('lightbox').classList.remove('active');
         }
+
+        // קוד לניגון אוטומטי בגלילה
+        const observerOptions = {
+            threshold: 0.5 // יתחיל להתנגן כש-50% מהוידאו נראה במסך
+        };
+
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.play();
+                } else {
+                    entry.target.pause();
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.video-item video').forEach(video => {
+            videoObserver.observe(video);
+        });
     </script>
 </body>
 </html>
