@@ -116,6 +116,44 @@
     .gallery-swiper img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; cursor: pointer; }
     .gallery-swiper img:hover { transform: scale(1.05); }
 
+    /* סגנון לביקורות */
+    .reviews-section { padding: 5rem 0; background: var(--grey-light); }
+    .reviews-grid { 
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+        gap: 2rem; 
+        max-width: 1200px; 
+        margin: 0 auto; 
+        padding: 0 2rem; 
+    }
+    .review-card { 
+        background: var(--white); 
+        padding: 2rem; 
+        border-radius: 15px; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .review-user { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .user-avatar { 
+        width: 48px; height: 48px; border-radius: 50%; 
+        display: flex; align-items: center; justify-content: center; 
+        color: white; font-weight: 700; font-size: 1.2rem;
+    }
+    .user-info h4 { font-size: 1rem; font-weight: 700; }
+    .stars { color: #FFD700; font-size: 1.2rem; margin-bottom: 1rem; }
+    .review-text { font-size: 0.95rem; color: #444; margin-bottom: 1.5rem; line-height: 1.6; }
+    .review-metrics { 
+        border-top: 1px solid #eee; 
+        padding-top: 1rem; 
+        display: flex; 
+        gap: 1rem; 
+        font-size: 0.85rem; 
+        color: var(--grey-dark);
+        font-weight: 600;
+    }
+
     .intro-section { max-width: 900px; margin: 5rem auto; padding: 0 2rem; text-align: center; }
     .intro-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1.5rem; }
     .intro-text { font-size: 1.1rem; color: var(--grey-dark); margin-bottom: 1.5rem; }
@@ -156,6 +194,7 @@
         }
         .video-scroller { padding: 0 1rem 1rem; }
         .gallery-swiper .swiper-slide { height: 350px; }
+        .reviews-grid { grid-template-columns: 1fr; padding: 0 1rem; }
     }
     </style>
 </head>
@@ -224,6 +263,60 @@
                 <div class="swiper-slide"><img src="img19.jpeg" alt="פינוקים מרוקאים" onclick="openLightbox('img19.jpeg')"></div>
             </div>
             <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- ביקורות לקוחות בסגנון כרטיס עסק -->
+    <section class="reviews-section">
+        <div class="section-header">
+            <h2 class="section-title">מה הלקוחות מספרים</h2>
+        </div>
+        <div class="reviews-grid">
+            <!-- ביקורת 1 -->
+            <div class="review-card">
+                <div>
+                    <div class="review-user">
+                        <div class="user-avatar" style="background-color: #e67e22;">י</div>
+                        <div class="user-info"><h4>ירדן הכהן- מצליח</h4></div>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">עליזה המדהימה הגיעה אלינו לדוכן של 600 ספינג'יים! מעבר לטעם ולטריות , זכינו בשירות נעים עם חיוך. שילוב מושלם בין שירות למקצועיות!</p>
+                </div>
+                <div class="review-metrics">
+                    <span>Food: 5/5</span>
+                    <span>Service: 5/5</span>
+                    <span>Atmosphere: 5/5</span>
+                </div>
+            </div>
+
+            <!-- ביקורת 2 -->
+            <div class="review-card">
+                <div>
+                    <div class="review-user">
+                        <div class="user-avatar" style="background-color: #546e7a;">ש</div>
+                        <div class="user-info"><h4>שני בוגטוס</h4></div>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">וואו!! טעם גן עדן , יש תוספות גאוניות של זילוף שוקולד , אגוזים ועוד .. השולחן מהמם ומשתלב כמו תפאורה באירוע שירות מצויין ! עליזה כל הזמן מחייכת ומסבירה פנים , מומלץ בחום !!!</p>
+                </div>
+            </div>
+
+            <!-- ביקורת 3 -->
+            <div class="review-card">
+                <div>
+                    <div class="review-user">
+                        <div class="user-avatar" style="background-color: #78909c;">ה</div>
+                        <div class="user-info"><h4>הודיה שרון</h4></div>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">חייבת להמליץ ! הגיעה אלינו לבית ספר ותיקתקה 20 קילו ספינג׳ הכי טעים שאכלנווו , הכל נקי ומסודר נהנינו ממש ❤️❤️</p>
+                </div>
+                <div class="review-metrics">
+                    <span>Food: 5/5</span>
+                    <span>Service: 5/5</span>
+                    <span>Atmosphere: 5/5</span>
+                </div>
+            </div>
         </div>
     </section>
 
