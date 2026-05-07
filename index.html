@@ -27,9 +27,9 @@
     :root {
         --black: #0A0A0A;
         --white: #FAFAFA;
-        --gold-light: #D4AF37;
-        --gold-main: #C9A961;
-        --gold-dark: #A18845;
+        --gold-light: #D4AF37; /* זהב בהיר מהלוגו */
+        --gold-main: #C9A961;  /* הזהב המרכזי */
+        --gold-dark: #A18845;  /* זהב כהה לעומק */
         --grey-light: #F5F5F5;
         --grey-medium: #CCCCCC;
         --grey-dark: #666666;
@@ -47,7 +47,7 @@
         background: rgba(250, 250, 250, 0.98); 
         backdrop-filter: blur(20px); 
         z-index: 1000; 
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05); 
+        border-bottom: 2px solid var(--gold-main); /* פס זהב דק מתחת לסרגל */
     }
 
     .nav-container { 
@@ -59,47 +59,30 @@
         align-items: center; 
     }
 
-    .nav-right, .nav-left {
-        flex: 1;
-        display: flex;
-        align-items: center;
-    }
+    .nav-right, .nav-left { flex: 1; display: flex; align-items: center; }
+    .nav-right { justify-content: flex-start; }
+    .nav-left { justify-content: flex-end; }
 
-    .nav-right { justify-content: flex-start; } /* בס"ד בימין */
-    .nav-left { justify-content: flex-end; }    /* כשרות בשמאל */
+    .bsd { font-size: 0.85rem; font-weight: 600; color: var(--gold-dark); } /* בס"ד בזהב כהה */
 
-    .bsd {
-        font-size: 0.85rem;
-        font-weight: 600;
-        color: var(--grey-dark);
-    }
-
-    .nav-links { 
-        display: flex; 
-        gap: 2.5rem; 
-        list-style: none; 
-        flex: 0; 
-        white-space: nowrap;
-    }
-
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; flex: 0; white-space: nowrap; }
     .nav-links a { 
         color: var(--black); 
         text-decoration: none; 
         font-size: 0.85rem; 
-        font-weight: 500; 
+        font-weight: 600; 
         text-transform: uppercase; 
         transition: 0.3s; 
     }
-
     .nav-links a:hover { color: var(--gold-main); }
 
     .kashrut-mini { 
         font-size: 0.75rem; 
-        color: var(--grey-dark); 
-        border: 1px solid var(--grey-medium); 
+        color: var(--gold-dark); 
+        border: 1px solid var(--gold-main); 
         padding: 0.4rem 0.8rem; 
         border-radius: 3px; 
-        white-space: nowrap;
+        font-weight: 600;
     }
 
     /* --- אזור ראשי (Hero Section) --- */
@@ -109,185 +92,120 @@
         display: flex; 
         align-items: center; 
         justify-content: center; 
-        overflow: hidden; 
-        /* שימוש בתמונה כרקע עם הכהיה מובנית */
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img12_main.jpeg');
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img12_main.jpeg');
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
     }
 
-    .hero-content { 
-        position: relative; 
-        z-index: 10; 
-        text-align: center; 
-        color: var(--white); 
-        padding: 2rem; 
-    }
-    
-    /* עיצוב הלוגו העגול - מוקטן ומונמך */
     .hero-logo img { 
         max-width: 280px; 
         width: 100%; 
-        height: auto; 
         margin-top: 2.5rem; 
-        margin-bottom: 0.5rem; 
         filter: drop-shadow(0 10px 25px rgba(0,0,0,0.6));
     }
 
-    /* באדג' מחיר מותאם לצבעי הלוגו החדש */
     .price-badge { 
         background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-main) 50%, var(--gold-dark) 100%);
         color: #fff;
-        display: inline-block; 
         padding: 8px 24px;
         border-radius: 50px; 
         font-weight: 700; 
         font-size: 1.1rem;
-        margin-top: 1.5rem;
-        margin-bottom: 2rem; 
+        margin: 1.5rem 0 2rem; 
         box-shadow: 0 4px 20px rgba(161, 136, 69, 0.4);
         animation: pulse 2.5s infinite;
         border: 1px solid rgba(255, 255, 255, 0.3);
-        white-space: nowrap;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
     }
 
     @keyframes pulse {
-        0% { transform: scale(1); box-shadow: 0 4px 20px rgba(161, 136, 69, 0.4); }
-        50% { transform: scale(1.05); box-shadow: 0 6px 30px rgba(161, 136, 69, 0.6); }
-        100% { transform: scale(1); box-shadow: 0 4px 20px rgba(161, 136, 69, 0.4); }
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
     }
 
-    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
-    .hero-description { font-size: 1.1rem; max-width: 700px; margin: 0 auto 2.5rem; }
-    .hero-phone-number { font-size: 2rem; font-weight: 800; margin-bottom: 1.5rem; color: var(--white); direction: ltr; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
-    .hero-cta { display: inline-block; padding: 1.1rem 2.5rem; background: var(--white); color: var(--black); text-decoration: none; font-weight: 600; transition: 0.3s; border: 2px solid var(--white); cursor: pointer; }
-    .hero-cta:hover { background: var(--gold-main); border-color: var(--gold-main); color: var(--white); }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 6vw, 4.5rem); color: var(--white); margin-bottom: 1rem; }
+    .hero-phone-number a { font-size: 2.2rem; font-weight: 800; color: var(--gold-main); text-decoration: none; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
 
-    /* --- גלריית וידאו --- */
-    .video-section { padding: 4rem 0; background: var(--white); overflow: hidden; }
-    .section-header { text-align: center; margin-bottom: 2rem; }
-    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); }
-
-    .video-scroller {
-        display: flex;
-        overflow-x: auto; 
-        scroll-snap-type: x mandatory;
-        gap: 15px;
-        padding: 0 2rem 1.5rem;
-        -webkit-overflow-scrolling: touch;
+    .hero-cta { 
+        display: inline-block; 
+        padding: 1.1rem 2.5rem; 
+        background: linear-gradient(135deg, var(--gold-main), var(--gold-dark));
+        color: var(--white); 
+        text-decoration: none; 
+        font-weight: 700; 
+        border-radius: 5px;
+        transition: 0.3s; 
     }
-    .video-scroller::-webkit-scrollbar { display: none; } 
+    .hero-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
 
-    .video-card {
-        flex: 0 0 300px; 
-        scroll-snap-align: start;
-        border-radius: 12px;
-        overflow: hidden;
-        background: #000;
-        height: 500px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    /* --- כותרות סקשנים --- */
+    .section-title { 
+        font-family: 'Playfair Display', serif; 
+        font-size: clamp(2rem, 5vw, 3.5rem); 
+        color: var(--gold-dark); /* שינוי לשחור לזהב כהה */
+        text-align: center;
+        margin-bottom: 3rem;
     }
-    .video-card video { width: 100%; height: 100%; object-fit: contain; }
 
-    /* --- גלריית תמונות --- */
-    .gallery-section { padding: 5rem 0; background: var(--black); color: var(--white); }
-    .gallery-swiper { padding: 0 2rem; }
-    .gallery-swiper .swiper-slide { height: 450px; border-radius: 8px; overflow: hidden; }
-    .gallery-swiper img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; cursor: pointer; }
-    .gallery-swiper img:hover { transform: scale(1.05); }
+    /* --- גלריית וידאו ותמונות --- */
+    .video-section { padding: 5rem 0; background: var(--white); }
+    .video-card { border: 3px solid var(--gold-main); border-radius: 15px; }
 
-    /* --- ביקורות לקוחות --- */
+    /* --- ביקורות --- */
     .reviews-section { padding: 5rem 0; background: var(--grey-light); }
-    .reviews-grid { 
-        display: grid; 
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-        gap: 2rem; 
-        max-width: 1200px; 
-        margin: 0 auto; 
-        padding: 0 2rem; 
+    .review-card { border-top: 4px solid var(--gold-main); }
+    .stars { color: var(--gold-main); } /* כוכבים בזהב של המותג */
+    .user-avatar { background: var(--gold-main); } /* עיגול אותיות המשתמש בזהב */
+
+    /* --- סקשן סיום (CTA) --- */
+    .cta-section { 
+        background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('img12_main.jpeg');
+        background-size: cover;
+        background-attachment: fixed;
+        padding: 6rem 2rem; 
+        text-align: center; 
+        color: var(--white);
     }
-    .review-card { 
-        background: var(--white); 
-        padding: 2rem; 
-        border-radius: 15px; 
-        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+    .cta-btn { 
+        background: var(--gold-main); 
+        color: var(--black); 
+        padding: 1.2rem 3rem; 
+        font-weight: 800; 
+        text-decoration: none; 
+        display: inline-block;
+        transition: 0.3s;
     }
-    .review-user { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-    .user-avatar { 
-        width: 48px; height: 48px; border-radius: 50%; 
-        display: flex; align-items: center; justify-content: center; 
-        color: white; font-weight: 700; font-size: 1.2rem;
+    .cta-btn:hover { background: var(--white); color: var(--gold-dark); }
+
+    /* --- אלמנטים צפים --- */
+    .floating-whatsapp { 
+        position: fixed; 
+        bottom: 2rem; 
+        left: 2rem; 
+        width: 65px; 
+        height: 65px; 
+        background: #25D366; 
+        border: 3px solid var(--white);
+        border-radius: 50%; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        z-index: 999; 
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3); 
     }
-    .stars { color: #FFD700; font-size: 1.2rem; margin-bottom: 1rem; }
-    .review-text { font-size: 0.95rem; color: #444; margin-bottom: 1.5rem; line-height: 1.6; }
 
-    /* --- אודות ו-CTA סופי --- */
-    .intro-section { max-width: 900px; margin: 5rem auto; padding: 0 2rem; text-align: center; }
-    .intro-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1.5rem; }
-    .intro-text { font-size: 1.1rem; color: var(--grey-dark); margin-bottom: 1.5rem; }
-
-    .cta-section { background: var(--gold-main); padding: 6rem 2rem; text-align: center; }
-    .cta-btn { padding: 1rem 2.5rem; font-weight: 600; text-decoration: none; border: 2px solid var(--black); color: var(--black); transition: 0.3s; cursor: pointer; }
-    .cta-btn:hover { background: var(--black); color: var(--white); }
-
-    footer { background: var(--black); color: var(--white); padding: 3rem 2rem; text-align: center; }
-    
-    .floating-whatsapp { position: fixed; bottom: 2rem; left: 2rem; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 999; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-
-    /* --- התאמות למובייל --- */
-    /* --- התאמות למובייל (Portrait) --- */
+    /* --- מובייל --- */
     @media (max-width: 768px) {
         .nav-links { display: none; }
-        .nav-right, .nav-left { flex: 1; }
-        .kashrut-mini { font-size: 0.6rem; padding: 0.3rem 0.4rem; }
-        .bsd { font-size: 0.75rem; }
-        
         .hero { 
-            height: 100vh; /* שומר על גובה מסך מלא */
-            /* שינוי קריטי: נותן לתמונה להתאים את עצמה לרוחב המכשיר במקום לגובה */
-            background-size: cover; 
-            background-position: 65% center; /* מסיט את התמונה מעט כדי לראות את הכדים והאוכל */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            background-position: 65% center; 
         } 
-
-        .hero-content {
-            padding-top: 80px; /* נותן מקום לסרגל העליון שלא יסתיר את הלוגו */
-        }
+        .hero-logo img { max-width: 180px; }
+        .hero-title { font-size: 1.9rem; }
+        .hero-phone-number a { font-size: 1.8rem; }
         
-        .hero-logo img { 
-            max-width: 180px; /* הקטנה נוספת למובייל כדי שלא יתפוס חצי מסך */
-            margin-top: 1rem;
-        }
-
-        .hero-title { 
-            font-size: 1.8rem; /* הקטנת הפונט כדי שלא יישבר ליותר מדי שורות */
-            margin-bottom: 1rem;
-        }
-
-        .hero-description {
-            font-size: 0.95rem;
-            line-height: 1.4;
-            max-width: 90%;
-            margin: 0 auto 1.5rem;
-        }
-
-        .hero-phone-number { font-size: 1.6rem; }
-        .price-badge { font-size: 0.85rem; padding: 6px 15px; margin-bottom: 1rem; }
-        
-        .video-card { flex: 0 0 85%; height: 380px; }
-    }
-
-    /* התאמה מיוחדת למצב שבו הטלפון שוכב (Landscape) */
-    @media (max-width: 768px) and (orientation: landscape) {
-        .hero { height: auto; padding: 100px 0; }
-        .hero-logo img { max-width: 150px; }
+        .section-title { font-size: 2.2rem; }
     }
 </style>
 </head>
