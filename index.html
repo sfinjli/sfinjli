@@ -40,7 +40,14 @@
 
     /* Navigation - Adjusted for circular logo */
     nav { position: fixed; top: 0; width: 100%; background: rgba(250, 250, 250, 0.98); backdrop-filter: blur(20px); z-index: 1000; border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
-    .nav-container { max-width: 1400px; margin: 0 auto; padding: 0.5rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .nav-container { 
+        max-width: 1400px; 
+        margin: 0 auto; 
+        padding: 0.8rem 2rem; 
+        display: flex; 
+        justify-content: space-between; /* שומר על התפריט בצד אחד והכשרות בצד שני */
+        align-items: center; 
+    }
     .logo { display: flex; align-items: center; height: 70px; } /* Increased height for the detailed emblem */
     .logo img { height: 100%; width: auto; transition: transform 0.3s ease; }
     .logo img:hover { transform: scale(1.05); }
@@ -213,7 +220,6 @@
 
     <nav>
         <div class="nav-container">
-            <a href="#" class="logo"><img src="logo_new.png" alt="ספינג׳ לי"></a>
             <ul class="nav-links">
                 <li><a href="#gallery">גלריה</a></li>
                 <li><a href="#about">אודות</a></li>
