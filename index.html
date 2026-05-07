@@ -38,19 +38,32 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--black); line-height: 1.6; overflow-x: hidden; }
 
+    /* Navigation - Adjusted for circular logo */
     nav { position: fixed; top: 0; width: 100%; background: rgba(250, 250, 250, 0.98); backdrop-filter: blur(20px); z-index: 1000; border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
-    .nav-container { max-width: 1400px; margin: 0 auto; padding: 0.8rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-    .logo { display: flex; align-items: center; height: 45px; }
-    .logo img { height: 100%; width: auto; }
+    .nav-container { max-width: 1400px; margin: 0 auto; padding: 0.5rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo { display: flex; align-items: center; height: 70px; } /* Increased height for the detailed emblem */
+    .logo img { height: 100%; width: auto; transition: transform 0.3s ease; }
+    .logo img:hover { transform: scale(1.05); }
+    
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a { color: var(--black); text-decoration: none; font-size: 0.85rem; font-weight: 500; text-transform: uppercase; transition: 0.3s; }
     .nav-links a:hover { color: var(--gold); }
     .kashrut-mini { font-size: 0.75rem; color: var(--grey-dark); border: 1px solid var(--grey-medium); padding: 0.4rem 0.8rem; border-radius: 3px; }
 
+    /* Hero Section */
     .hero { height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
     .hero-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.4); }
     .hero-content { position: relative; z-index: 10; text-align: center; color: var(--white); padding: 2rem; }
     
+    /* Hero Logo - Specific for the new emblem */
+    .hero-logo img { 
+        max-width: 320px; 
+        width: 100%; 
+        height: auto; 
+        margin-bottom: 1rem; 
+        filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5)); /* Adds depth to the gold */
+    }
+
     .price-badge { 
         background: var(--gold); 
         color: var(--black); 
@@ -73,29 +86,28 @@
         100% { transform: scale(1); }
     }
 
-    .hero-logo img { max-width: 350px; width: 100%; height: auto; margin-bottom: 0.5rem; }
     .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
     .hero-description { font-size: 1.2rem; max-width: 700px; margin: 0 auto 2.5rem; }
     .hero-cta { display: inline-block; padding: 1.1rem 2.5rem; background: var(--white); color: var(--black); text-decoration: none; font-weight: 600; transition: 0.3s; border: 2px solid var(--white); cursor: pointer; }
     .hero-cta:hover { background: var(--gold); border-color: var(--gold); color: var(--white); }
 
-    /* גלריית וידאו חדשה וחלקה */
+    /* Video Gallery */
     .video-section { padding: 4rem 0; background: var(--white); overflow: hidden; }
     .section-header { text-align: center; margin-bottom: 2rem; }
     .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); }
 
     .video-scroller {
         display: flex;
-        overflow-x: auto; /* This enables the scrollbar */
+        overflow-x: auto; 
         scroll-snap-type: x mandatory;
         gap: 15px;
         padding: 0 2rem 1.5rem;
         -webkit-overflow-scrolling: touch;
     }
-    .video-scroller::-webkit-scrollbar { display: none; } /* Hide scrollbar Chrome/Safari */
+    .video-scroller::-webkit-scrollbar { display: none; } 
 
     .video-card {
-        flex: 0 0 300px; /* Gives each video a fixed width so they don't squash */
+        flex: 0 0 300px; 
         scroll-snap-align: start;
         border-radius: 12px;
         overflow: hidden;
@@ -103,19 +115,16 @@
         height: 500px;
         box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
-    .video-card video {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
+    .video-card video { width: 100%; height: 100%; object-fit: contain; }
 
+    /* Photo Gallery */
     .gallery-section { padding: 5rem 0; background: var(--black); color: var(--white); }
     .gallery-swiper { padding: 0 2rem; }
     .gallery-swiper .swiper-slide { height: 450px; border-radius: 8px; overflow: hidden; }
     .gallery-swiper img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; cursor: pointer; }
     .gallery-swiper img:hover { transform: scale(1.05); }
 
-    /* סגנון לביקורות */
+    /* Reviews */
     .reviews-section { padding: 5rem 0; background: var(--grey-light); }
     .reviews-grid { 
         display: grid; 
@@ -180,28 +189,31 @@
         text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
     }
     
+    /* Mobile Adjustments */
     @media (max-width: 768px) {
+        .logo { height: 55px; } /* Slightly smaller for mobile screens */
         .hero-phone-number { font-size: 1.8rem; margin-bottom: 1rem; }
         .nav-links { display: none; }
         .hero { height: auto; min-height: 100vh; padding: 110px 0 60px; } 
+        .hero-logo img { max-width: 220px; }
         .hero-title { font-size: 2.5rem; }
         .price-badge { font-size: 0.95rem; padding: 8px 18px; margin-top: 0.5rem; margin-bottom: 1.2rem; }
         
         .video-card {
-            flex: 0 0 85%; /* במובייל - רואים כמעט הכל + רמז לבא בתור */
+            flex: 0 0 85%; 
             height: 400px;
         }
         .video-scroller { padding: 0 1rem 1rem; }
         .gallery-swiper .swiper-slide { height: 350px; }
         .reviews-grid { grid-template-columns: 1fr; padding: 0 1rem; }
     }
-    </style>
+</style>
 </head>
 <body>
 
     <nav>
         <div class="nav-container">
-            <a href="#" class="logo"><img src="logo.png" alt="ספינג׳ לי"></a>
+            <a href="#" class="logo"><img src="logo_new.png" alt="ספינג׳ לי"></a>
             <ul class="nav-links">
                 <li><a href="#gallery">גלריה</a></li>
                 <li><a href="#about">אודות</a></li>
@@ -214,7 +226,7 @@
     <section class="hero">
         <img src="img_main.jpeg" alt="עמדת ספינג' ומופלטה מרוקאית" class="hero-image">
         <div class="hero-content">
-            <div class="hero-logo"><img src="logo.png" alt="ספינג׳ לי"></div>
+            <div class="hero-logo"><img src="logo_new.png" alt="ספינג׳ לי"></div>
             <div class="price-badge">מחירים מפתיעים ומשתלמים! ✨</div>
             <h1 class="hero-title">דוכן ספינג' ומופלטה מרוקאית</h1>
             <p class="hero-description">החגיגה האותנטית לאירוע שלכם: ספינג' זהוב ואוורירי ומופלטה חמה הנעשים במקום מחומרי הגלם הטובים ביותר, עם ניחוח וטעם של פעם.</p>
