@@ -240,6 +240,7 @@
     .floating-whatsapp { position: fixed; bottom: 2rem; left: 2rem; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 999; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
 
     /* --- התאמות למובייל --- */
+    /* --- התאמות למובייל (Portrait) --- */
     @media (max-width: 768px) {
         .nav-links { display: none; }
         .nav-right, .nav-left { flex: 1; }
@@ -247,23 +248,46 @@
         .bsd { font-size: 0.75rem; }
         
         .hero { 
-            height: auto; 
-            min-height: 100vh; 
-            padding: 120px 0 60px; 
-            /* הזזת הרקע במובייל כדי להראות את הפריטים על השולחן */
-            background-position: 75% center; 
+            height: 100vh; /* שומר על גובה מסך מלא */
+            /* שינוי קריטי: נותן לתמונה להתאים את עצמה לרוחב המכשיר במקום לגובה */
+            background-size: cover; 
+            background-position: 65% center; /* מסיט את התמונה מעט כדי לראות את הכדים והאוכל */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         } 
+
+        .hero-content {
+            padding-top: 80px; /* נותן מקום לסרגל העליון שלא יסתיר את הלוגו */
+        }
         
         .hero-logo img { 
-            max-width: 200px; 
-            margin-top: 1.5rem;
+            max-width: 180px; /* הקטנה נוספת למובייל כדי שלא יתפוס חצי מסך */
+            margin-top: 1rem;
         }
-        .hero-title { font-size: 2.2rem; }
-        .hero-phone-number { font-size: 1.8rem; }
-        .price-badge { font-size: 0.95rem; padding: 8px 18px; }
+
+        .hero-title { 
+            font-size: 1.8rem; /* הקטנת הפונט כדי שלא יישבר ליותר מדי שורות */
+            margin-bottom: 1rem;
+        }
+
+        .hero-description {
+            font-size: 0.95rem;
+            line-height: 1.4;
+            max-width: 90%;
+            margin: 0 auto 1.5rem;
+        }
+
+        .hero-phone-number { font-size: 1.6rem; }
+        .price-badge { font-size: 0.85rem; padding: 6px 15px; margin-bottom: 1rem; }
         
-        .video-card { flex: 0 0 85%; height: 400px; }
-        .reviews-grid { grid-template-columns: 1fr; padding: 0 1rem; }
+        .video-card { flex: 0 0 85%; height: 380px; }
+    }
+
+    /* התאמה מיוחדת למצב שבו הטלפון שוכב (Landscape) */
+    @media (max-width: 768px) and (orientation: landscape) {
+        .hero { height: auto; padding: 100px 0; }
+        .hero-logo img { max-width: 150px; }
     }
 </style>
 </head>
