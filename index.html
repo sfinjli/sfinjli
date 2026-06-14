@@ -146,7 +146,7 @@
     .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); color: var(--gold-dark); text-align: center; margin-bottom: 3rem; }
     section { padding: 5rem 0; }
 
-    /* --- גלריית וידאו --- */
+    /* --- גלריית וידאו בסגנון סטורי / סטטוס --- */
     .video-section { background: var(--white); overflow: hidden; }
     .video-scroller {
         display: flex;
@@ -154,18 +154,37 @@
         scroll-snap-type: x mandatory;
         gap: 15px;
         padding: 0 2rem 2rem;
+        -webkit-overflow-scrolling: touch;
     }
     .video-scroller::-webkit-scrollbar { display: none; } 
+    
     .video-card {
-        flex: 0 0 300px; 
+        flex: 0 0 280px; /* רוחב מושלם לסטורי אנכי */
         scroll-snap-align: start;
-        border-radius: 12px;
+        border-radius: 16px;
         overflow: hidden;
         background: #000;
-        height: 500px;
-        border: 2px solid var(--gold-main);
+        height: 480px; /* גובה אנכי צר */
+        border: 3px solid var(--gold-main);
+        position: relative;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
     .video-card video { width: 100%; height: 100%; object-fit: cover; }
+
+    /* עיגול סטורי קטן בתוך הוידאו למראה אותנטי */
+    .story-avatar {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid var(--gold-light);
+        background: var(--white);
+        z-index: 5;
+        overflow: hidden;
+    }
+    .story-avatar img { width: 100%; height: 100%; object-fit: cover; }
 
     /* --- גלריית תמונות --- */
     .gallery-section { background: var(--black); color: var(--white); }
@@ -202,11 +221,10 @@
         .hero { background-position: 70% center; }
         .hero-logo img { max-width: 180px; }
         
-        /* התיקון לבאנר המחירים */
         .price-badge { 
             font-size: 0.85rem; 
             padding: 6px 12px; 
-            white-space: nowrap; /* מונע מהאימוג'י לרדת שורה */
+            white-space: nowrap; 
             display: inline-flex; 
             align-items: center; 
             justify-content: center;
@@ -215,7 +233,10 @@
 
         .hero-title { font-size: 1.9rem; }
         .hero-phone-number a { font-size: 1.8rem; }
-        .video-card { flex: 0 0 85%; height: 400px; }
+        
+        /* במובייל נציג כרטיס אחד כמעט שלם בכל פעם וניתן לגלול הצידה */
+        .video-card { flex: 0 0 75%; height: 420px; }
+        .video-scroller { padding: 0 1rem 1.5rem; gap: 10px; }
     }
     </style>
 </head>
@@ -247,10 +268,37 @@
     <section class="video-section">
         <h2 class="section-title">החוויה באירוע שלכם</h2>
         <div class="video-scroller" id="videoScroller">
-            <div class="video-card"><video controls playsinline><source src="video1.mp4" type="video/mp4"></video></div>
-            <div class="video-card"><video controls playsinline><source src="video6.mp4" type="video/mp4"></video></div>
-            <div class="video-card"><video controls playsinline><source src="video4.mp4" type="video/mp4"></video></div>
-            <div class="video-card"><video controls playsinline><source src="video5.mp4" type="video/mp4"></video></div>
+            
+            <div class="video-card">
+                <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
+                <video controls playsinline loop muted><source src="video1.mp4" type="video/mp4"></video>
+            </div>
+            
+            <div class="video-card">
+                <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
+                <video controls playsinline loop muted><source src="video2.mp4" type="video/mp4"></video>
+            </div>
+            
+            <div class="video-card">
+                <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
+                <video controls playsinline loop muted><source src="video3.mp4" type="video/mp4"></video>
+            </div>
+            
+            <div class="video-card">
+                <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
+                <video controls playsinline loop muted><source src="video4.mp4" type="video/mp4"></video>
+            </div>
+            
+            <div class="video-card">
+                <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
+                <video controls playsinline loop muted><source src="video5.mp4" type="video/mp4"></video>
+            </div>
+
+            <div class="video-card">
+                <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
+                <video controls playsinline loop muted><source src="video6.mp4" type="video/mp4"></video>
+            </div>
+            
         </div>
     </section>
 
@@ -338,6 +386,26 @@
         function closeLightbox() {
             document.getElementById('lightbox').classList.remove('active');
         }
+
+        // קוד חכם שמפעיל אוטומטית רק את הסרטון שנמצא כרגע על המסך בגלילה
+        const videos = document.querySelectorAll('.video-card video');
+        const observerOptions = {
+            root: document.getElementById('videoScroller'),
+            properties: null,
+            threshold: 0.6 // יתנגן כשלפחות 60% מהסרטון נראה לעין
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.play().catch(err => console.log("Autoplay blocked or waiting for user interaction"));
+                } else {
+                    entry.target.pause();
+                }
+            });
+        }, observerOptions);
+
+        videos.forEach(video => observer.observe(video));
     </script>
 </body>
 </html>
