@@ -149,12 +149,11 @@
     /* --- גלריית וידאו בסגנון סטורי / סטטוס --- */
     .video-section { background: var(--white); overflow: hidden; }
     
-    /* מעטפת חדשה כדי להחזיק את החצים בצדדים */
     .video-wrapper-outer {
         position: relative;
         max-width: 1400px;
         margin: 0 auto;
-        padding: 0 3.5rem; /* מרווח לחצים */
+        padding: 0 3.5rem; 
     }
 
     .video-scroller {
@@ -169,7 +168,7 @@
     .video-scroller::-webkit-scrollbar { display: none; } 
     
     .video-card {
-        flex: 0 0 260px; /* רוחב אופטימלי שייכנסו יותר סרטים במחשב */
+        flex: 0 0 260px; 
         scroll-snap-align: start;
         border-radius: 16px;
         overflow: hidden;
@@ -217,7 +216,7 @@
         border: 1px solid rgba(255,255,255,0.3);
     }
 
-    /* כפתורי חצים למחשב */
+    /* כפתורי חצים מעודכנים ויזואלית לפי כיוון הזרימה */
     .scroll-btn {
         position: absolute;
         top: 50%;
@@ -363,7 +362,6 @@
         .hero-title { font-size: 1.9rem; }
         .hero-phone-number a { font-size: 1.8rem; }
         
-        /* הסתרת חצי הדסקטופ במובייל */
         .scroll-btn { display: none; }
         .video-wrapper-outer { padding: 0 1rem; }
         
@@ -401,8 +399,8 @@
         <h2 class="section-title">החוויה באירוע שלכם</h2>
         
         <div class="video-wrapper-outer">
-            <button class="scroll-btn btn-right" onclick="scrollVideos('right')">❯</button>
-            <button class="scroll-btn btn-left" onclick="scrollVideos('left')">❮</button>
+            <button class="scroll-btn btn-right" onclick="scrollVideos('right')">❮</button>
+            <button class="scroll-btn btn-left" onclick="scrollVideos('left')">❯</button>
 
             <div class="video-scroller" id="videoScroller">
                 
@@ -562,13 +560,13 @@
             document.getElementById('lightbox').classList.remove('active');
         }
 
-        // --- קוד חצים לגלילת סרטונים במחשב ---
+        // --- קוד חצים מתוקן ומסונכרן ל-RTL ---
         function scrollVideos(direction) {
             const scroller = document.getElementById('videoScroller');
-            const scrollAmount = 300; // כמה פיקסלים לגלול בכל לחיצה
+            const scrollAmount = 300; 
             
+            // בגלל ה-RTL: ערך שלילי לוקח אותנו שמאלה (להמשך הסרטונים) וערך חיובי ימינה (חזרה להתחלה)
             if (direction === 'right') {
-                // מאחר והאתר ב-RTL, הזזה ימינה היא במינוס או פלוס תלוי דפדפן, קוד smooth מטפל בזה
                 scroller.scrollBy({ left: scrollAmount, behavior: 'smooth' });
             } else {
                 scroller.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
