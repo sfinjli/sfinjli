@@ -159,19 +159,19 @@
     .video-scroller::-webkit-scrollbar { display: none; } 
     
     .video-card {
-        flex: 0 0 280px; /* רוחב מושלם לסטורי אנכי */
+        flex: 0 0 280px; 
         scroll-snap-align: start;
         border-radius: 16px;
         overflow: hidden;
         background: #000;
-        height: 480px; /* גובה אנכי צר */
+        height: 480px; 
         border: 3px solid var(--gold-main);
         position: relative;
         box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        cursor: pointer;
     }
-    .video-card video { width: 100%; height: 100%; object-fit: cover; }
+    .video-card video { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
 
-    /* עיגול סטורי קטן בתוך הוידאו למראה אותנטי */
     .story-avatar {
         position: absolute;
         top: 15px;
@@ -185,6 +185,96 @@
         overflow: hidden;
     }
     .story-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* כפתור פליי קטן באמצע שרומז שזה לחיץ */
+    .play-hint {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        z-index: 4;
+        pointer-events: none;
+        border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    /* --- רכיב הסטוריז במסך מלא (Full Screen Story Viewer) --- */
+    .story-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 3000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
+    .story-overlay.active { display: flex; }
+
+    .story-window {
+        position: relative;
+        width: 100%;
+        max-width: 450px;
+        height: 100%;
+        max-height: 850px;
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+        .story-window { max-width: 100%; height: 100%; max-height: 100%; }
+    }
+
+    .story-window video { width: 100%; height: 100%; object-fit: cover; }
+
+    /* אזורי לחיצה חבויים להעברת סטורי (ימין ושמאל) */
+    .story-nav-zone {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 40%;
+        z-index: 3100;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .story-nav-zone.next { right: 0; }
+    .story-nav-zone.prev { left: 0; }
+
+    .story-close {
+        position: absolute;
+        top: 25px;
+        left: 20px;
+        color: white;
+        font-size: 2.5rem;
+        font-weight: 300;
+        cursor: pointer;
+        z-index: 3200;
+        text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+    .story-header-main {
+        position: absolute;
+        top: 25px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        z-index: 3200;
+    }
+    .story-header-main img { width: 35px; height: 35px; border-radius: 50%; border: 1.5px solid var(--gold-main); }
+    .story-header-main span { color: white; font-weight: 700; font-size: 0.95rem; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
 
     /* --- גלריית תמונות --- */
     .gallery-section { background: var(--black); color: var(--white); }
@@ -209,7 +299,7 @@
     
     .floating-whatsapp { position: fixed; bottom: 2rem; left: 2rem; width: 65px; height: 65px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 999; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 2px solid white; }
 
-    /* --- Lightbox --- */
+    /* --- Lightbox לתמונות --- */
     .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; display: none; align-items: center; justify-content: center; }
     .lightbox.active { display: flex; }
     .lightbox img { max-width: 90%; max-height: 80%; border: 3px solid var(--gold-main); }
@@ -234,7 +324,6 @@
         .hero-title { font-size: 1.9rem; }
         .hero-phone-number a { font-size: 1.8rem; }
         
-        /* במובייל נציג כרטיס אחד כמעט שלם בכל פעם וניתן לגלול הצידה */
         .video-card { flex: 0 0 75%; height: 420px; }
         .video-scroller { padding: 0 1rem 1.5rem; gap: 10px; }
     }
@@ -269,53 +358,75 @@
         <h2 class="section-title">החוויה באירוע שלכם</h2>
         <div class="video-scroller" id="videoScroller">
             
-            <div class="video-card">
+            <div class="video-card" onclick="openStory(0)">
                 <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                <video controls playsinline loop muted><source src="video9.mp4" type="video/mp4"></video>
+                <div class="play-hint">▶</div>
+                <video playsinline loop muted autoplay><source src="video9.mp4" type="video/mp4"></video>
             </div>
 
-            <div class="video-card">
+            <div class="video-card" onclick="openStory(1)">
                 <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                <video controls playsinline loop muted><source src="video1.mp4" type="video/mp4"></video>
+                <div class="play-hint">▶</div>
+                <video playsinline loop muted autoplay><source src="video1.mp4" type="video/mp4"></video>
             </div>
             
-            <div class="video-card">
+            <div class="video-card" onclick="openStory(2)">
                 <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                <video controls playsinline loop muted><source src="video2.mp4" type="video/mp4"></video>
+                <div class="play-hint">▶</div>
+                <video playsinline loop muted autoplay><source src="video2.mp4" type="video/mp4"></video>
             </div>
             
-            <div class="video-card">
+            <div class="video-card" onclick="openStory(3)">
                 <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                <video controls playsinline loop muted><source src="video3.mp4" type="video/mp4"></video>
+                <div class="play-hint">▶</div>
+                <video playsinline loop muted autoplay><source src="video3.mp4" type="video/mp4"></video>
             </div>
             
-            <div class="video-card">
+            <div class="video-card" onclick="openStory(4)">
                 <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                <video controls playsinline loop muted><source src="video4.mp4" type="video/mp4"></video>
+                <div class="play-hint">▶</div>
+                <video playsinline loop muted autoplay><source src="video4.mp4" type="video/mp4"></video>
             </div>
             
-            <div class="video-card">
+            <div class="video-card" onclick="openStory(5)">
                 <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                <video controls playsinline loop muted><source src="video5.mp4" type="video/mp4"></video>
+                <div class="play-hint">▶</div>
+                <video playsinline loop muted autoplay><source src="video5.mp4" type="video/mp4"></video>
             </div>
 
-            <div class="video-card">
+            <div class="video-card" onclick="openStory(6)">
                 <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                <video controls playsinline loop muted><source src="video6.mp4" type="video/mp4"></video>
+                <div class="play-hint">▶</div>
+                <video playsinline loop muted autoplay><source src="video6.mp4" type="video/mp4"></video>
             </div>
 
-            <div class="video-card">
+            <div class="video-card" onclick="openStory(7)">
                 <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                <video controls playsinline loop muted><source src="video7.mp4" type="video/mp4"></video>
+                <div class="play-hint">▶</div>
+                <video playsinline loop muted autoplay><source src="video7.mp4" type="video/mp4"></video>
             </div>
 
-            <div class="video-card">
+            <div class="video-card" onclick="openStory(8)">
                 <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                <video controls playsinline loop muted><source src="video8.mp4" type="video/mp4"></video>
+                <div class="play-hint">▶</div>
+                <video playsinline loop muted autoplay><source src="video8.mp4" type="video/mp4"></video>
             </div>
             
         </div>
     </section>
+
+    <div class="story-overlay" id="storyOverlay">
+        <span class="story-close" onclick="closeStory()">×</span>
+        <div class="story-header-main">
+            <img src="logo_new.png" alt="ספינג' לי">
+            <span>ספינג' לי - האירוע</span>
+        </div>
+        <div class="story-window">
+            <div class="story-nav-zone prev" onclick="prevStory()"></div>
+            <div class="story-nav-zone next" onclick="nextStory()"></div>
+            <video id="storyVideo" playsinline loop></video>
+        </div>
+    </div>
 
     <section class="gallery-section" id="gallery">
         <div class="section-header"><h2 class="section-title" style="color: var(--gold-main);">הפינוקים שלנו</h2></div>
@@ -402,25 +513,66 @@
             document.getElementById('lightbox').classList.remove('active');
         }
 
-        // קוד חכם שמפעיל אוטומטית רק את הסרטון שנמצא כרגע על המסך בגלילה
-        const videos = document.querySelectorAll('.video-card video');
-        const observerOptions = {
-            root: document.getElementById('videoScroller'),
-            properties: null,
-            threshold: 0.6 // יתנגן כשלפחות 60% מהסרטון נראה לעין
-        };
+        // --- מערכת סטוריז חכמה ---
+        const storySources = [
+            "video9.mp4", "video1.mp4", "video2.mp4", "video3.mp4", 
+            "video4.mp4", "video5.mp4", "video6.mp4", "video7.mp4", "video8.mp4"
+        ];
+        
+        let currentStoryIndex = 0;
+        const overlay = document.getElementById('storyOverlay');
+        const storyVideo = document.getElementById('storyVideo');
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.play().catch(err => console.log("Autoplay blocked or waiting for user interaction"));
-                } else {
-                    entry.target.pause();
-                }
+        function openStory(index) {
+            currentStoryIndex = index;
+            storyVideo.src = storySources[currentStoryIndex];
+            overlay.classList.add('active');
+            storyVideo.muted = false; // פתיחה עם סאונד!
+            storyVideo.play().catch(err => {
+                // מונע שגיאות אם הדפדפן חוסם סאונד ללא אינטראקציה ראשונית
+                storyVideo.muted = true;
+                storyVideo.play();
             });
-        }, observerOptions);
+            document.body.style.overflow = 'hidden'; // מניעת גלילה של האתר ברקע
+        }
 
-        videos.forEach(video => observer.observe(video));
+        function closeStory() {
+            overlay.classList.remove('active');
+            storyVideo.pause();
+            storyVideo.src = "";
+            document.body.style.overflow = ''; // החזרת הגלילה
+        }
+
+        function nextStory() {
+            // מאחר והאתר ב-RTL (מימין לשמאל): לחיצה על צד ימין (הבא) מקדמת באינדקס
+            if (currentStoryIndex < storySources.length - 1) {
+                currentStoryIndex++;
+                updateStoryVideo();
+            } else {
+                closeStory(); // אם זה הסרטון האחרון, סגור את הסטורי
+            }
+        }
+
+        function prevStory() {
+            // לחיצה על צד שמאל (הקודם) מחזירה אחורה
+            if (currentStoryIndex > 0) {
+                currentStoryIndex--;
+                updateStoryVideo();
+            }
+        }
+
+        function updateStoryVideo() {
+            storyVideo.src = storySources[currentStoryIndex];
+            storyVideo.muted = false;
+            storyVideo.play().catch(err => console.log(err));
+        }
+
+        // סגירה בלחיצה על הרקע (מחוץ לחלון הוידאו)
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) {
+                closeStory();
+            }
+        });
     </script>
 </body>
 </html>
