@@ -148,28 +148,40 @@
 
     /* --- גלריית וידאו בסגנון סטורי / סטטוס --- */
     .video-section { background: var(--white); overflow: hidden; }
+    
+    /* מעטפת חדשה כדי להחזיק את החצים בצדדים */
+    .video-wrapper-outer {
+        position: relative;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 3.5rem; /* מרווח לחצים */
+    }
+
     .video-scroller {
         display: flex;
         overflow-x: auto; 
         scroll-snap-type: x mandatory;
-        gap: 15px;
-        padding: 0 2rem 2rem;
+        gap: 20px;
+        padding: 10px 0 2rem 0;
+        scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
     }
     .video-scroller::-webkit-scrollbar { display: none; } 
     
     .video-card {
-        flex: 0 0 280px; 
+        flex: 0 0 260px; /* רוחב אופטימלי שייכנסו יותר סרטים במחשב */
         scroll-snap-align: start;
         border-radius: 16px;
         overflow: hidden;
         background: #000;
-        height: 480px; 
+        height: 460px; 
         border: 3px solid var(--gold-main);
         position: relative;
         box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         cursor: pointer;
+        transition: transform 0.3s ease;
     }
+    .video-card:hover { transform: translateY(-5px); }
     .video-card video { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
 
     .story-avatar {
@@ -186,7 +198,6 @@
     }
     .story-avatar img { width: 100%; height: 100%; object-fit: cover; }
 
-    /* כפתור פליי קטן באמצע שרומז שזה לחיץ */
     .play-hint {
         position: absolute;
         top: 50%;
@@ -206,7 +217,36 @@
         border: 1px solid rgba(255,255,255,0.3);
     }
 
-    /* --- רכיב הסטוריז במסך מלא (Full Screen Story Viewer) --- */
+    /* כפתורי חצים למחשב */
+    .scroll-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--white);
+        border: 2px solid var(--gold-main);
+        color: var(--gold-dark);
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 100;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        transition: 0.2s ease;
+        user-select: none;
+    }
+    .scroll-btn:hover {
+        background: var(--gold-main);
+        color: var(--white);
+    }
+    .scroll-btn.btn-right { right: 10px; }
+    .scroll-btn.btn-left { left: 10px; }
+
+    /* --- רכיב הסטוריז במסך מלא --- */
     .story-overlay {
         position: fixed;
         top: 0;
@@ -240,7 +280,6 @@
 
     .story-window video { width: 100%; height: 100%; object-fit: cover; }
 
-    /* אזורי לחיצה חבויים להעברת סטורי (ימין ושמאל) */
     .story-nav-zone {
         position: absolute;
         top: 0;
@@ -324,8 +363,12 @@
         .hero-title { font-size: 1.9rem; }
         .hero-phone-number a { font-size: 1.8rem; }
         
+        /* הסתרת חצי הדסקטופ במובייל */
+        .scroll-btn { display: none; }
+        .video-wrapper-outer { padding: 0 1rem; }
+        
         .video-card { flex: 0 0 75%; height: 420px; }
-        .video-scroller { padding: 0 1rem 1.5rem; gap: 10px; }
+        .video-scroller { padding: 10px 0 1.5rem 0; gap: 10px; }
     }
     </style>
 </head>
@@ -356,62 +399,68 @@
 
     <section class="video-section">
         <h2 class="section-title">החוויה באירוע שלכם</h2>
-        <div class="video-scroller" id="videoScroller">
-            
-            <div class="video-card" onclick="openStory(0)">
-                <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                <div class="play-hint">▶</div>
-                <video playsinline loop muted autoplay><source src="video9.mp4" type="video/mp4"></video>
-            </div>
+        
+        <div class="video-wrapper-outer">
+            <button class="scroll-btn btn-right" onclick="scrollVideos('right')">❯</button>
+            <button class="scroll-btn btn-left" onclick="scrollVideos('left')">❮</button>
 
-            <div class="video-card" onclick="openStory(1)">
-                <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                <div class="play-hint">▶</div>
-                <video playsinline loop muted autoplay><source src="video1.mp4" type="video/mp4"></video>
-            </div>
-            
-            <div class="video-card" onclick="openStory(2)">
-                <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                <div class="play-hint">▶</div>
-                <video playsinline loop muted autoplay><source src="video2.mp4" type="video/mp4"></video>
-            </div>
-            
-            <div class="video-card" onclick="openStory(3)">
-                <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                <div class="play-hint">▶</div>
-                <video playsinline loop muted autoplay><source src="video3.mp4" type="video/mp4"></video>
-            </div>
-            
-            <div class="video-card" onclick="openStory(4)">
-                <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                <div class="play-hint">▶</div>
-                <video playsinline loop muted autoplay><source src="video4.mp4" type="video/mp4"></video>
-            </div>
-            
-            <div class="video-card" onclick="openStory(5)">
-                <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                <div class="play-hint">▶</div>
-                <video playsinline loop muted autoplay><source src="video5.mp4" type="video/mp4"></video>
-            </div>
+            <div class="video-scroller" id="videoScroller">
+                
+                <div class="video-card" onclick="openStory(0)">
+                    <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
+                    <div class="play-hint">▶</div>
+                    <video playsinline loop muted autoplay><source src="video9.mp4" type="video/mp4"></video>
+                </div>
 
-            <div class="video-card" onclick="openStory(6)">
-                <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                <div class="play-hint">▶</div>
-                <video playsinline loop muted autoplay><source src="video6.mp4" type="video/mp4"></video>
-            </div>
+                <div class="video-card" onclick="openStory(1)">
+                    <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
+                    <div class="play-hint">▶</div>
+                    <video playsinline loop muted autoplay><source src="video1.mp4" type="video/mp4"></video>
+                </div>
+                
+                <div class="video-card" onclick="openStory(2)">
+                    <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
+                    <div class="play-hint">▶</div>
+                    <video playsinline loop muted autoplay><source src="video2.mp4" type="video/mp4"></video>
+                </div>
+                
+                <div class="video-card" onclick="openStory(3)">
+                    <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
+                    <div class="play-hint">▶</div>
+                    <video playsinline loop muted autoplay><source src="video3.mp4" type="video/mp4"></video>
+                </div>
+                
+                <div class="video-card" onclick="openStory(4)">
+                    <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
+                    <div class="play-hint">▶</div>
+                    <video playsinline loop muted autoplay><source src="video4.mp4" type="video/mp4"></video>
+                </div>
+                
+                <div class="video-card" onclick="openStory(5)">
+                    <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
+                    <div class="play-hint">▶</div>
+                    <video playsinline loop muted autoplay><source src="video5.mp4" type="video/mp4"></video>
+                </div>
 
-            <div class="video-card" onclick="openStory(7)">
-                <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                <div class="play-hint">▶</div>
-                <video playsinline loop muted autoplay><source src="video7.mp4" type="video/mp4"></video>
-            </div>
+                <div class="video-card" onclick="openStory(6)">
+                    <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
+                    <div class="play-hint">▶</div>
+                    <video playsinline loop muted autoplay><source src="video6.mp4" type="video/mp4"></video>
+                </div>
 
-            <div class="video-card" onclick="openStory(8)">
-                <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                <div class="play-hint">▶</div>
-                <video playsinline loop muted autoplay><source src="video8.mp4" type="video/mp4"></video>
+                <div class="video-card" onclick="openStory(7)">
+                    <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
+                    <div class="play-hint">▶</div>
+                    <video playsinline loop muted autoplay><source src="video7.mp4" type="video/mp4"></video>
+                </div>
+
+                <div class="video-card" onclick="openStory(8)">
+                    <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
+                    <div class="play-hint">▶</div>
+                    <video playsinline loop muted autoplay><source src="video8.mp4" type="video/mp4"></video>
+                </div>
+                
             </div>
-            
         </div>
     </section>
 
@@ -513,6 +562,19 @@
             document.getElementById('lightbox').classList.remove('active');
         }
 
+        // --- קוד חצים לגלילת סרטונים במחשב ---
+        function scrollVideos(direction) {
+            const scroller = document.getElementById('videoScroller');
+            const scrollAmount = 300; // כמה פיקסלים לגלול בכל לחיצה
+            
+            if (direction === 'right') {
+                // מאחר והאתר ב-RTL, הזזה ימינה היא במינוס או פלוס תלוי דפדפן, קוד smooth מטפל בזה
+                scroller.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            } else {
+                scroller.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            }
+        }
+
         // --- מערכת סטוריז חכמה ---
         const storySources = [
             "video9.mp4", "video1.mp4", "video2.mp4", "video3.mp4", 
@@ -527,34 +589,31 @@
             currentStoryIndex = index;
             storyVideo.src = storySources[currentStoryIndex];
             overlay.classList.add('active');
-            storyVideo.muted = false; // פתיחה עם סאונד!
+            storyVideo.muted = false; 
             storyVideo.play().catch(err => {
-                // מונע שגיאות אם הדפדפן חוסם סאונד ללא אינטראקציה ראשונית
                 storyVideo.muted = true;
                 storyVideo.play();
             });
-            document.body.style.overflow = 'hidden'; // מניעת גלילה של האתר ברקע
+            document.body.style.overflow = 'hidden'; 
         }
 
         function closeStory() {
             overlay.classList.remove('active');
             storyVideo.pause();
             storyVideo.src = "";
-            document.body.style.overflow = ''; // החזרת הגלילה
+            document.body.style.overflow = ''; 
         }
 
         function nextStory() {
-            // מאחר והאתר ב-RTL (מימין לשמאל): לחיצה על צד ימין (הבא) מקדמת באינדקס
             if (currentStoryIndex < storySources.length - 1) {
                 currentStoryIndex++;
                 updateStoryVideo();
             } else {
-                closeStory(); // אם זה הסרטון האחרון, סגור את הסטורי
+                closeStory(); 
             }
         }
 
         function prevStory() {
-            // לחיצה על צד שמאל (הקודם) מחזירה אחורה
             if (currentStoryIndex > 0) {
                 currentStoryIndex--;
                 updateStoryVideo();
@@ -567,7 +626,6 @@
             storyVideo.play().catch(err => console.log(err));
         }
 
-        // סגירה בלחיצה על הרקע (מחוץ לחלון הוידאו)
         overlay.addEventListener('click', function(e) {
             if (e.target === overlay) {
                 closeStory();
