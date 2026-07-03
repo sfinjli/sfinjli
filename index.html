@@ -1,702 +1,184 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL41DTFN2D"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-QL41DTFN2D'); 
-      gtag('config', 'AW-3551966605');
-    </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>דוכן ספינג' ומופלטה מרוקאית לאירועים | ספינג' לי</title>
-    <meta name="description" content="ספינג' לי מציעה דוכן ספינג' ומופלטה מרוקאית חמה הנעשית במקום לעיני האורחים. חוויה קולינרית אותנטית לחינה, חתונות ואירועים. הזמינו עכשיו: 054-5576767">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    
+    <title>נגן וידאו עם גלילה חלקה לביקורות</title>
     <style>
-    :root {
-        --black: #0A0A0A;
-        --white: #FAFAFA;
-        --gold-light: #D4AF37;
-        --gold-main: #C9A961;
-        --gold-dark: #A18845;
-        --grey-light: #F5F5F5;
-        --grey-medium: #CCCCCC;
-        --grey-dark: #666666;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--black); line-height: 1.6; overflow-x: hidden; }
-
-    /* --- סרגל ניווט (Navigation)  --- */
-    nav { 
-        position: fixed; 
-        top: 0; 
-        width: 100%; 
-        background: rgba(250, 250, 250, 0.98); 
-        backdrop-filter: blur(20px); 
-        z-index: 1000; 
-        border-bottom: 2px solid var(--gold-main); 
-    }
-
-    .nav-container { 
-        max-width: 1400px; 
-        margin: 0 auto; 
-        padding: 0.8rem 2rem; 
-        display: flex; 
-        justify-content: space-between; 
-        align-items: center; 
-    }
-
-    .nav-right, .nav-left { flex: 1; display: flex; align-items: center; }
-    .nav-right { justify-content: flex-start; } 
-    .nav-left { justify-content: flex-end; }
-
-    .bsd { font-size: 0.85rem; font-weight: 600; color: var(--gold-dark); }
-
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { color: var(--black); text-decoration: none; font-size: 0.9rem; font-weight: 700; transition: 0.3s; }
-    .nav-links a:hover { color: var(--gold-main); }
-
-    .kashrut-mini { 
-        font-size: 0.75rem; 
-        color: var(--gold-dark); 
-        border: 1px solid var(--gold-main); 
-        padding: 0.4rem 0.8rem; 
-        border-radius: 3px; 
-        white-space: nowrap;
-        font-weight: 600;
-    }
-
-    /* --- אזור ראשי (Hero Section) --- */
-    .hero { 
-        height: 100vh; 
-        position: relative; 
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
-        overflow: hidden; 
-        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img12_main.jpeg');
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-
-    .hero-content { 
-        position: relative; 
-        z-index: 10; 
-        text-align: center; 
-        color: var(--white); 
-        padding: 2rem; 
-        width: 100%;
-    }
-    
-    .hero-logo img { 
-        max-width: 280px; 
-        width: 100%; 
-        height: auto; 
-        margin-top: 2rem; 
-        filter: drop-shadow(0 10px 25px rgba(0,0,0,0.6));
-    }
-
-    .price-badge { 
-        background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
-        color: #fff;
-        display: inline-block; 
-        padding: 8px 24px;
-        border-radius: 50px; 
-        font-weight: 700; 
-        font-size: 1.1rem;
-        margin: 1.5rem 0;
-        box-shadow: 0 4px 20px rgba(161, 136, 69, 0.4);
-        animation: pulse 2.5s infinite;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-    @keyframes pulse {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-    }
-
-    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 6vw, 4rem); font-weight: 900; margin-bottom: 1rem; }
-    .hero-description { font-size: 1.1rem; max-width: 700px; margin: 0 auto 2rem; }
-    .hero-phone-number a { font-size: 2.2rem; font-weight: 800; color: var(--gold-main); text-decoration: none; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); display: block; margin-bottom: 1.5rem; }
-    
-    .hero-cta { 
-        display: inline-block; 
-        padding: 1.1rem 2.5rem; 
-        background: linear-gradient(135deg, var(--gold-main), var(--gold-dark));
-        color: var(--white); 
-        text-decoration: none; 
-        font-weight: 700; 
-        border-radius: 5px;
-        transition: 0.3s; 
-    }
-    .hero-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
-
-    /* --- כותרות וקטעים --- */
-    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); color: var(--gold-dark); text-align: center; margin-bottom: 3rem; }
-    section { padding: 5rem 0; }
-
-    /* --- גלריית וידאו בסגנון סטורי / סטטוס --- */
-    .video-section { background: var(--white); overflow: hidden; }
-    
-    .video-wrapper-outer {
-        position: relative;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 3.5rem; 
-    }
-
-    .video-scroller {
-        display: flex;
-        overflow-x: auto; 
-        scroll-snap-type: x mandatory;
-        gap: 20px;
-        padding: 10px 0 2rem 0;
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch;
-    }
-    .video-scroller::-webkit-scrollbar { display: none; } 
-    
-    .video-card {
-        flex: 0 0 260px; 
-        scroll-snap-align: start;
-        border-radius: 16px;
-        overflow: hidden;
-        background: #000;
-        height: 460px; 
-        border: 3px solid var(--gold-main);
-        position: relative;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        cursor: pointer;
-        transition: transform 0.3s ease;
-    }
-    .video-card:hover { transform: translateY(-5px); }
-    .video-card video { width: 100%; height: 100%; object-fit: contain; background: #000; pointer-events: none; }
-
-    .story-avatar {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        border: 2px solid var(--gold-light);
-        background: var(--white);
-        z-index: 5;
-        overflow: hidden;
-    }
-    .story-avatar img { width: 100%; height: 100%; object-fit: cover; }
-
-    .play-hint {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(0, 0, 0, 0.5);
-        color: white;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        z-index: 4;
-        pointer-events: none;
-        border: 1px solid rgba(255,255,255,0.3);
-    }
-
-    .scroll-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: var(--white);
-        border: 2px solid var(--gold-main);
-        color: var(--gold-dark);
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        font-weight: bold;
-        cursor: pointer;
-        z-index: 100;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        transition: 0.2s ease;
-        user-select: none;
-    }
-    .scroll-btn:hover {
-        background: var(--gold-main);
-        color: var(--white);
-    }
-    .scroll-btn.btn-right { right: 10px; }
-    .scroll-btn.btn-left { left: 10px; }
-
-    /* --- רכיב הסטוריז במסך מלא --- */
-    .story-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.95);
-        z-index: 3000;
-        display: none;
-        align-items: center;
-        justify-content: center;
-    }
-    .story-overlay.active { display: flex; }
-
-    .story-window {
-        position: relative;
-        width: 100%;
-        max-width: 450px;
-        height: 100%;
-        max-height: 850px;
-        background: #000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-    }
-
-    @media (max-width: 768px) {
-        .story-window { max-width: 100%; height: 100%; max-height: 100%; }
-    }
-
-    .story-window video { width: 100%; height: 100%; object-fit: contain; background: #000; }
-
-    .story-nav-zone {
-        position: absolute;
-        top: 0;
-        height: 100%;
-        width: 40%;
-        z-index: 3100;
-        cursor: pointer;
-        -webkit-tap-highlight-color: transparent;
-    }
-    .story-nav-zone.next { right: 0; }
-    .story-nav-zone.prev { left: 0; }
-
-    .story-close {
-        position: absolute;
-        top: 25px;
-        left: 20px;
-        color: white;
-        font-size: 2.5rem;
-        font-weight: 300;
-        cursor: pointer;
-        z-index: 3200;
-        text-shadow: 0 2px 5px rgba(0,0,0,0.5);
-    }
-    .story-header-main {
-        position: absolute;
-        top: 25px;
-        right: 20px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        z-index: 3200;
-    }
-    .story-header-main img { width: 35px; height: 35px; border-radius: 50%; border: 1.5px solid var(--gold-main); }
-    .story-header-main span { color: white; font-weight: 700; font-size: 0.95rem; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
-
-    /* --- גלריית תמונות --- */
-    .gallery-section { background: var(--black); color: var(--white); }
-    .gallery-swiper { padding: 0 2rem 3rem; }
-    .gallery-swiper .swiper-slide { height: 400px; border-radius: 8px; overflow: hidden; }
-    .gallery-swiper img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; cursor: pointer; }
-
-    /* --- מערכת ביקורות בסרט נע (Infinite Ticker Scroller) --- */
-    .reviews-section { 
-        background: var(--grey-light); 
-        padding: 5rem 0; 
-        overflow: hidden; 
-        position: relative;
-    }
-    
-    /* מיכל הפס שמבצע את האנימציה */
-    .ticker-container {
-        display: flex;
-        width: max-content;
-        gap: 2rem;
-        padding: 1rem 0;
-        animation: ticker 45s linear infinite;
-    }
-
-    /* עצירת התנועה בעת ריחוף עכבר או נגיעה */
-    .reviews-section:hover .ticker-container {
-        animation-play-state: paused;
-    }
-
-    .review-card { 
-        background: var(--white); 
-        padding: 2rem; 
-        border-radius: 15px; 
-        border-top: 4px solid var(--gold-main); 
-        box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
-        width: 350px; 
-        flex-shrink: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: compact;
-    }
-    
-    .review-user { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-    .user-avatar { width: 45px; height: 45px; border-radius: 50%; background: var(--gold-main); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; }
-    .stars { color: var(--gold-main); font-size: 1.2rem; margin-bottom: 0.5rem; }
-    .review-text { font-size: 0.95rem; color: #333; line-height: 1.5; }
-
-    /* הגדרת כיוון האנימציה מימין לשמאל */
-    @keyframes ticker {
-        0% { transform: translate3d(0, 0, 0); }
-        100% { transform: translate3d(50%, 0, 0); } /* זז חצי דרך מכיוון שהתוכן משוכפל בצורה מדויקת */
-    }
-
-    /* --- CTA וסיום --- */
-    .cta-section { text-align: center; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('img12_main.jpeg'); background-size: cover; color: white; padding: 6rem 2rem; }
-    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
-    .cta-btn { padding: 1.1rem 2.5rem; background: var(--gold-main); color: var(--black); text-decoration: none; font-weight: 800; border-radius: 5px; }
-
-    footer { background: var(--black); color: rgba(255,255,255,0.6); padding: 3rem 2rem; text-align: center; font-size: 0.9rem; }
-    
-    .floating-whatsapp { position: fixed; bottom: 2rem; left: 2rem; width: 65px; height: 65px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 999; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 2px solid white; }
-
-    /* --- Lightbox לתמונות --- */
-    .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; display: none; align-items: center; justify-content: center; }
-    .lightbox.active { display: flex; }
-    .lightbox img { max-width: 90%; max-height: 80%; border: 3px solid var(--gold-main); }
-    .lightbox-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 3rem; cursor: pointer; }
-
-    /* --- התאמות מובייל --- */
-    @media (max-width: 768px) {
-        .nav-links { display: none; }
-        .hero { background-position: 70% center; }
-        .hero-logo img { max-width: 180px; }
-        
-        .price-badge { 
-            font-size: 0.85rem; 
-            padding: 6px 12px; 
-            white-space: nowrap; 
-            display: inline-flex; 
-            align-items: center; 
-            justify-content: center;
-            gap: 5px; 
+        /* עיצוב כללי לדף הדגמה */
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
         }
 
-        .hero-title { font-size: 1.9rem; }
-        .hero-phone-number a { font-size: 1.8rem; }
+        h1 {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* ------------------------------------------------ */
+        /* עיצוב אזור הווידאו והכפתור הצף */
+        /* ------------------------------------------------ */
         
-        .scroll-btn { display: none; }
-        .video-wrapper-outer { padding: 0 1rem; }
-        
-        .video-card { flex: 0 0 75%; height: 420px; }
-        .video-scroller { padding: 10px 0 1.5rem 0; gap: 10px; }
-        
-        .review-card { width: 300px; padding: 1.5rem; }
-        .ticker-container { animation-duration: 30s; } /* מהירות מותאמת קצת למסכים קטנים */
-    }
+        /* מיכל הווידאו - משמש כעוגן אבסולוטי לכפתור */
+        .video-container {
+            position: relative;
+            max-width: 800px; 
+            margin: 40px auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            overflow: hidden; /* שומר על הפינות המעוגלות של הווידאו */
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* עיצוב הכפתור הצף מעל הווידאו */
+        .reviews-overlay-btn {
+            position: absolute;
+            bottom: 65px; /* מיקום מעל סרגל הכלים המובנה של הנגן */
+            right: 25px;  /* מרחק מהצד הימני (מותאם לעברית) */
+            background-color: rgba(0, 0, 0, 0.8); /* רקע כהה חצי שקוף */
+            color: #ffffff;
+            border: 2px solid #ffcc00; /* מסגרת בצבע זהב */
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 30px; /* מראה קפסולה מודרני */
+            cursor: pointer;
+            z-index: 10; /* מוודא שהכפתור תמיד יצוף מעל הסרטון */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease; /* מעבר חלק באפקטים */
+        }
+
+        /* אפקט ויזואלי במעבר עכבר (Hover) */
+        .reviews-overlay-btn:hover {
+            background-color: #ffcc00;
+            color: #000000;
+            transform: scale(1.05); /* הגדלה עדינה של הכפתור */
+            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.4);
+        }
+
+        /* ------------------------------------------------ */
+        /* עיצוב התוכן שבין הווידאו לביקורות */
+        /* ------------------------------------------------ */
+        .spacer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            line-height: 1.6;
+        }
+
+        /* ------------------------------------------------ */
+        /* עיצוב אזור הביקורות (יעד הגלילה) */
+        /* ------------------------------------------------ */
+        .reviews-container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            border-radius: 16px;
+            border: 1px solid #e9ecef;
+        }
+
+        .reviews-container h2 {
+            margin-top: 0;
+            color: #212529;
+            border-bottom: 2px solid #ffcc00;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .review-box {
+            background: #ffffff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            border-right: 4px solid #ffcc00; /* פס זהב בצד הימני של הביקורת */
+        }
+
+        .review-stars {
+            color: #ffcc00;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .review-author {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #6c757d;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="nav-container">
-            <div class="nav-right"><span class="bsd">בס"ד</span></div>
-            <ul class="nav-links">
-                <li><a href="#gallery">גלריה</a></li>
-                <li><a href="#reviews">ביקורות</a></li>
-                <li><a href="#contact">הזמנות</a></li>
-            </ul>
-            <div class="nav-left"><span class="kashrut-mini">✡ כשרויות מהודרות ביותר</span></div>
-        </div>
-    </nav>
+    <h1>ברוכים הבאים לאתר שלנו</h1>
 
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-logo"><img src="logo_new.png" alt="ספינג׳ לי"></div>
-            <div class="price-badge">מחירים מפתיעים ומשתלמים! ✨</div>
-            <h1 class="hero-title">דוכן ספינג' ומופלטה מרוקאית</h1>
-            <p class="hero-description">החגיגה האותנטית לאירוע שלכם: ספינג' זהוב ואוורירי ומופלטה חמה הנעשים במקום עם ניחוח וטעם של פעם.</p>
-            <div class="hero-phone-number"><a href="tel:0545576767">054-5576767</a></div>
-            <a href="tel:0545576767" class="hero-cta" onclick="gtag('event', 'conversion', {'send_to': 'AW-17754186390/_YrhCN6LluIBeJbF7ZFC'});">קבלו הצעת מחיר משתלמת</a>
-        </div>
-    </section>
+    <!-- מיכל הווידאו והכפתור -->
+    <div class="video-container">
+        <!-- נגן וידאו מובנה של HTML5 -->
+        <video id="my-video" controls poster="https://via.placeholder.com/800x450/222/fff?text=לחצו+לנגן+וידאו">
+            <!-- החלף את הקישור הזמני הזה בקישור האמיתי לקובץ הוידאו שלך (MP4) -->
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            הדפדפן שלך אינו תומך בניגון וידאו.
+        </video>
 
-    <section class="video-section">
-        <h2 class="section-title">מהחוויות בשמחות שלכם</h2>
+        <!-- הכפתור הצף המולבש על הווידאו -->
+        <button id="scroll-to-reviews-btn" class="reviews-overlay-btn">
+            ⭐️ קראו ביקורות עלינו
+        </button>
+    </div>
+
+    <!-- תוכן זמני כדי ליצור גובה בעמוד ולהמחיש את הגלילה -->
+    <div class="spacer-content">
+        <h3>קצת עלינו ועל השירות</h3>
+        <p>כאן באתר תוכלו למצוא מידע רחב על הפעילות שלנו, על הדרך שבה אנחנו עוזרים לעסקים ולאנשים פרטיים להשיג את המטרות שלהם, ועל הכלים המתקדמים שאנחנו מפתחים יום-יום.</p>
+        <p>אנחנו מאמינים בשקפות מלאה, מקצועיות ללא פשרות, ומתן ערך אמיתי לכל לקוח ולקוח שמגיע אלינו. גללו למטה או לחצו על הכפתור שעל הווידאו כדי לראות מה הלקוחות שלנו חושבים על חוויית השירות אצלנו.</p>
+    </div>
+
+    <!-- אזור הביקורות (אלמנט היעד שה-ID שלו משמש לגלילה) -->
+    <div id="reviews-section" class="reviews-container">
+        <h2>מה הלקוחות שלנו אומרים?</h2>
         
-        <div class="video-wrapper-outer">
-            <button class="scroll-btn btn-right" onclick="scrollVideos('right')">❮</button>
-            <button class="scroll-btn btn-left" onclick="scrollVideos('left')">❯</button>
-
-            <div class="video-scroller" id="videoScroller">
-                
-                <div class="video-card" onclick="openStory(0)">
-                    <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                    <div class="play-hint">▶</div>
-                    <video playsinline loop muted autoplay><source src="video9.mp4" type="video/mp4"></video>
-                </div>
-
-                <div class="video-card" onclick="openStory(1)">
-                    <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                    <div class="play-hint">▶</div>
-                    <video playsinline loop muted autoplay><source src="video4.mp4" type="video/mp4"></video>
-                </div>
-                
-                <div class="video-card" onclick="openStory(2)">
-                    <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                    <div class="play-hint">▶</div>
-                    <video playsinline loop muted autoplay><source src="video5.mp4" type="video/mp4"></video>
-                </div>
-                
-                <div class="video-card" onclick="openStory(3)">
-                    <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                    <div class="play-hint">▶</div>
-                    <video playsinline loop muted autoplay><source src="video6.mp4" type="video/mp4"></video>
-                </div>
-
-                <div class="video-card" onclick="openStory(4)">
-                    <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                    <div class="play-hint">▶</div>
-                    <video playsinline loop muted autoplay><source src="video7.mp4" type="video/mp4"></video>
-                </div>
-
-                <div class="video-card" onclick="openStory(5)">
-                    <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                    <div class="play-hint">▶</div>
-                    <video playsinline loop muted autoplay><source src="video8.mp4" type="video/mp4"></video>
-                </div>
-
-                <div class="video-card" onclick="openStory(6)">
-                    <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                    <div class="play-hint">▶</div>
-                    <video playsinline loop muted autoplay><source src="video10.mp4" type="video/mp4"></video>
-                </div>
-                
-            </div>
+        <div class="review-box">
+            <div class="review-stars">★★★★★</div>
+            <p>"השירות היה פשוט יוצא מן הכלל! המערכת עובדת בצורה מושלמת והצוות תמך בי לאורך כל הדרך. מומלץ בחום לכל מי שמחפש מקצועיות."</p>
+            <span class="review-author">- ישראל ישראלי</span>
         </div>
-    </section>
 
-    <div class="story-overlay" id="storyOverlay">
-        <span class="story-close" onclick="closeStory()">×</span>
-        <div class="story-header-main">
-            <img src="logo_new.png" alt="ספינג' לי">
-            <span>ספינג' לי - האירוע</span>
-        </div>
-        <div class="story-window">
-            <div class="story-nav-zone prev" onclick="prevStory()"></div>
-            <div class="story-nav-zone next" onclick="nextStory()"></div>
-            <video id="storyVideo" playsinline loop></video>
+        <div class="review-box">
+            <div class="review-stars">★★★★★</div>
+            <p>"התוצאות שקיבלנו עלו על כל הציפיות שלנו. העבודה התבצעה במהירות, ביעילות ותוך הקשבה מלאה לצרכים הייחודיים של העסק שלנו."</p>
+            <span class="review-author">- מיכל כהן</span>
         </div>
     </div>
 
-    <section class="gallery-section" id="gallery">
-        <div class="section-header"><h2 class="section-title" style="color: var(--gold-main);">הפינוקים שלנו</h2></div>
-        <div class="swiper gallery-swiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="img21.jpeg" alt="דוכן ספינג'" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img15.jpeg" alt="מופלטות חמות באירוע" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img11.jpeg" alt="ספינג' חם" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img12.jpeg" alt="מופלטה מרוקאית" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img22.jpg" alt="מופלטה מרוקאית" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img16.jpeg" alt="מופלטות חמות באירוע" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img1.jpg" alt="מופלטות חמות באירוע" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img2.jpeg" alt="דוכן ספינג' מרוקאי" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img3.jpeg" alt="דוכן מרוקאי" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img17.jpeg" alt="דוכן מרוקאי" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img6.jpeg" alt="ספינג' טרי" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img18.jpeg" alt="דוכן ספינג'" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img13.jpeg" alt="עמדת מתוקים" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img14.jpeg" alt="חגיגה מרוקאית" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img19.jpeg" alt="פינוקים מרוקאים" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img20.jpeg" alt="ספינג'לי" onclick="openLightbox(this.src)"></div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </section>
-
-    <!-- קטע ביקורות בסרט נע (Ticker) -->
-    <section class="reviews-section" id="reviews">
-        <h2 class="section-title">מה הלקוחות אומרים</h2>
-        
-        <!-- מיכל ה-Ticker שמשכפל את התוכן ליצירת לופ אינסופי וחלק -->
-        <div class="ticker-container" id="tickerContainer">
-            <!-- סט ראשון של ביקורות -->
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">ס</div><h4>סיון נחליאל</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">הלוואי והיו עוד כוכבים לדרג את הדוכן ספינג׳ ומופלטה של עליזה. עליזה ואורה הגיעו כמו קוסמות בשקט הקימו דוכן מדהים לפליאת המוזמנים (הפתעה לכלה חובבת הספינג׳) והכינו בשפע, הכל היה טעים, טרי, נקי, מסודר פשוט מושלם ומשדרג כל אירוע וחינה במיוחד. ספינג׳ לי הבחירה הנכונה לאירוע שלכם.</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">T</div><h4>Tirtza Hagai</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">היה טעים ומעולה.</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">S</div><h4>shaylee Barzilay</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">ידיי זהבבב הכל היה מושלם והשירות הכי מדהים!</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">מ</div><h4>Mazal Find</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">עשיתי אירוע של הפרשת חלה לביתי יחד עם חינה, הזמנתי את עליזה...</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">E</div><h4>Erez Kirat</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">חוויה פשוט מדהימה! חגגנו מימונה מטורפת עם הספינג'ים הכי טעימים שאכלתי בחיי... הכל מוגש עם חיוך, בשפע ובאהבה רבה. מומלצים בחום!</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">י</div><h4>ירדן הכהן- מצליח</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">עליזה המדהימה הגיעה אלינו לדוכן של 600 ספינג׳ים! מעבר לטעם ולטריות, זכינו בשירות נעים עם חיוך. שילוב מושלם בין שירות למקצועיות!</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">ה</div><h4>הודיה שרון</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">חייבת להמליץ! הגיעה אלינו לבית ספר ותיקתקה 20 קילו ספינג׳ הכי טעים שאכלנווו, הכל נקי ומסודר נהנינו ממש ❤️❤️</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">י</div><h4>יהונתן מור</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">ממממממששששש טעים ממליץ</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">ל</div><h4>ליאור פדלון</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">טעים, טרי בצק מושלם. אין על ספינג' בעולם ועליזה מקסימה ושירותית</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">ש</div><h4>שני בוגטוס</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">וואו!! טעם גן עדן, יש תוספות גאוניות של זילוף שוקולד, אגוזים ועוד.. השולחן מהמם ומשתלב כמו תפאורה באירוע שירות מצויין! עליזה כל הזמן מחייכת ומסבירה פנים, מומלץ בחום!!!</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section" id="contact">
-        <h2 class="section-title" style="color: white;">רוצים להמתיק את האירוע?</h2>
-        <p>נשמח להעניק לאורחים שלכם חוויה אותנטית, טעימה ושמחה!</p>
-        <div class="cta-buttons">
-            <a href="https://wa.me/972545576767" class="cta-btn" style="background: #25D366; color: white;">WhatsApp</a>
-            <a href="tel:0545576767" class="cta-btn">חייגו עכשיו</a>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2026 ספינג׳ לי - חוויה מרוקאית אותנטית לאירועים</p>
-    </footer>
-
-    <a href="https://wa.me/972545576767" class="floating-whatsapp">
-        <svg viewBox="0 0 24 24" style="width:35px; fill:white;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-     </a>
-
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <span class="lightbox-close">×</span>
-        <img id="lightbox-img" src="">
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- קוד ה-JavaScript שמבצע את הגלילה החלקה -->
     <script>
-        // שכפול אוטומטי של הביקורות בתוך ה-DOM כדי שהלופ האינסופי יעבוד חלק ללא קפיצות
-        const ticker = document.getElementById('tickerContainer');
-        ticker.innerHTML += ticker.innerHTML;
+        document.addEventListener('DOMContentLoaded', function() {
+            // תפיסת האלמנטים מהדף
+            const scrollToReviewsBtn = document.getElementById('scroll-to-reviews-btn');
+            const reviewsSection = document.getElementById('reviews-section');
 
-        const swiperGallery = new Swiper('.gallery-swiper', {
-            loop: true, slidesPerView: 1, spaceBetween: 20,
-            autoplay: { delay: 3000 },
-            pagination: { el: '.swiper-pagination', clickable: true },
-            breakpoints: { 768: { slidesPerView: 3 } }
-        });
-
-        function openLightbox(src) {
-            document.getElementById('lightbox-img').src = src;
-            document.getElementById('lightbox').classList.add('active');
-        }
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
-        }
-
-        function scrollVideos(direction) {
-            const scroller = document.getElementById('videoScroller');
-            const scrollAmount = 300; 
-            
-            if (direction === 'right') {
-                scroller.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-            } else {
-                scroller.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-            }
-        }
-
-        const storySources = [
-            "video9.mp4", "video4.mp4", "video5.mp4", 
-            "video6.mp4", "video7.mp4", "video8.mp4", "video10.mp4"
-        ];
-        
-        let currentStoryIndex = 0;
-        const overlay = document.getElementById('storyOverlay');
-        const storyVideo = document.getElementById('storyVideo');
-
-        function openStory(index) {
-            currentStoryIndex = index;
-            storyVideo.src = storySources[currentStoryIndex];
-            overlay.classList.add('active');
-            storyVideo.muted = false; 
-            storyVideo.play().catch(err => {
-                storyVideo.muted = true;
-                storyVideo.play();
+            // האזנה לאירוע הלחיצה על הכפתור
+            scrollToReviewsBtn.addEventListener('click', function() {
+                // ביצוע גלילה חלקה ישירות לאזור הביקורות
+                reviewsSection.scrollIntoView({ 
+                    behavior: 'smooth', // תנועה חלקה ואלגנטית
+                    block: 'start'      // מביא את תחילת האזור לראש המסך
+                });
             });
-            document.body.style.overflow = 'hidden'; 
-        }
-
-        function closeStory() {
-            overlay.classList.remove('active');
-            storyVideo.pause();
-            storyVideo.src = "";
-            document.body.style.overflow = ''; 
-        }
-
-        function nextStory() {
-            if (currentStoryIndex < storySources.length - 1) {
-                currentStoryIndex++;
-                updateStoryVideo();
-            } else {
-                closeStory(); 
-            }
-        }
-
-        function prevStory() {
-            if (currentStoryIndex > 0) {
-                currentStoryIndex--;
-                updateStoryVideo();
-            }
-        }
-
-        function updateStoryVideo() {
-            storyVideo.src = storySources[currentStoryIndex];
-            storyVideo.muted = false;
-            storyVideo.play().catch(err => console.log(err));
-        }
-
-        overlay.addEventListener('click', function(e) {
-            if (e.target === overlay) {
-                closeStory();
-            }
         });
     </script>
+
 </body>
 </html>
