@@ -17,40 +17,46 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     
     <style>
     :root {
-        --black: #0A0A0A;
-        --white: #FAFAFA;
-        --gold-light: #D4AF37;
-        --gold-main: #C9A961;
-        --gold-dark: #A18845;
-        --grey-light: #F5F5F5;
-        --grey-medium: #CCCCCC;
-        --grey-dark: #666666;
+        --bg-deep: #050505;
+        --bg-card: #0D0D0D;
+        --gold: #D4AF37;
+        --gold-light: #F3C653;
+        --gold-dark: #997A26;
+        --text-white: #F9F9F9;
+        --text-gray: #A0A0A0;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--black); line-height: 1.6; overflow-x: hidden; }
+    body { 
+        font-family: 'Heebo', sans-serif; 
+        background: var(--bg-deep); 
+        color: var(--text-white); 
+        line-height: 1.6; 
+        overflow-x: hidden; 
+    }
 
-    /* --- סרגל ניווט (Navigation) --- */
+    /* --- סרגל ניווט (Navigation) על מלא הרוחב --- */
     nav { 
         position: fixed; 
         top: 0; 
         width: 100%; 
-        background: rgba(250, 250, 250, 0.98); 
-        backdrop-filter: blur(20px); 
+        background: rgba(5, 5, 5, 0.95); 
+        backdrop-filter: blur(12px); 
         z-index: 1000; 
-        border-bottom: 2px solid var(--gold-main); 
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2); 
     }
 
     .nav-container { 
-        max-width: 1400px; 
+        width: 100%; 
+        max-width: 100%;
         margin: 0 auto; 
-        padding: 0.8rem 2rem; 
+        padding: 0.9rem 3rem; 
         display: flex; 
         justify-content: space-between; 
         align-items: center; 
@@ -60,100 +66,87 @@
     .nav-right { justify-content: flex-start; } 
     .nav-left { justify-content: flex-end; }
 
-    .bsd { font-size: 0.85rem; font-weight: 600; color: var(--gold-dark); }
+    .bsd { font-size: 0.9rem; font-weight: 600; color: var(--gold); letter-spacing: 1px; }
 
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { color: var(--black); text-decoration: none; font-size: 0.9rem; font-weight: 700; transition: 0.3s; }
-    .nav-links a:hover { color: var(--gold-main); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { color: var(--text-white); text-decoration: none; font-size: 0.9rem; font-weight: 400; transition: 0.3s; }
+    .nav-links a:hover { color: var(--gold); }
 
     .kashrut-mini { 
-        font-size: 0.75rem; 
-        color: var(--gold-dark); 
-        border: 1px solid var(--gold-main); 
-        padding: 0.4rem 0.8rem; 
+        font-size: 0.8rem; 
+        color: var(--gold); 
+        border: 1px solid rgba(212, 175, 55, 0.4); 
+        padding: 0.3rem 0.7rem; 
         border-radius: 3px; 
         white-space: nowrap;
         font-weight: 600;
     }
 
-    /* --- אזור ראשי  (Hero Section) --- */
+    /* --- אזור ראשי (Hero Section) על כל הרוחב --- */
     .hero { 
-        height: 100vh; 
+        min-height: 85vh; 
+        width: 100%;
         position: relative; 
         display: flex; 
         align-items: center; 
         justify-content: center; 
         overflow: hidden; 
-        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img12_main.jpeg');
+        background-image: linear-gradient(rgba(5, 5, 5, 0.7), rgba(5, 5, 5, 0.85)), url('img12_main.jpeg');
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+        padding: 6rem 2rem 2rem 2rem;
     }
 
     .hero-content { 
         position: relative; 
         z-index: 10; 
         text-align: center; 
-        color: var(--white); 
-        padding: 2rem; 
+        color: var(--text-white); 
+        padding: 1rem; 
         width: 100%;
+        max-width: 1100px;
     }
     
     .hero-logo img { 
-        max-width: 280px; 
+        max-width: 260px; 
         width: 100%; 
         height: auto; 
-        margin-top: 2rem; 
-        filter: drop-shadow(0 10px 25px rgba(0,0,0,0.6));
+        margin-top: 1rem; 
+        filter: drop-shadow(0 10px 25px rgba(0,0,0,0.8));
     }
 
-    .price-badge { 
-        background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
-        color: #fff;
-        display: inline-block; 
-        padding: 8px 24px;
-        border-radius: 50px; 
-        font-weight: 700; 
-        font-size: 1.1rem;
-        margin: 1.5rem 0;
-        box-shadow: 0 4px 20px rgba(161, 136, 69, 0.4);
-        animation: pulse 2.5s infinite;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-    @keyframes pulse {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-    }
-
-    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 6vw, 4rem); font-weight: 900; margin-bottom: 1rem; }
-    .hero-description { font-size: 1.1rem; max-width: 700px; margin: 0 auto 2rem; }
-    .hero-phone-number a { font-size: 2.2rem; font-weight: 800; color: var(--gold-main); text-decoration: none; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); display: block; margin-bottom: 1.5rem; }
+    .hero-title { font-family: 'Cinzel', serif; font-size: clamp(2.2rem, 5vw, 4.2rem); font-weight: 700; margin-bottom: 1rem; color: var(--text-white); }
+    .hero-description { font-size: 1.15rem; color: var(--text-gray); max-width: 800px; margin: 0 auto 1.5rem; }
+    .hero-phone-number a { font-size: 2.2rem; font-weight: 700; color: var(--gold); text-decoration: none; display: block; margin-bottom: 1.2rem; }
     
     .hero-cta { 
         display: inline-block; 
-        padding: 1.1rem 2.5rem; 
-        background: linear-gradient(135deg, var(--gold-main), var(--gold-dark));
-        color: var(--white); 
+        padding: 0.9rem 2.5rem;
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        color: #000; 
         text-decoration: none; 
         font-weight: 700; 
-        border-radius: 5px;
+        border-radius: 2px;
         transition: 0.3s; 
+        box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
     }
-    .hero-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+    .hero-cta:hover { transform: translateY(-2px); background: linear-gradient(135deg, var(--gold-light), var(--gold)); }
 
-    /* --- כותרות וקטעים --- */
-    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); color: var(--gold-dark); text-align: center; margin-bottom: 3rem; }
-    section { padding: 5rem 0; }
+    /* --- סקשנים על כל רוחב המסך --- */
+    .section-title { font-family: 'Cinzel', serif; font-size: 2.2rem; color: var(--gold); text-align: center; margin-bottom: 0.3rem; }
+    section { padding: 2.5rem 2rem; width: 100%; max-width: 100%; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 1.5rem; }
 
-    /* --- גלריית וידאו בסגנון סטורי / סטטוס --- */
-    .video-section { background: var(--white); overflow: hidden; }
+    /* --- גלריית וידאו פרוסה לרוחב --- */
+    .video-section { background: var(--bg-deep); overflow: hidden; width: 100%; }
     
     .video-wrapper-outer {
         position: relative;
-        max-width: 1400px;
+        width: 100%;
+        max-width: 100%;
         margin: 0 auto;
-        padding: 0 3.5rem; 
+        padding: 0 4rem; 
     }
 
     .video-scroller {
@@ -161,36 +154,36 @@
         overflow-x: auto; 
         scroll-snap-type: x mandatory;
         gap: 20px;
-        padding: 10px 0 2rem 0;
+        padding: 10px 0 1.5rem 0;
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
     }
     .video-scroller::-webkit-scrollbar { display: none; } 
     
     .video-card {
-        flex: 0 0 260px; 
+        flex: 0 0 280px; 
         scroll-snap-align: start;
-        border-radius: 16px;
+        border-radius: 8px;
         overflow: hidden;
-        background: #000;
-        height: 460px; 
-        border: 3px solid var(--gold-main);
+        background: var(--bg-card);
+        height: 400px; 
+        border: 1px solid rgba(212, 175, 55, 0.2);
         position: relative;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.5);
         cursor: pointer;
         transition: transform 0.3s ease;
     }
-    .video-card:hover { transform: translateY(-5px); }
-    .video-card video { width: 100%; height: 100%; object-fit: contain; background: #000; pointer-events: none; }
+    .video-card:hover { transform: translateY(-5px); border-color: var(--gold); }
+    .video-card video { width: 100%; height: 100%; object-fit: cover; background: #000; pointer-events: none; }
 
     .story-avatar {
         position: absolute;
-        top: 15px;
-        right: 15px;
-        width: 40px;
-        height: 40px;
+        top: 12px;
+        right: 12px;
+        width: 35px;
+        height: 35px;
         border-radius: 50%;
-        border: 2px solid var(--gold-light);
+        border: 1.5px solid var(--gold);
         background: var(--white);
         z-index: 5;
         overflow: hidden;
@@ -199,59 +192,51 @@
 
     .play-hint {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(0, 0, 0, 0.5);
-        color: white;
-        width: 50px;
-        height: 50px;
+        bottom: 15px;
+        left: 15px;
+        background: rgba(212, 175, 55, 0.9);
+        color: #000;
+        width: 35px;
+        height: 35px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.5rem;
+        font-size: 0.9rem;
         z-index: 4;
         pointer-events: none;
-        border: 1px solid rgba(255,255,255,0.3);
+        font-weight: bold;
     }
 
     .scroll-btn {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background: var(--white);
-        border: 2px solid var(--gold-main);
-        color: var(--gold-dark);
+        background: var(--bg-card);
+        border: 1px solid var(--gold);
+        color: var(--gold);
         width: 45px;
         height: 45px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.5rem;
-        font-weight: bold;
+        font-size: 1.3rem;
         cursor: pointer;
         z-index: 100;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         transition: 0.2s ease;
         user-select: none;
     }
-    .scroll-btn:hover {
-        background: var(--gold-main);
-        color: var(--white);
-    }
+    .scroll-btn:hover { background: var(--gold); color: #000; }
     .scroll-btn.btn-right { right: 10px; }
     .scroll-btn.btn-left { left: 10px; }
 
-    /* --- רכיב  הסטוריז במסך מלא --- */
+    /* --- רכיב הסטוריז במסך מלא --- */
     .story-overlay {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.95);
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.96);
         z-index: 3000;
         display: none;
         align-items: center;
@@ -261,90 +246,68 @@
 
     .story-window {
         position: relative;
-        width: 100%;
-        max-width: 450px;
-        height: 100%;
-        max-height: 850px;
+        width: 100%; max-width: 420px; height: 85vh;
         background: #000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        border-radius: 10px;
+        display: flex; align-items: center; justify-content: center;
         overflow: hidden;
+        border: 1px solid var(--gold);
     }
 
     @media (max-width: 768px) {
-        .story-window { max-width: 100%; height: 100%; max-height: 100%; }
+        .story-window { max-width: 100%; height: 100%; border-radius: 0; border: none; }
     }
 
     .story-window video { width: 100%; height: 100%; object-fit: contain; background: #000; }
 
-    /* כפתור הניווט לביקורות בסטורי */
     .btn-to-reviews {
         position: absolute;
-        bottom: 30px;
+        bottom: 25px;
         left: 50%;
         transform: translateX(-50%);
-        background: var(--gold-main);
-        color: white;
-        padding: 10px 20px;
+        background: var(--gold);
+        color: #000;
+        padding: 9px 20px;
         border-radius: 30px;
         font-size: 0.9rem;
         font-weight: 700;
         z-index: 3300;
         text-decoration: none;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         border: none;
         cursor: pointer;
         white-space: nowrap;
     }
 
     .story-nav-zone {
-        position: absolute;
-        top: 0;
-        height: 100%;
-        width: 40%;
-        z-index: 3100;
-        cursor: pointer;
+        position: absolute; top: 0; height: 100%; width: 40%; z-index: 3100; cursor: pointer;
         -webkit-tap-highlight-color: transparent;
     }
     .story-nav-zone.next { right: 0; }
     .story-nav-zone.prev { left: 0; }
 
     .story-close {
-        position: absolute;
-        top: 25px;
-        left: 20px;
-        color: white;
-        font-size: 2.5rem;
-        font-weight: 300;
-        cursor: pointer;
-        z-index: 3200;
-        text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        position: absolute; top: 20px; left: 20px; color: white; font-size: 2.2rem; font-weight: 300; cursor: pointer; z-index: 3200;
     }
     .story-header-main {
-        position: absolute;
-        top: 25px;
-        right: 20px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        z-index: 3200;
+        position: absolute; top: 20px; right: 20px; display: flex; align-items: center; gap: 10px; z-index: 3200;
     }
-    .story-header-main img { width: 35px; height: 35px; border-radius: 50%; border: 1.5px solid var(--gold-main); }
-    .story-header-main span { color: white; font-weight: 700; font-size: 0.95rem; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+    .story-header-main img { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--gold); }
+    .story-header-main span { color: white; font-weight: 600; font-size: 0.9rem; }
 
-    /* --- גלריית תמונות --- */
-    .gallery-section { background: var(--black); color: var(--white); }
-    .gallery-swiper { padding: 0 2rem 3rem; }
-    .gallery-swiper .swiper-slide { height: 400px; border-radius: 8px; overflow: hidden; }
+    /* --- גלריית תמונות פרוסה לרוחב מלא --- */
+    .gallery-section { background: #080808; border-top: 1px solid rgba(212,175,55,0.1); border-bottom: 1px solid rgba(212,175,55,0.1); padding: 2.5rem 0; width: 100%; }
+    .gallery-swiper { width: 100%; padding: 0 2rem 2.5rem; }
+    .gallery-swiper .swiper-slide { height: 420px; border-radius: 6px; overflow: hidden; border: 1px solid rgba(212,175,55,0.15); }
     .gallery-swiper img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; cursor: pointer; }
 
-    /* --- מערכת ביקורות בסרט נע (Infinite Ticker Scroller) --- */
+    /* --- מערכת ביקורות פרוסה לרוחב --- */
     .reviews-section { 
-        background: var(--grey-light); 
-        padding: 5rem 0; 
+        background: var(--bg-deep); 
+        padding: 3.5rem 0; 
         overflow: hidden; 
         position: relative;
+        width: 100%;
     }
     
     .ticker-container {
@@ -355,27 +318,24 @@
         animation: ticker 45s linear infinite;
     }
 
-    .reviews-section:hover .ticker-container {
-        animation-play-state: paused;
-    }
+    .reviews-section:hover .ticker-container { animation-play-state: paused; }
 
     .review-card { 
-        background: var(--white); 
-        padding: 2rem; 
-        border-radius: 15px; 
-        border-top: 4px solid var(--gold-main); 
-        box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
-        width: 350px; 
+        background: var(--bg-card); 
+        padding: 2.2rem; 
+        border-radius: 6px; 
+        border: 1px solid rgba(212, 175, 55, 0.15); 
+        box-shadow: 0 5px 20px rgba(0,0,0,0.3); 
+        width: 360px; 
         flex-shrink: 0;
         display: flex;
         flex-direction: column;
-        justify-content: compact;
     }
     
-    .review-user { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-    .user-avatar { width: 45px; height: 45px; border-radius: 50%; background: var(--gold-main); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; }
-    .stars { color: var(--gold-main); font-size: 1.2rem; margin-bottom: 0.5rem; }
-    .review-text { font-size: 0.95rem; color: #333; line-height: 1.5; }
+    .review-user { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.8rem; }
+    .user-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--gold); color: #000; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+    .stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 0.4rem; }
+    .review-text { font-size: 0.95rem; color: var(--text-gray); line-height: 1.5; }
 
     @keyframes ticker {
         0% { transform: translate3d(0, 0, 0); }
@@ -383,47 +343,39 @@
     }
 
     /* --- CTA וסיום --- */
-    .cta-section { text-align: center; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('img12_main.jpeg'); background-size: cover; color: white; padding: 6rem 2rem; }
-    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
-    .cta-btn { padding: 1.1rem 2.5rem; background: var(--gold-main); color: var(--black); text-decoration: none; font-weight: 800; border-radius: 5px; }
+    .cta-section { text-align: center; background: linear-gradient(rgba(5,5,5,0.8), rgba(5,5,5,0.9)), url('img12_main.jpeg'); background-size: cover; color: white; padding: 5rem 2rem; border-top: 1px solid rgba(212,175,55,0.2); width: 100%; }
+    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; }
+    .cta-btn { padding: 0.9rem 2.5rem; background: var(--gold); color: #000; text-decoration: none; font-weight: 700; border-radius: 2px; box-shadow: 0 5px 20px rgba(212,175,55,0.3); }
 
-    footer { background: var(--black); color: rgba(255,255,255,0.6); padding: 3rem 2rem; text-align: center; font-size: 0.9rem; }
+    footer { background: #020202; color: var(--text-gray); padding: 2.5rem; text-align: center; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; }
     
-    .floating-whatsapp { position: fixed; bottom: 2rem; left: 2rem; width: 65px; height: 65px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 999; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 2px solid white; }
+    .floating-whatsapp { position: fixed; bottom: 1.5rem; left: 1.5rem; width: 55px; height: 55px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 999; box-shadow: 0 5px 20px rgba(0,0,0,0.4); border: 2px solid white; }
 
     /* --- Lightbox לתמונות --- */
-    .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; display: none; align-items: center; justify-content: center; }
+    .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.96); z-index: 4000; display: none; align-items: center; justify-content: center; }
     .lightbox.active { display: flex; }
-    .lightbox img { max-width: 90%; max-height: 80%; border: 3px solid var(--gold-main); }
+    .lightbox img { max-width: 90%; max-height: 80%; border: 1px solid var(--gold); border-radius: 6px; }
     .lightbox-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 3rem; cursor: pointer; }
 
     /* --- התאמות מובייל --- */
     @media (max-width: 768px) {
         .nav-links { display: none; }
-        .hero { background-position: 70% center; }
+        .nav-container { padding: 0.9rem 1.5rem; }
+        .hero { background-position: 70% center; padding: 6rem 1rem 1.5rem 1rem; }
         .hero-logo img { max-width: 180px; }
-        
-        .price-badge { 
-            font-size: 0.85rem; 
-            padding: 6px 12px; 
-            white-space: nowrap; 
-            display: inline-flex; 
-            align-items: center; 
-            justify-content: center;
-            gap: 5px; 
-        }
 
-        .hero-title { font-size: 1.9rem; }
+        .hero-title { font-size: 2.2rem; }
         .hero-phone-number a { font-size: 1.8rem; }
         
         .scroll-btn { display: none; }
         .video-wrapper-outer { padding: 0 1rem; }
         
-        .video-card { flex: 0 0 75%; height: 420px; }
-        .video-scroller { padding: 10px 0 1.5rem 0; gap: 10px; }
+        .video-card { flex: 0 0 75%; height: 380px; }
+        .video-scroller { padding: 10px 0 1rem 0; gap: 10px; }
         
         .review-card { width: 300px; padding: 1.5rem; }
         .ticker-container { animation-duration: 30s; }
+        section { padding: 2rem 1rem; }
     }
     </style>
 </head>
@@ -444,7 +396,6 @@
     <section class="hero">
         <div class="hero-content">
             <div class="hero-logo"><img src="logo_new.png" alt="ספינג׳ לי"></div>
-            <div class="price-badge">מחירים מפתיעים ומשתלמים! ✨</div>
             <h1 class="hero-title">דוכן ספינג' ומופלטה מרוקאית</h1>
             <p class="hero-description">החגיגה האותנטית לאירוע שלכם: ספינג' זהוב ואוורירי ומופלטה חמה הנעשים במקום עם ניחוח וטעם של פעם.</p>
             <div class="hero-phone-number"><a href="tel:0545576767">054-5576767</a></div>
@@ -453,15 +404,16 @@
     </section>
 
     <section class="video-section">
-        <h2 class="section-title">מהחוויות בשמחות שלכם</h2>
+        <div class="section-header">
+            <h2 class="section-title">מהחוויות בשמחות שלכם</h2>
+            <p style="color: var(--text-gray); font-size: 1rem; margin-top: 0.4rem;">הצצו לרגעים השמחים והמתוקים מהשטח</p>
+        </div>
         
         <div class="video-wrapper-outer">
             <button class="scroll-btn btn-right" onclick="scrollVideos('right')">❮</button>
             <button class="scroll-btn btn-left" onclick="scrollVideos('left')">❯</button>
 
            <div class="video-scroller" id="videoScroller">
-
-                <!-- NEW VIDEOS (12, 13, 14, 15, 16) -->
                 <div class="video-card" onclick="openStory(0)">
                     <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
                     <div class="play-hint">▶</div>
@@ -492,7 +444,6 @@
                     <video playsinline loop muted autoplay><source src="video16.mp4" type="video/mp4"></video>
                 </div>
             
-                <!-- EXISTING VIDEOS (Shifted Indices) -->
                 <div class="video-card" onclick="openStory(12)">
                     <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
                     <div class="play-hint">▶</div>
@@ -540,7 +491,6 @@
                     <div class="play-hint">▶</div>
                     <video playsinline loop muted autoplay><source src="video5.mp4" type="video/mp4"></video>
                 </div>
-            
             </div>
         </div>
     </section>
@@ -555,16 +505,18 @@
             <div class="story-nav-zone prev" onclick="prevStory()"></div>
             <div class="story-nav-zone next" onclick="nextStory()"></div>
             <video id="storyVideo" playsinline loop></video>
-            <!-- הוספת הכפתור כאן -->
             <a href="#reviews" class="btn-to-reviews" onclick="closeStory()">לצפיה בביקורות שלנו</a>
         </div>
     </div>
 
     <section class="gallery-section" id="gallery">
-        <div class="section-header"><h2 class="section-title" style="color: var(--gold-main);">הפינוקים שלנו</h2></div>
+        <div class="section-header">
+            <h2 class="section-title">הפינוקים שלנו</h2>
+            <p style="color: var(--text-gray); font-size: 1rem; margin-top: 0.4rem;">טעם של פעם בנראות מוקפדת</p>
+        </div>
         <div class="swiper gallery-swiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="img24.jpeg" alt=" דוכן ספינג'" onclick="openLightbox(this.src)"></div>
+                <div class="swiper-slide"><img src="img24.jpeg" alt="דוכן ספינג'" onclick="openLightbox(this.src)"></div>
                 <div class="swiper-slide"><img src="img23.jpeg" alt="דוכן ספינג'" onclick="openLightbox(this.src)"></div>
                 <div class="swiper-slide"><img src="img21.jpeg" alt="דוכן ספינג'" onclick="openLightbox(this.src)"></div>
                 <div class="swiper-slide"><img src="img15.jpeg" alt="מופלטות חמות באירוע" onclick="openLightbox(this.src)"></div>
@@ -588,7 +540,10 @@
     </section>
 
     <section class="reviews-section" id="reviews">
-        <h2 class="section-title">מה הלקוחות אומרים</h2>
+        <div class="section-header">
+            <h2 class="section-title">מה הלקוחות אומרים</h2>
+            <p style="color: var(--text-gray); font-size: 1rem; margin-top: 0.4rem;">החוויות של אלו שכבר חגגו איתנו</p>
+        </div>
         <div class="ticker-container" id="tickerContainer">
             <div class="review-card">
                 <div class="review-user"><div class="user-avatar">ס</div><h4>סיון נחליאל</h4></div>
@@ -644,10 +599,10 @@
     </section>
 
     <section class="cta-section" id="contact">
-        <h2 class="section-title" style="color: white;">רוצים להמתיק את האירוע?</h2>
-        <p>נשמח להעניק לאורחים שלכם חוויה אותנטית, טעימה ושמחה!</p>
+        <h2 class="section-title" style="color: var(--gold);">רוצים להמתיק את האירוע?</h2>
+        <p style="color: var(--text-gray); margin-bottom: 1.5rem; font-size: 1.1rem;">נשמח להעניק לאורחים שלכם חוויה אותנטית, טעימה ושמחה!</p>
         <div class="cta-buttons">
-            <a href="https://wa.me/972545576767" class="cta-btn" style="background: #25D366; color: white;">WhatsApp</a>
+            <a href="https://wa.me/972545576767" class="cta-btn" style="background: #25D366; color: #fff;">WhatsApp</a>
             <a href="tel:0545576767" class="cta-btn">חייגו עכשיו</a>
         </div>
     </section>
@@ -657,7 +612,7 @@
     </footer>
 
     <a href="https://wa.me/972545576767" class="floating-whatsapp">
-        <svg viewBox="0 0 24 24" style="width:35px; fill:white;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <svg viewBox="0 0 24 24" style="width:30px; fill:white;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
 
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
@@ -674,7 +629,7 @@
             loop: true, slidesPerView: 1, spaceBetween: 20,
             autoplay: { delay: 3000 },
             pagination: { el: '.swiper-pagination', clickable: true },
-            breakpoints: { 768: { slidesPerView: 3 } }
+            breakpoints: { 768: { slidesPerView: 4 } }
         });
 
         function openLightbox(src) {
@@ -687,8 +642,7 @@
 
         function scrollVideos(direction) {
             const scroller = document.getElementById('videoScroller');
-            const scrollAmount = 300; 
-            
+            const scrollAmount = 350; 
             if (direction === 'right') {
                 scroller.scrollBy({ left: scrollAmount, behavior: 'smooth' });
             } else {
@@ -697,22 +651,8 @@
         }
 
        const storySources = [
-            // New .mp4 videos (Indices 0 - 4)
-            "video12.mp4", // index 0
-            "video13.mp4", // index 1
-            "video14.mp4", // index 2
-            "video15.mp4", // index 3
-            "video16.mp4", // index 4
-        
-            // Existing videos (Indices 5 - 12)
-            "video9.mp4",  // index 5
-            "video4.mp4",  // index 6
-            "video5.mp4",  // index 7
-            "video6.mp4",  // index 8
-            "video7.mp4",  // index 9
-            "video8.mp4",  // index 10
-            "video10.mp4", // index 11
-            "video11.mp4"  // index 12
+            "video12.mp4", "video13.mp4", "video14.mp4", "video15.mp4", "video16.mp4",
+            "video9.mp4", "video4.mp4", "video5.mp4", "video6.mp4", "video7.mp4", "video8.mp4", "video10.mp4", "video11.mp4"
         ];
                 
         let currentStoryIndex = 0;
