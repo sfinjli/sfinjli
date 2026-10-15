@@ -158,7 +158,7 @@
     section { padding: 2.5rem 2rem; width: 100%; max-width: 100%; margin: 0 auto; }
     .section-header { text-align: center; margin-bottom: 1.5rem; }
 
-    /* --- גלריית וידאו פרוסה לרוחב --- */
+    /* --- גלריית וידאו פרוסה לרוחב עם משיכה (Drag/Swipe) --- */
     .video-section { background: var(--bg-deep); overflow: hidden; width: 100%; }
     
     .video-wrapper-outer {
@@ -177,7 +177,10 @@
         padding: 10px 0 1.5rem 0;
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
+        cursor: grab;
+        user-select: none;
     }
+    .video-scroller:active { cursor: grabbing; }
     .video-scroller::-webkit-scrollbar { display: none; } 
     
     .video-card {
@@ -359,7 +362,7 @@
         transform: scale(1.05);
     }
 
-    /* --- מערכת ביקורות פרוסה לרוחב --- */
+    /* --- מערכת ביקורות פרוסה לרוחב עם משיכה (Drag/Swipe) --- */
     .reviews-section { 
         background: var(--bg-deep); 
         padding: 3.5rem 0; 
@@ -368,15 +371,24 @@
         width: 100%;
     }
     
+    .ticker-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        cursor: grab;
+        user-select: none;
+        padding: 1rem 0;
+    }
+    .ticker-wrapper::-webkit-scrollbar { display: none; }
+    .ticker-wrapper:active { cursor: grabbing; }
+
     .ticker-container {
         display: flex;
         width: max-content;
         gap: 2rem;
-        padding: 1rem 0;
-        animation: ticker 45s linear infinite;
+        /* הוסר האנימציה האוטומטית כדי לאפשר משיכה חופשית של המשתמש ימינה ושמאלה */
     }
-
-    .reviews-section:hover .ticker-container { animation-play-state: paused; }
 
     .review-card { 
         background: var(--bg-card); 
@@ -394,11 +406,6 @@
     .user-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--gold); color: #000; display: flex; align-items: center; justify-content: center; font-weight: 700; }
     .stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 0.4rem; }
     .review-text { font-size: 0.95rem; color: var(--text-gray); line-height: 1.5; }
-
-    @keyframes ticker {
-        0% { transform: translate3d(0, 0, 0); }
-        100% { transform: translate3d(50%, 0, 0); } 
-    }
 
     /* --- CTA וסיום --- */
     .cta-section { text-align: center; background: var(--bg-card); color: white; padding: 5rem 2rem; border-top: 1px solid rgba(212,175,55,0.2); width: 100%; }
@@ -440,7 +447,6 @@
         }
         
         .review-card { width: 300px; padding: 1.5rem; }
-        .ticker-container { animation-duration: 30s; }
         section { padding: 2rem 1rem; }
     }
     </style>
@@ -603,116 +609,118 @@
             <h2 class="section-title">מה הלקוחות אומרים</h2>
             <p style="color: var(--text-gray); font-size: 1rem; margin-top: 0.4rem;">החוויות של אלו שכבר חגגו איתנו</p>
         </div>
-        <div class="ticker-container" id="tickerContainer">
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">M</div><h4>Meital Shnider</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">הספינג׳ והמופלטה הכי טעימה שיש!! כל האורחים התעלפו !</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">ע</div><h4>עוז פרבין</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">טעים בטרוף</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">ר</div><h4>רותם חי</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">וואו היה מדהים! טעים מדוייק אווירה טובה ממליצה ברמותתתתתתת 🥰</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">G</div><h4>Galit zakay</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">עליזה הנהדרת והנעימה, העמידה דוכן לתפארת באירוע חינה אצלינו בבית. הכול במקצועיות, בשקט וענווה. הספינג׳ הכי טוב שאכלנו, והכול בשפע. ממליצה בחום! בחירה מעולה שלנו.</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">ת</div><h4>תמיר</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">מושלם, הספינג' והמופלטות הגיעו במהירות, חם וטרי פשוט מושלם, ועליזה היקרה כמות המחמאות שקיבלנו על התענוג שהכנת היה אינסופי, ואת אישיות מדהימה לב ענק...אוהבים מלא משפחת גנות.</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">ט</div><h4>טל כהן</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">היה ארוע מושלם !! אפילו בעל המקום ניגש לשאול אותי מאיפה הבאתי אותה ואמר זה ספינג בליגה אחרת לגמרי ! אני בטוחה שאנחנו נמשיך להיפגש ולהתראות בעוד ארועים שנעשה ! הכל היה באמת באמת מושלם ! אין מילים בפי להודות שהגעת יום לפני ראש השנה , בהתראה כל כך קצרה ונשארת איתנו עד כל כך מאוחר , יבורכו ידיך על העשיה והלב הטוב !</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">מ</div><h4>מירי כרמל</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">עמדה מושלמת לאירוע אנשים עפו על זה טעים טעים טעים שירות מצוין לאורך כל הדרך עליזה דאגה שאהיה רגועה ממש ממליצה ממש ❤️</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">A</div><h4>Ayelet Atias</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">אין לי מילים לתאר איך זה הקפיץ לי את האירוע העמדה פשוט וואו אחד גדול יפיפיה ! והשירות עם החיוך עושה הכל ושלא נדבר על הריחות והטעמים אנשים פשו עפו על זה הבחירה הכי נכונה שיש</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">מ</div><h4>מאיה אליאס</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">מקצוענית ואלופה . הגיעה בזמן עם כל הציוד הנדרש לשולחן מהמם, לא ביקשה דבר, בשקט ובנחת הכינה הכל והספינג חלומי. טרי, פריך, לא ספוג בשמן , טעים טעים כל האורחים התלהבו ממש מוסיף מאוד לארוע והכל במחיר הוגן. מומלצת בחום ❤️</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">נ</div><h4>ניב ניב</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">אין מילים לתאר פשוט מדהים הכל הכל מושלם</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">S</div><h4>Shiri Ohayon</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">עליזה , אורה ורן היו מושלמים!! הכל היה מדויק , טעים בטירוף, צוות שעובד עם הלב והנשמה , מומלצים בחום🙏</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">e</div><h4>eden hassin</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">עמדה של ספינג ומופלטות מהממת! זה עשה את כל האירוע של החינה וכולם לא הפסיקו להחמיא על היופי והטעם❤️</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">ס</div><h4>סיון נחליאל</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">הלוואי והיו עוד כוכבים לדרג את הדוכן ספינג׳ ומופלטה של עליזה. עליזה ואורה הגיעו כמו קוסמות בשקט הקימו דוכן מדהים לפליאת המוזמנים (הפתעה לכלה חובבת הספינג׳) והכינו בשפע, הכל היה טעים, טרי, נקי, מסודר פשוט מושלם ומשדרג כל אירוע וחינה במיוחד. ספינג׳ לי הבחירה הנכונה לאירוע שלכם.</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">T</div><h4>Tirtza Hagai</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">היה טעים ומעולה.</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">S</div><h4>shaylee Barzilay</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">ידיי זהבבב הכל היה מושלם והשירות הכי מדהים!</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">מ</div><h4>Mazal Find</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">עשיתי אירוע של הפרשת חלה לביתי יחד עם חינה, הזמנתי את עליזה...</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">E</div><h4>Erez Kirat</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">חוויה פשוט מדהימה! חגגנו מימונה מטורפת עם הספינג'ים הכי טעימים שאכלתי בחיי... הכל מוגש עם חיוך, בשפע ובאהבה רבה. מומלצים בחום!</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">י</div><h4>ירדן הכהן- מצליח</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">עליזה המדהימה הגיעה אלינו לדוכן של 600 ספינג׳ים! מעבר לטעם ולטריות, זכינו בשירות נעים עם חיוך. שילוב מושלם בין שירות למקצועיות!</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">ה</div><h4>הודיה שרון</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">חייבת להמליץ! הגיעה אלינו לבית ספר ותיקתקה 20 קילו ספינג׳ הכי טעים שאכלנווו, הכל נקי ומסודר נהנינו ממש ❤️❤️</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">י</div><h4>יהונתן מור</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">ממממממששששש טעים ממליץ</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">ל</div><h4>ליאור פדלון</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">טעים, טרי בצק מושלם. אין על ספינג' בעולם ועליזה מקסימה ושירותית</p>
-            </div>
-            <div class="review-card">
-                <div class="review-user"><div class="user-avatar">ש</div><h4>שני בוגטוס</h4></div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">וואו!! טעם גן עדן, יש תוספות גאוניות של זילוף שוקולד, אגוזים ועוד.. השולחן מהמם ומשתלב כמו תפאורה באירוע שירות מצויין! עליזה כל הזמן מחייכת ומסבירה פנים, מומלץ בחום!!!</p>
+        <div class="ticker-wrapper" id="reviewsWrapper">
+            <div class="ticker-container" id="tickerContainer">
+                <div class="review-card">
+                    <div class="review-user"><div class="user-avatar">M</div><h4>Meital Shnider</h4></div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">הספינג׳ והמופלטה הכי טעימה שיש!! כל האורחים התעלפו !</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-user"><div class="user-avatar">ע</div><h4>עוז פרבין</h4></div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">טעים בטרוף</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-user"><div class="user-avatar">ר</div><h4>רותם חי</h4></div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">וואו היה מדהים! טעים מדוייק אווירה טובה ממליצה ברמותתתתתתת 🥰</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-user"><div class="user-avatar">G</div><h4>Galit zakay</h4></div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">עליזה הנהדרת והנעימה, העמידה דוכן לתפארת באירוע חינה אצלינו בבית. הכול במקצועיות, בשקט וענווה. הספינג׳ הכי טוב שאכלנו, והכול בשפע. ממליצה בחום! בחירה מעולה שלנו.</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-user"><div class="user-avatar">ת</div><h4>תמיר</h4></div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">מושלם, הספינג' והמופלטות הגיעו במהירות, חם וטרי פשוט מושלם, ועליזה היקרה כמות המחמאות שקיבלנו על התענוג שהכנת היה אינסופי, ואת אישיות מדהימה לב ענק...אוהבים מלא משפחת גנות.</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-user"><div class="user-avatar">ט</div><h4>טל כהן</h4></div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">היה ארוע מושלם !! אפילו בעל המקום ניגש לשאול אותי מאיפה הבאתי אותה ואמר זה ספינג בליגה אחרת לגמרי ! אני בטוחה שאנחנו נמשיך להיפגש ולהתראות בעוד ארועים שנעשה ! הכל היה באמת באמת מושלם ! אין מילים בפי להודות שהגעת יום לפני ראש השנה , בהתראה כל כך קצרה ונשארת איתנו עד כל כך מאוחר , יבורכו ידיך על העשיה והלב הטוב !</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-user"><div class="user-avatar">מ</div><h4>מירי כרמל</h4></div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">עמדה מושלמת לאירוע אנשים עפו על זה טעים טעים טעים שירות מצוין לאורך כל הדרך עליזה דאגה שאהיה רגועה ממש ממליצה ממש ❤️</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-user"><div class="user-avatar">A</div><h4>Ayelet Atias</h4></div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">אין לי מילים לתאר איך זה הקפיץ לי את האירוע העמדה פשוט וואו אחד גדול יפיפיה ! והשירות עם החיוך עושה הכל ושלא נדבר על הריחות והטעמים אנשים פשו עפו על זה הבחירה הכי נכונה שיש</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-user"><div class="user-avatar">מ</div><h4>מאיה אליאס</h4></div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">מקצוענית ואלופה . הגיעה בזמן עם כל הציוד הנדרש לשולחן מהמם, לא ביקשה דבר, בשקט ובנחת הכינה הכל והספינג חלומי. טרי, פריך, לא ספוג בשמן , טעים טעים כל האורחים התלהבו ממש מוסיף מאוד לארוע והכל במחיר הוגן. מומלצת בחום ❤️</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-user"><div class="user-avatar">נ</div><h4>ניב ניב</h4></div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">אין מילים לתאר פשוט מדהים הכל הכל מושלם</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-user"><div class="user-avatar">S</div><h4>Shiri Ohayon</h4></div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">עליזה , אורה ורן היו מושלמים!! הכל היה מדויק , טעים בטירוף, צוות שעובד עם הלב והנשמה , מומלצים בחום🙏</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-user"><div class="user-avatar">e</div><h4>eden hassin</h4></div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">עמדה של ספינג ומופלטות מהממת! זה עשה את כל האירוע של החינה וכולם לא הפסיקו להחמיא על היופי והטעם❤️</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-user"><div class="user-avatar">ס</div><h4>סיון נחליאל</h4></div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">הלוואי והיו עוד כוכבים לדרג את הדוכן ספינג׳ ומופלטה של עליזה. עליזה ואורה הגיעו כמו קוסמות בשקט הקימו דוכן מדהים לפליאת המוזמנים (הפתעה לכלה חובבת הספינג׳) והכינו בשפע, הכל היה טעים, טרי, נקי, מסודר פשוט מושלם ומשדרג כל אירוע וחינה במיוחד. ספינג׳ לי הבחירה הנכונה לאירוע שלכם.</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-user"><div class="user-avatar">T</div><h4>Tirtza Hagai</h4></div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">היה טעים ומעולה.</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-user"><div class="user-avatar">S</div><h4>shaylee Barzilay</h4></div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">ידיי זהבבב הכל היה מושלם והשירות הכי מדהים!</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-user"><div class="user-avatar">מ</div><h4>Mazal Find</h4></div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">עשיתי אירוע של הפרשת חלה לביתי יחד עם חינה, הזמנתי את עליזה...</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-user"><div class="user-avatar">E</div><h4>Erez Kirat</h4></div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">חוויה פשוט מדהימה! חגגנו מימונה מטורפת עם הספינג'ים הכי טעימים שאכלתי בחיי... הכל מוגש עם חיוך, בשפע ובאהבה רבה. מומלצים בחום!</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-user"><div class="user-avatar">י</div><h4>ירדן הכהן- מצליח</h4></div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">עליזה המדהימה הגיעה אלינו לדוכן של 600 ספינג׳ים! מעבר לטעם ולטריות, זכינו בשירות נעים עם חיוך. שילוב מושלם בין שירות למקצועיות!</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-user"><div class="user-avatar">ה</div><h4>הודיה שרון</h4></div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">חייבת להמליץ! הגיעה אלינו לבית ספר ותיקתקה 20 קילו ספינג׳ הכי טעים שאכלנווו, הכל נקי ומסודר נהנינו ממש ❤️❤️</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-user"><div class="user-avatar">י</div><h4>יהונתן מור</h4></div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">ממממממששששש טעים ממליץ</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-user"><div class="user-avatar">ל</div><h4>ליאור פדלון</h4></div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">טעים, טרי בצק מושלם. אין על ספינג' בעולם ועליזה מקסימה ושירותית</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-user"><div class="user-avatar">ש</div><h4>שני בוגטוס</h4></div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">וואו!! טעם גן עדן, יש תוספות גאוניות של זילוף שוקולד, אגוזים ועוד.. השולחן מהמם ומשתלב כמו תפאורה באירוע שירות מצויין! עליזה כל הזמן מחייכת ומסבירה פנים, מומלץ בחום!!!</p>
+                </div>
             </div>
         </div>
     </section>
@@ -740,8 +748,39 @@
     </div>
 
     <script>
-        const ticker = document.getElementById('tickerContainer');
-        ticker.innerHTML += ticker.innerHTML;
+        // פונקציונליות משיכה (Drag / Swipe) בעכבר ובמגע לקרוסלות
+        function enableDragScroll(sliderId) {
+            const slider = document.getElementById(sliderId);
+            if (!slider) return;
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                slider.classList.add('active');
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+                slider.classList.remove('active');
+            });
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                slider.classList.remove('active');
+            });
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2; // מהירות גרירה
+                slider.scrollLeft = scrollLeft - walk;
+            });
+        }
+
+        enableDragScroll('videoScroller');
+        enableDragScroll('reviewsWrapper');
 
         function openLightbox(src) {
             document.getElementById('lightbox-img').src = src;
