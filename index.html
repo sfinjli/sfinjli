@@ -82,9 +82,9 @@
         font-weight: 600;
     }
 
-    /* --- אזור ראשי (Hero Section) עם מרווחים צמודים --- */
+    /* --- אזור ראשי (Hero Section) מוקטן רווח מגלריית הסרטונים --- */
     .hero { 
-        min-height: 85vh; 
+        min-height: auto; 
         width: 100%;
         position: relative; 
         display: flex; 
@@ -92,7 +92,7 @@
         justify-content: center; 
         overflow: hidden; 
         background: var(--bg-deep); 
-        padding: 3.5rem 2rem 2rem 2rem; 
+        padding: 3.5rem 2rem 0.5rem 2rem; 
     }
 
     .hero-content { 
@@ -100,7 +100,7 @@
         z-index: 10; 
         text-align: center; 
         color: var(--text-white); 
-        padding: 0 1rem 1rem 1rem; 
+        padding: 0 1rem 0.5rem 1rem; 
         width: 100%;
         max-width: 1100px;
     }
@@ -155,11 +155,11 @@
 
     /* --- סקשנים על כל רוחב המסך --- */
     .section-title { font-family: 'Cinzel', serif; font-size: 2.2rem; color: var(--gold); text-align: center; margin-bottom: 0.3rem; }
-    section { padding: 2.5rem 2rem; width: 100%; max-width: 100%; margin: 0 auto; }
+    section { padding: 1.5rem 2rem 2.5rem 2rem; width: 100%; max-width: 100%; margin: 0 auto; }
     .section-header { text-align: center; margin-bottom: 1.5rem; }
 
     /* --- גלריית וידאו פרוסה לרוחב עם משיכה (Drag/Swipe) --- */
-    .video-section { background: var(--bg-deep); overflow: hidden; width: 100%; }
+    .video-section { background: var(--bg-deep); overflow: hidden; width: 100%; padding-top: 1rem; }
     
     .video-wrapper-outer {
         position: relative;
@@ -425,7 +425,7 @@
     @media (max-width: 768px) {
         .nav-links { display: none; }
         .nav-container { padding: 0.9rem 1.5rem; }
-        .hero { padding: 3.5rem 1rem 1.5rem 1rem; }
+        .hero { padding: 3.5rem 1rem 0.5rem 1rem; }
         .hero-logo img { max-width: 220px; margin-top: -1.5rem; }
 
         .hero-title { font-size: 2.2rem; }
@@ -446,7 +446,7 @@
         }
         
         .review-card { width: 300px; padding: 1.5rem; }
-        section { padding: 2rem 1rem; }
+        section { padding: 1.5rem 1rem; }
     }
     </style>
 </head>
