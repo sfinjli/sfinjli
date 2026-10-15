@@ -82,7 +82,7 @@
         font-weight: 600;
     }
 
-    /* --- אזור ראשי (Hero Section) עם הרמת הלוגו למעלה --- */
+    /* --- אזור ראשי (Hero Section) עם מרווחים צמודים --- */
     .hero { 
         min-height: 85vh; 
         width: 100%;
@@ -92,7 +92,7 @@
         justify-content: center; 
         overflow: hidden; 
         background: var(--bg-deep); 
-        padding: 4.5rem 2rem 2rem 2rem; /* צומצם הרווח העליון כך שהלוגו יעלה גבוה יותר */
+        padding: 4.5rem 2rem 2rem 2rem; 
     }
 
     .hero-content { 
@@ -109,14 +109,36 @@
         max-width: 260px; 
         width: 100%; 
         height: auto; 
-        margin-top: -1rem; /* מרים את הלוגו מעט כלפי מעלה לכיוון התפריט */
-        margin-bottom: 0.5rem;
+        margin-top: -1rem; 
+        margin-bottom: 0.2rem;
         filter: drop-shadow(0 10px 25px rgba(0,0,0,0.8));
     }
 
-    .hero-title { font-family: 'Cinzel', serif; font-size: clamp(2.2rem, 5vw, 4.2rem); font-weight: 700; margin-bottom: 1rem; color: var(--text-white); }
-    .hero-description { font-size: 1.15rem; color: var(--text-gray); max-width: 800px; margin: 0 auto 1.5rem; }
-    .hero-phone-number a { font-size: 2.2rem; font-weight: 700; color: var(--gold); text-decoration: none; display: block; margin-bottom: 1.2rem; }
+    .hero-title { 
+        font-family: 'Cinzel', serif; 
+        font-size: clamp(2.2rem, 5vw, 4.2rem); 
+        font-weight: 700; 
+        margin-bottom: 0.4rem; /* צומצם משמעותית */
+        color: var(--text-white); 
+        line-height: 1.1;
+    }
+
+    .hero-description { 
+        font-size: 1.15rem; 
+        color: var(--text-gray); 
+        max-width: 800px; 
+        margin: 0 auto 0.6rem; /* צומצם משמעותית */
+    }
+
+    .hero-phone-number a { 
+        font-size: 2.2rem; 
+        font-weight: 700; 
+        color: var(--gold); 
+        text-decoration: none; 
+        display: block; 
+        margin-bottom: 1rem; /* צומצם משמעותית */
+        line-height: 1.1;
+    }
     
     .hero-cta { 
         display: inline-block; 
@@ -359,7 +381,7 @@
     @media (max-width: 768px) {
         .nav-links { display: none; }
         .nav-container { padding: 0.9rem 1.5rem; }
-        .hero { padding: 5rem 1rem 1.5rem 1rem; }
+        .hero { padding: 4.5rem 1rem 1.5rem 1rem; }
         .hero-logo img { max-width: 170px; margin-top: -0.5rem; }
 
         .hero-title { font-size: 2.2rem; }
