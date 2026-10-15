@@ -68,7 +68,7 @@
 
     .bsd { font-size: 0.9rem; font-weight: 600; color: var(--gold); letter-spacing: 1px; }
 
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a { color: var(--text-white); text-decoration: none; font-size: 0.9rem; font-weight: 400; transition: 0.3s; }
     .nav-links a:hover { color: var(--gold); }
 
@@ -451,7 +451,8 @@
         <div class="nav-container">
             <div class="nav-right"><span class="bsd">בס"ד</span></div>
             <ul class="nav-links">
-                <li><a href="#gallery">גלריה</a></li>
+                <li><a href="#videos">סרטונים</a></li>
+                <li><a href="#gallery">תמונות</a></li>
                 <li><a href="#reviews">ביקורות</a></li>
                 <li><a href="#contact">הזמנות</a></li>
             </ul>
@@ -469,7 +470,7 @@
         </div>
     </section>
 
-    <section class="video-section">
+    <section class="video-section" id="videos">
         <div class="section-header">
             <h2 class="section-title">מהחוויות בשמחות שלכם</h2>
             <p style="color: var(--text-gray); font-size: 1rem; margin-top: 0.4rem;">הצצו לרגעים השמחים והמתוקים מהשטח</p>
@@ -510,49 +511,49 @@
                     <video playsinline loop muted autoplay><source src="video16.mp4" type="video/mp4"></video>
                 </div>
             
-                <div class="video-card" onclick="openStory(12)">
+                <div class="video-card" onclick="openStory(5)">
                     <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
                     <div class="play-hint">▶</div>
                     <video playsinline loop muted autoplay><source src="video11.mp4" type="video/mp4"></video>
                 </div>
             
-                <div class="video-card" onclick="openStory(11)">
+                <div class="video-card" onclick="openStory(6)">
                     <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
                     <div class="play-hint">▶</div>
                     <video playsinline loop muted autoplay><source src="video10.mp4" type="video/mp4"></video>
                 </div>
             
-                <div class="video-card" onclick="openStory(5)">
+                <div class="video-card" onclick="openStory(7)">
                     <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
                     <div class="play-hint">▶</div>
                     <video playsinline loop muted autoplay><source src="video9.mp4" type="video/mp4"></video>
                 </div>
             
-                <div class="video-card" onclick="openStory(9)">
+                <div class="video-card" onclick="openStory(8)">
                     <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
                     <div class="play-hint">▶</div>
                     <video playsinline loop muted autoplay><source src="video7.mp4" type="video/mp4"></video>
                 </div>
             
-                <div class="video-card" onclick="openStory(10)">
+                <div class="video-card" onclick="openStory(9)">
                     <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
                     <div class="play-hint">▶</div>
                     <video playsinline loop muted autoplay><source src="video8.mp4" type="video/mp4"></video>
                 </div>
             
-                <div class="video-card" onclick="openStory(8)">
+                <div class="video-card" onclick="openStory(10)">
                     <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
                     <div class="play-hint">▶</div>
                     <video playsinline loop muted autoplay><source src="video6.mp4" type="video/mp4"></video>
                 </div>
             
-                <div class="video-card" onclick="openStory(6)">
+                <div class="video-card" onclick="openStory(11)">
                     <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
                     <div class="play-hint">▶</div>
                     <video playsinline loop muted autoplay><source src="video4.mp4" type="video/mp4"></video>
                 </div>
             
-                <div class="video-card" onclick="openStory(7)">
+                <div class="video-card" onclick="openStory(12)">
                     <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
                     <div class="play-hint">▶</div>
                     <video playsinline loop muted autoplay><source src="video5.mp4" type="video/mp4"></video>
@@ -585,19 +586,14 @@
             <div class="gallery-item"><img src="img24.jpeg" alt="דוכן ספינג'" onclick="openLightbox(this.src)"></div>
             <div class="gallery-item"><img src="img23.jpeg" alt="דוכן ספינג'" onclick="openLightbox(this.src)"></div>
             <div class="gallery-item"><img src="img21.jpeg" alt="דוכן ספינג'" onclick="openLightbox(this.src)"></div>
-            <div class="gallery-item"><img src="img15.jpeg" alt="מופלטות חמות באירוע" onclick="openLightbox(this.src)"></div>
             <div class="gallery-item"><img src="img11.jpeg" alt="ספינג' חם" onclick="openLightbox(this.src)"></div>
             <div class="gallery-item"><img src="img12.jpeg" alt="מופלטה מרוקאית" onclick="openLightbox(this.src)"></div>
-            <div class="gallery-item"><img src="img22.jpg" alt="מופלטה מרוקאית" onclick="openLightbox(this.src)"></div>
             <div class="gallery-item"><img src="img16.jpeg" alt="מופלטות חמות באירוע" onclick="openLightbox(this.src)"></div>
-            <div class="gallery-item"><img src="img1.jpg" alt="מופלטות חמות באירוע" onclick="openLightbox(this.src)"></div>
             <div class="gallery-item"><img src="img2.jpeg" alt="דוכן ספינג' מרוקאי" onclick="openLightbox(this.src)"></div>
             <div class="gallery-item"><img src="img3.jpeg" alt="דוכן מרוקאי" onclick="openLightbox(this.src)"></div>
             <div class="gallery-item"><img src="img17.jpeg" alt="דוכן מרוקאי" onclick="openLightbox(this.src)"></div>
             <div class="gallery-item"><img src="img6.jpeg" alt="ספינג' טרי" onclick="openLightbox(this.src)"></div>
-            <div class="gallery-item"><img src="img18.jpeg" alt="דוכן ספינג'" onclick="openLightbox(this.src)"></div>
             <div class="gallery-item"><img src="img13.jpeg" alt="עמדת מתוקים" onclick="openLightbox(this.src)"></div>
-            <div class="gallery-item"><img src="img14.jpeg" alt="חגיגה מרוקאית" onclick="openLightbox(this.src)"></div>
             <div class="gallery-item"><img src="img19.jpeg" alt="פינוקים מרוקאים" onclick="openLightbox(this.src)"></div>
             <div class="gallery-item"><img src="img20.jpeg" alt="ספינג'לי" onclick="openLightbox(this.src)"></div>
         </div>
@@ -708,7 +704,7 @@
 
        const storySources = [
             "video12.mp4", "video13.mp4", "video14.mp4", "video15.mp4", "video16.mp4",
-            "video9.mp4", "video4.mp4", "video5.mp4", "video6.mp4", "video7.mp4", "video8.mp4", "video10.mp4", "video11.mp4"
+            "video11.mp4", "video10.mp4", "video9.mp4", "video7.mp4", "video8.mp4", "video6.mp4", "video4.mp4", "video5.mp4"
         ];
                 
         let currentStoryIndex = 0;
