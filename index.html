@@ -387,7 +387,6 @@
         display: flex;
         width: max-content;
         gap: 2rem;
-        /* הוסר האנימציה האוטומטית כדי לאפשר משיכה חופשית של המשתמש ימינה ושמאלה */
     }
 
     .review-card { 
@@ -478,8 +477,7 @@
 
     <section class="video-section" id="videos">
         <div class="section-header">
-            <h2 class="section-title">מהחוויות בשמחות שלכם</h2>
-            <p style="color: var(--text-gray); font-size: 1rem; margin-top: 0.4rem;">הצצו לרגעים השמחים והמתוקים מהשטח</p>
+            <h2 class="section-title">גלריית הסרטונים שלנו</h2>
         </div>
         
         <div class="video-wrapper-outer">
@@ -584,8 +582,7 @@
 
     <section class="gallery-section" id="gallery">
         <div class="section-header">
-            <h2 class="section-title">הפינוקים שלנו</h2>
-            <p style="color: var(--text-gray); font-size: 1rem; margin-top: 0.4rem;">טעם של פעם בנראות מוקפדת</p>
+            <h2 class="section-title">גלריית תמונות</h2>
         </div>
         
         <div class="gallery-grid">
@@ -748,7 +745,6 @@
     </div>
 
     <script>
-        // פונקציונליות משיכה (Drag / Swipe) בעכבר ובמגע לקרוסלות
         function enableDragScroll(sliderId) {
             const slider = document.getElementById(sliderId);
             if (!slider) return;
@@ -774,7 +770,7 @@
                 if (!isDown) return;
                 e.preventDefault();
                 const x = e.pageX - slider.offsetLeft;
-                const walk = (x - startX) * 2; // מהירות גרירה
+                const walk = (x - startX) * 2;
                 slider.scrollLeft = scrollLeft - walk;
             });
         }
