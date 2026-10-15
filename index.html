@@ -118,7 +118,7 @@
         font-family: 'Cinzel', serif; 
         font-size: clamp(2.2rem, 5vw, 4.2rem); 
         font-weight: 700; 
-        margin-bottom: 0.4rem; /* צומצם משמעותית */
+        margin-bottom: 0.4rem; 
         color: var(--text-white); 
         line-height: 1.1;
     }
@@ -127,7 +127,7 @@
         font-size: 1.15rem; 
         color: var(--text-gray); 
         max-width: 800px; 
-        margin: 0 auto 0.6rem; /* צומצם משמעותית */
+        margin: 0 auto 0.6rem; 
     }
 
     .hero-phone-number a { 
@@ -136,7 +136,7 @@
         color: var(--gold); 
         text-decoration: none; 
         display: block; 
-        margin-bottom: 1rem; /* צומצם משמעותית */
+        margin-bottom: 1rem; 
         line-height: 1.1;
     }
     
@@ -315,11 +315,49 @@
     .story-header-main img { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--gold); }
     .story-header-main span { color: white; font-weight: 600; font-size: 0.9rem; }
 
-    /* --- גלריית תמונות פרוסה לרוחב מלא --- */
-    .gallery-section { background: #080808; border-top: 1px solid rgba(212,175,55,0.1); border-bottom: 1px solid rgba(212,175,55,0.1); padding: 2.5rem 0; width: 100%; }
-    .gallery-swiper { width: 100%; padding: 0 2rem 2.5rem; }
-    .gallery-swiper .swiper-slide { height: 420px; border-radius: 6px; overflow: hidden; border: 1px solid rgba(212,175,55,0.15); }
-    .gallery-swiper img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; cursor: pointer; }
+    /* --- גלריית תמונות רשת (Grid) מעודכנת --- */
+    .gallery-section { 
+        background: #080808; 
+        border-top: 1px solid rgba(212,175,55,0.1); 
+        border-bottom: 1px solid rgba(212,175,55,0.1); 
+        padding: 3rem 2rem; 
+        width: 100%; 
+    }
+    
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 15px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .gallery-item {
+        height: 240px;
+        border-radius: 6px;
+        overflow: hidden;
+        border: 1px solid rgba(212,175,55,0.2);
+        background: var(--bg-card);
+        cursor: pointer;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .gallery-item:hover {
+        transform: translateY(-4px);
+        border-color: var(--gold);
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.05);
+    }
 
     /* --- מערכת ביקורות פרוסה לרוחב --- */
     .reviews-section { 
@@ -392,6 +430,14 @@
         
         .video-card { flex: 0 0 75%; height: 380px; }
         .video-scroller { padding: 10px 0 1rem 0; gap: 10px; }
+
+        .gallery-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .gallery-item {
+            height: 160px;
+        }
         
         .review-card { width: 300px; padding: 1.5rem; }
         .ticker-container { animation-duration: 30s; }
@@ -534,28 +580,26 @@
             <h2 class="section-title">הפינוקים שלנו</h2>
             <p style="color: var(--text-gray); font-size: 1rem; margin-top: 0.4rem;">טעם של פעם בנראות מוקפדת</p>
         </div>
-        <div class="swiper gallery-swiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="img24.jpeg" alt="דוכן ספינג'" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img23.jpeg" alt="דוכן ספינג'" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img21.jpeg" alt="דוכן ספינג'" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img15.jpeg" alt="מופלטות חמות באירוע" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img11.jpeg" alt="ספינג' חם" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img12.jpeg" alt="מופלטה מרוקאית" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img22.jpg" alt="מופלטה מרוקאית" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img16.jpeg" alt="מופלטות חמות באירוע" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img1.jpg" alt="מופלטות חמות באירוע" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img2.jpeg" alt="דוכן ספינג' מרוקאי" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img3.jpeg" alt="דוכן מרוקאי" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img17.jpeg" alt="דוכן מרוקאי" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img6.jpeg" alt="ספינג' טרי" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img18.jpeg" alt="דוכן ספינג'" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img13.jpeg" alt="עמדת מתוקים" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img14.jpeg" alt="חגיגה מרוקאית" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img19.jpeg" alt="פינוקים מרוקאים" onclick="openLightbox(this.src)"></div>
-                <div class="swiper-slide"><img src="img20.jpeg" alt="ספינג'לי" onclick="openLightbox(this.src)"></div>
-            </div>
-            <div class="swiper-pagination"></div>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="img24.jpeg" alt="דוכן ספינג'" onclick="openLightbox(this.src)"></div>
+            <div class="gallery-item"><img src="img23.jpeg" alt="דוכן ספינג'" onclick="openLightbox(this.src)"></div>
+            <div class="gallery-item"><img src="img21.jpeg" alt="דוכן ספינג'" onclick="openLightbox(this.src)"></div>
+            <div class="gallery-item"><img src="img15.jpeg" alt="מופלטות חמות באירוע" onclick="openLightbox(this.src)"></div>
+            <div class="gallery-item"><img src="img11.jpeg" alt="ספינג' חם" onclick="openLightbox(this.src)"></div>
+            <div class="gallery-item"><img src="img12.jpeg" alt="מופלטה מרוקאית" onclick="openLightbox(this.src)"></div>
+            <div class="gallery-item"><img src="img22.jpg" alt="מופלטה מרוקאית" onclick="openLightbox(this.src)"></div>
+            <div class="gallery-item"><img src="img16.jpeg" alt="מופלטות חמות באירוע" onclick="openLightbox(this.src)"></div>
+            <div class="gallery-item"><img src="img1.jpg" alt="מופלטות חמות באירוע" onclick="openLightbox(this.src)"></div>
+            <div class="gallery-item"><img src="img2.jpeg" alt="דוכן ספינג' מרוקאי" onclick="openLightbox(this.src)"></div>
+            <div class="gallery-item"><img src="img3.jpeg" alt="דוכן מרוקאי" onclick="openLightbox(this.src)"></div>
+            <div class="gallery-item"><img src="img17.jpeg" alt="דוכן מרוקאי" onclick="openLightbox(this.src)"></div>
+            <div class="gallery-item"><img src="img6.jpeg" alt="ספינג' טרי" onclick="openLightbox(this.src)"></div>
+            <div class="gallery-item"><img src="img18.jpeg" alt="דוכן ספינג'" onclick="openLightbox(this.src)"></div>
+            <div class="gallery-item"><img src="img13.jpeg" alt="עמדת מתוקים" onclick="openLightbox(this.src)"></div>
+            <div class="gallery-item"><img src="img14.jpeg" alt="חגיגה מרוקאית" onclick="openLightbox(this.src)"></div>
+            <div class="gallery-item"><img src="img19.jpeg" alt="פינוקים מרוקאים" onclick="openLightbox(this.src)"></div>
+            <div class="gallery-item"><img src="img20.jpeg" alt="ספינג'לי" onclick="openLightbox(this.src)"></div>
         </div>
     </section>
 
@@ -640,17 +684,9 @@
         <img id="lightbox-img" src="">
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         const ticker = document.getElementById('tickerContainer');
         ticker.innerHTML += ticker.innerHTML;
-
-        const swiperGallery = new Swiper('.gallery-swiper', {
-            loop: true, slidesPerView: 1, spaceBetween: 20,
-            autoplay: { delay: 3000 },
-            pagination: { el: '.swiper-pagination', clickable: true },
-            breakpoints: { 768: { slidesPerView: 4 } }
-        });
 
         function openLightbox(src) {
             document.getElementById('lightbox-img').src = src;
