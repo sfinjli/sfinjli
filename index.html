@@ -589,6 +589,12 @@
             <button class="scroll-btn btn-left" onclick="scrollVideos('left')">❯</button>
 
            <div class="video-scroller" id="videoScroller">
+               <div class="video-card" onclick="openStory(0)">
+                    <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
+                    <div class="play-hint">▶</div>
+                    <video playsinline loop muted autoplay><source src="video17.mp4" type="video/mp4"></video>
+                </div>
+               
                 <div class="video-card" onclick="openStory(0)">
                     <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
                     <div class="play-hint">▶</div>
@@ -629,30 +635,6 @@
                     <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
                     <div class="play-hint">▶</div>
                     <video playsinline loop muted autoplay><source src="video10.mp4" type="video/mp4"></video>
-                </div>
-            
-                <div class="video-card" onclick="openStory(7)">
-                    <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                    <div class="play-hint">▶</div>
-                    <video playsinline loop muted autoplay><source src="video9.mp4" type="video/mp4"></video>
-                </div>
-            
-                <div class="video-card" onclick="openStory(8)">
-                    <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                    <div class="play-hint">▶</div>
-                    <video playsinline loop muted autoplay><source src="video7.mp4" type="video/mp4"></video>
-                </div>
-            
-                <div class="video-card" onclick="openStory(9)">
-                    <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                    <div class="play-hint">▶</div>
-                    <video playsinline loop muted autoplay><source src="video8.mp4" type="video/mp4"></video>
-                </div>
-            
-                <div class="video-card" onclick="openStory(10)">
-                    <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
-                    <div class="play-hint">▶</div>
-                    <video playsinline loop muted autoplay><source src="video6.mp4" type="video/mp4"></video>
                 </div>
             
                 <div class="video-card" onclick="openStory(11)">
@@ -914,8 +896,8 @@
         }
 
        const storySources = [
-            "video12.mp4", "video13.mp4", "video14.mp4", "video15.mp4", "video16.mp4",
-            "video11.mp4", "video10.mp4", "video9.mp4", "video7.mp4", "video8.mp4", "video6.mp4", "video4.mp4", "video5.mp4"
+            "video17.mp4", "video12.mp4", "video13.mp4", "video14.mp4", "video15.mp4", 
+            "video16.mp4", "video11.mp4", "video10.mp4", "video4.mp4", "video5.mp4"
         ];
                 
         let currentStoryIndex = 0;
