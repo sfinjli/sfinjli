@@ -589,14 +589,11 @@
             <button class="scroll-btn btn-left" onclick="scrollVideos('left')">❯</button>
 
            <div class="video-scroller" id="videoScroller">
-                <!-- סרטון ראשון בלבד ממשיך להיות עם autoplay -->
                 <div class="video-card" onclick="openStory(0)">
                     <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
                     <div class="play-hint">▶</div>
-                    <video class="lazy-video" playsinline loop muted autoplay><source src="video17.mp4" type="video/mp4"></video>
+                    <video class="lazy-video" playsinline loop muted preload="metadata"><source src="video17.mp4" type="video/mp4"></video>
                 </div>
-            
-                <!-- שאר הסרטונים ללא autoplay - יופעלו רק בעזרת הגלילה -->
                 <div class="video-card" onclick="openStory(1)">
                     <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
                     <div class="play-hint">▶</div>
@@ -897,18 +894,15 @@
             }
         }
 
-        // מערכת השמעה לפי ריחוף עכבר (Hover) במחשב
+        // מערכת השמעה לפי ריחוף עכבר (Hover) לכל הסרטונים
         document.addEventListener("DOMContentLoaded", function() {
             const videoCards = document.querySelectorAll(".video-card");
 
-            videoCards.forEach((card, index) => {
+            videoCards.forEach((card) => {
                 const video = card.querySelector("video");
                 if (!video) return;
 
-                // אם זה הסרטון הראשון - הוא מנגן תמיד (או בהתאם למה שהוגדר)
-                if (index === 0) return;
-
-                // כאשר העכבר נכנס לכרטיס של הסרטון
+                // כאשר העכבר נכנס לכרטיס הסרטון
                 card.addEventListener("mouseenter", () => {
                     video.play().catch(err => console.log("Play prevented:", err));
                 });
@@ -916,7 +910,7 @@
                 // כאשר העכבר יוצא מכרטיס הסרטון
                 card.addEventListener("mouseleave", () => {
                     video.pause();
-                    video.currentTime = 0; // מחזיר להתחלה כדי שיראה את הפריים הראשון יפה
+                    video.currentTime = 0; // מחזיר להתחלה כדי שיראה את הפריים הראשון
                 });
             });
         });
