@@ -589,12 +589,14 @@
             <button class="scroll-btn btn-left" onclick="scrollVideos('left')">❯</button>
 
            <div class="video-scroller" id="videoScroller">
+                <!-- סרטון ראשון בלבד ממשיך להיות עם autoplay -->
                 <div class="video-card" onclick="openStory(0)">
                     <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
                     <div class="play-hint">▶</div>
                     <video class="lazy-video" playsinline loop muted autoplay><source src="video17.mp4" type="video/mp4"></video>
                 </div>
             
+                <!-- שאר הסרטונים ללא autoplay - יופעלו רק בעזרת הגלילה -->
                 <div class="video-card" onclick="openStory(1)">
                     <div class="story-avatar"><img src="logo_new.png" alt="לוגו"></div>
                     <div class="play-hint">▶</div>
