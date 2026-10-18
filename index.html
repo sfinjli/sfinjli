@@ -915,6 +915,18 @@
             });
         });
 
+        // הצגת פריים משנייה מסוימת כ-Cover לכל הסרטונים
+        document.addEventListener("DOMContentLoaded", function() {
+            const videos = document.querySelectorAll(".video-card video");
+            
+            videos.forEach(video => {
+                // ברגע שהדפדפן טען את המטא-דאטה של הסרטון
+                video.addEventListener('loadedmetadata', function() {
+                    video.currentTime = 0.3; // כאן אתה מגדיר את מספר השניות (למשל שנייה וחצי, אפשר לשנות ל-2 וכו')
+                });
+            });
+        });
+
        const storySources = [
             "video17.mp4", "video12.mp4", "video13.mp4", "video14.mp4", "video15.mp4", 
             "video16.mp4", "video11.mp4", "video10.mp4", "video4.mp4", "video5.mp4"
